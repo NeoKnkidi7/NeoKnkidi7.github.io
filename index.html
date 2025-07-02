@@ -21,11 +21,11 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             --shadow: 0 15px 40px -15px rgba(67, 97, 238, 0.15);
             --radius: 16px;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --header-bg: rgba(248, 249, 255, 0.95);
-            --text-color: var(--darker);
-            --bg-gradient: linear-gradient(135deg, #f8f9ff 0%, #eef2f8 100%);
-            --hero-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --card-bg: rgba(255, 255, 255, 0.95); /* More solid white for better readability */
+            --header-bg: rgba(248, 249, 255, 0.98); /* Less transparency for better contrast */
+            --text-color: #2a3349; /* Slightly darker for better readability */
+            --bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e6ecf7 100%); /* Softer gradient */
+            --hero-gradient: linear-gradient(135deg, #4361ee 0%, #6c63ff 100%);
         }
 
         [data-theme="dark"] {
@@ -36,14 +36,14 @@
             --accent: #9d8cff;
             --light: #1a202c;
             --light-gray: #2d3748;
-            --medium-gray: #718096;
+            --medium-gray: #a0aec0;
             --dark: #e2e8f0;
             --darker: #f8f9ff;
-            --card-bg: rgba(26, 32, 44, 0.9);
-            --header-bg: rgba(26, 32, 44, 0.95);
-            --text-color: var(--darker);
-            --bg-gradient: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            --hero-gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --card-bg: rgba(26, 32, 44, 0.95); /* More solid dark background */
+            --header-bg: rgba(26, 32, 44, 0.98); /* Less transparency */
+            --text-color: #eef2f8; /* Lighter text for better contrast */
+            --bg-gradient: linear-gradient(135deg, #1a202c 0%, #222938 100%); /* Darker gradient */
+            --hero-gradient: linear-gradient(135deg, #5c7cff 0%, #8a84ff 100%);
         }
 
         * {
