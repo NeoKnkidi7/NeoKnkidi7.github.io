@@ -733,7 +733,29 @@
             font-size: 0.9rem;
         }
 
+        .cert-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .cert-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
         /* Contact Section */
+        .contact {
+            position: relative;
+        }
+
         .contact-content {
             display: flex;
             gap: 60px;
@@ -1023,33 +1045,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Added progress bars for certifications */
-        .cert-progress {
-            height: 8px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 4px;
-            margin-top: 15px;
-            overflow: hidden;
-        }
-        
-        .cert-progress-bar {
-            height: 100%;
-            background: var(--secondary);
-            border-radius: 4px;
-            position: relative;
-        }
-        
-        .cert-progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: progress-shine 2s infinite;
-        }
     </style>
 </head>
 <body>
@@ -1117,11 +1112,11 @@
                             <p>Projects Completed</p>
                         </div>
                         <div class="stat-item">
-                            <h3>1</h3>
-                            <p>Microsoft AI Certification</p>
+                            <h3>6</h3>
+                            <p>Certifications Earned</p>
                         </div>
                         <div class="stat-item">
-                            <h3>9</h3>
+                            <h3>5</h3>
                             <p>Google Certifications in Progress</p>
                         </div>
                         <div class="stat-item">
@@ -1160,7 +1155,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Information System Project Manager</h3>
-                        <span class="date"> Feb 2023 - Nov 2021</span>
+                        <span class="date">Nov 2021 - Feb 2023</span>
                         <p>Howard University</p>
                         <p>Managed development and implementation of information systems to support university operations.</p>
                     </div>
@@ -1168,10 +1163,11 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h4>Mathematics and Science Private Tutor</h4>
-                        <span class="date"> Jan 2022 - Present</span>
+                        <span class="date">Jan 2022 - Present</span>
                         <p>ValorSpirit Academy</p>
                         <p>Assisting Learners and Students achieve greatness in academics.</p>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1338,7 +1334,7 @@
                         </div>
                         <h3 class="project-title">Load-Shedding Impact Predictor</h3>
                         <p class="project-desc">Forecasts Eskom outages and correlates with economic activity using Scikit-learn/XGBoost and EskomSePush API.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://gmrbd3olwagdnpprs4aafc.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -1355,24 +1351,24 @@
                         </div>
                         <h3 class="project-title">Indigenous Language Voice Assistant</h3>
                         <p class="project-desc">Bridges digital divides for Zulu/Tswana speakers using Mozilla DeepSpeech and Hugging Face Transformers.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://indigenous-language-voice-assistant.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
+                <!-- Project 3 (Updated) -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Academic Credential Verification">
+                        <img src="https://images.unsplash.com/photo-1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Clinic Hospital Appointment Scheduler">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Blockchain</span>
-                            <span class="project-tag">Ethereum</span>
-                            <span class="project-tag">IPFS</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">Firebase</span>
                         </div>
-                        <h3 class="project-title">Academic Credential Verification</h3>
-                        <p class="project-desc">Combat certificate fraud using Ethereum blockchain and IPFS decentralized storage.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <h3 class="project-title">Clinic Hospital Appointment Scheduler</h3>
+                        <p class="project-desc">An appointment scheduling system for community clinics and hospitals to manage patient bookings efficiently.</p>
+                        <a href="https://community-clinic-hospital-appointment-scheduler.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -1389,7 +1385,7 @@
                         </div>
                         <h3 class="project-title">GBV Resource Navigator with Offline Sync</h3>
                         <p class="project-desc">Help survivors find shelters/legal aid during connectivity gaps using Next.js and Firebase.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://gbv-resource-navigator-with-offline-sync.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -1406,7 +1402,7 @@
                         </div>
                         <h3 class="project-title">SA Crime Hotspot Predictor</h3>
                         <p class="project-desc">Predicts crime hotspots using SAPS open crime stats, Python GeoPandas, and AWS.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://sa-crime-hotspot-predictor.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -1423,7 +1419,7 @@
                         </div>
                         <h3 class="project-title">AI Resume Optimizer</h3>
                         <p class="project-desc">Scrapes job descriptions → suggests resume tweaks using NLP and Hugging Face Transformers.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://ai-resume-optimizer-application.streamlit.app/" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1433,41 +1429,27 @@
     <!-- Certifications Section -->
     <section class="certifications" id="certifications">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <p class="section-subtitle">Currently pursuing these Google certifications to enhance my skills</p>
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <p class="section-subtitle">Professional certifications I've earned and currently pursuing</p>
             
             <div class="cert-grid">
+                <!-- Completed Certifications -->
                 <div class="cert-card">
                     <div class="cert-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="cert-title">Google AI Certificate</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 75%"></div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3 class="cert-title">Google Digital Marketing & E-commerce</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 60%"></div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fab fa-google"></i>
                     </div>
                     <h3 class="cert-title">Google Business Intelligence</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 40%"></div>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/business-intelligence-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
                     </div>
+                    <h3 class="cert-title">Google Cybersecurity</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/cybersecurity-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
                 </div>
                 
                 <div class="cert-card">
@@ -1475,9 +1457,57 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3 class="cert-title">Google IT Support</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 80%"></div>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/it-support-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="cert-title">Google Project Management</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/project-mgmt-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Fluency Course</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/microsoft-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="cert-title">FNB App Academy</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="path/to/fnb-cert.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <!-- In Progress Certifications -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="cert-title">Google AI Certificate</h3>
+                    <p class="cert-status">In Progress (75%)</p>
+                    <div class="skill-bar" style="margin-top: 15px;">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="cert-title">Google Digital Marketing</h3>
+                    <p class="cert-status">In Progress (60%)</p>
+                    <div class="skill-bar" style="margin-top: 15px;">
+                        <div class="skill-progress" style="width: 60%"></div>
                     </div>
                 </div>
                 
@@ -1486,9 +1516,9 @@
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3 class="cert-title">Google UX Design</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 30%"></div>
+                    <p class="cert-status">In Progress (30%)</p>
+                    <div class="skill-bar" style="margin-top: 15px;">
+                        <div class="skill-progress" style="width: 30%"></div>
                     </div>
                 </div>
                 
@@ -1496,21 +1526,10 @@
                     <div class="cert-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="cert-title">Google Advanced Data Analytics</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 65%"></div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3 class="cert-title">Google Project Management</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 55%"></div>
+                    <h3 class="cert-title">Google Data Analytics</h3>
+                    <p class="cert-status">In Progress (65%)</p>
+                    <div class="skill-bar" style="margin-top: 15px;">
+                        <div class="skill-progress" style="width: 65%"></div>
                     </div>
                 </div>
                 
@@ -1518,21 +1537,10 @@
                     <div class="cert-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="cert-title">Google IT Automation with Python</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 85%"></div>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="cert-title">Google Cybersecurity</h3>
-                    <p class="cert-status">In Progress</p>
-                    <div class="cert-progress">
-                        <div class="cert-progress-bar" style="width: 50%"></div>
+                    <h3 class="cert-title">Google IT Automation</h3>
+                    <p class="cert-status">In Progress (85%)</p>
+                    <div class="skill-bar" style="margin-top: 15px;">
+                        <div class="skill-progress" style="width: 85%"></div>
                     </div>
                 </div>
             </div>
