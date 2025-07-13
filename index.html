@@ -131,6 +131,30 @@
             background: var(--primary);
             color: white;
         }
+        
+        /* Resume Float Button */
+        .resume-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .resume-float:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
 
         /* Header & Navigation */
         header {
@@ -396,6 +420,17 @@
 
         .btn-secondary:hover {
             transform: translateY(-5px) scale(1.05);
+        }
+        
+        .btn-resume {
+            background: var(--accent);
+            color: white;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-resume:hover {
+            background: transparent;
+            color: white;
         }
 
         /* About Section */
@@ -1064,6 +1099,13 @@
             .about-stats {
                 grid-template-columns: 1fr;
             }
+            
+            .resume-float {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1081,6 +1123,13 @@
             
             .stat-item h3 {
                 font-size: 2rem;
+            }
+            
+            .resume-float {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                font-size: 0.8rem;
             }
         }
 
@@ -1113,6 +1162,14 @@
     <div class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
     </div>
+    
+    <!-- Resume Float Button -->
+    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Neo%20Kennedy%20Nkidi%20Resume.pdf" 
+       class="resume-float" 
+       target="_blank" 
+       download="Neo_Kennedy_Nkidi_Resume.pdf">
+        <i class="fas fa-file-download"></i> Download Resume
+    </a>
 
     <!-- Header -->
     <header id="header">
@@ -1132,6 +1189,14 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Neo%20Kennedy%20Nkidi%20Resume.pdf" 
+                       class="btn btn-resume" 
+                       target="_blank" 
+                       download="Neo_Kennedy_Nkidi_Resume.pdf">
+                        <i class="fas fa-file-download"></i> Resume
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
@@ -1146,6 +1211,12 @@
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View My Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Neo%20Kennedy%20Nkidi%20Resume.pdf" 
+                       class="btn btn-resume" 
+                       target="_blank" 
+                       download="Neo_Kennedy_Nkidi_Resume.pdf">
+                        <i class="fas fa-file-download"></i> Download Resume
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
