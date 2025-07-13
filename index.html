@@ -332,6 +332,14 @@
             max-width: 600px;
         }
 
+        .hero-roles {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.4;
+        }
+
         .hero-btns {
             display: flex;
             gap: 20px;
@@ -445,6 +453,47 @@
             margin: 0;
             font-size: 1.1rem;
             color: var(--medium-gray);
+        }
+
+        .certifications-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .certifications-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .certifications-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--primary);
+        }
+
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .projects-list li {
+            background: rgba(67, 97, 238, 0.1);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .projects-list li:hover {
+            background: rgba(67, 97, 238, 0.2);
+            transform: translateY(-3px);
         }
 
         /* Experience Section */
@@ -961,6 +1010,10 @@
             .timeline-item:nth-child(even) {
                 left: 0;
             }
+            
+            .projects-list {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -995,6 +1048,10 @@
                 font-size: 2.8rem;
             }
             
+            .hero-roles {
+                font-size: 1.3rem;
+            }
+            
             .hero-btns {
                 flex-direction: column;
                 gap: 15px;
@@ -1012,6 +1069,10 @@
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .hero-roles {
+                font-size: 1.1rem;
             }
             
             .section-title {
@@ -1079,8 +1140,9 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Hi, I'm <span>Neo Kennedy Nkidi</span><br>IT Student & Developer</h1>
-                <p>Final year Bachelor of Science in Information Technology student at North West University, South Africa. Passionate about creating innovative solutions to real-world problems.</p>
+                <h1>Hi, I'm <span>Neo Kennedy Nkidi</span></h1>
+                <p class="hero-roles">IT Student · Developer · Data & AI Enthusiast · IT Support and Business Intelligence Professional · Project Management and Cybersecurity Professional</p>
+                <p>Final-year Bachelor of Science in Information Technology student at North-West University, South Africa, passionate about transforming real-world challenges into practical, data-driven solutions.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View My Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
@@ -1102,9 +1164,35 @@
             
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a final-year IT student at North West University in South Africa, specializing in software development and AI technologies. With a strong foundation in computer science principles and hands-on experience through various projects, I'm passionate about creating efficient, scalable solutions.</p>
-                    <p>My academic journey has equipped me with a diverse skill set, from backend development to cybersecurity practices. I thrive in collaborative environments and enjoy tackling complex challenges with innovative approaches.</p>
-                    <p>When I'm not coding, you can find me contributing to open-source projects, exploring new technologies, or participating in hackathons. I'm currently seeking opportunities to apply my skills in a professional setting upon graduation.</p>
+                    <p>I’m Neo Kennedy Nkidi, an IT professional in the making, driven by curiosity and purpose. Currently completing my BSc in Information Technology at North-West University, I’ve built a strong academic and professional foundation focused on software development, data analytics, artificial intelligence, and cybersecurity.</p>
+                    
+                    <p>Alongside my degree, I’ve earned industry-recognized certifications, including:</p>
+                    
+                    <ul class="certifications-list">
+                        <li>Google Business Intelligence Certificate – skills in BigQuery, SQL, Tableau, data modeling, ETL, dashboards, and data visualization</li>
+                        <li>Google Cybersecurity Professional Certificate – experience in network security, SIEM tools, threat analysis, and Python for security</li>
+                        <li>Google IT Support Professional Certificate – practical know-how in system administration, troubleshooting, and customer-centric IT support</li>
+                        <li>Google Project Management Professional Certificate – agile project management, risk management, budgeting, and stakeholder engagement</li>
+                        <li>FNB App Academy Full Stack Development – blending app strategy with data management and analysis</li>
+                        <li>Microsoft Fluency Course – enhancing communication and collaboration in tech environments</li>
+                    </ul>
+                    
+                    <p>My academic journey includes distinctions in fields like Artificial Intelligence, Descriptive Statistics, Problem Solving for Managers, and Communication Skills. I’ve applied these skills to projects that address local and social issues, such as:</p>
+                    
+                    <ul class="projects-list">
+                        <li>Load-Shedding Impact Predictor</li>
+                        <li>Indigenous Language Voice Assistant</li>
+                        <li>GBV Resource Navigator with Offline Sync</li>
+                        <li>SA Crime Hotspot Predictor</li>
+                        <li>AI Resume Optimizer</li>
+                        <li>Clinic Hospital Appointment Scheduler</li>
+                    </ul>
+                    
+                    <p>I enjoy solving complex problems at the intersection of data, AI, and human needs, and I’m most inspired when building solutions that make a tangible difference in people’s lives.</p>
+                    
+                    <p>Outside academics, I actively contribute to open-source projects, join hackathons, and explore new technologies to stay ahead in the fast-evolving IT landscape. I’m now seeking new professional opportunities to bring my blend of technical expertise, analytical thinking, and creativity into impactful projects and teams.</p>
+                    
+                    <p>Let’s build something meaningful together!</p>
                     
                     <div class="about-stats">
                         <div class="stat-item">
@@ -1162,7 +1250,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>Mathematics and Science Private Tutor</h4>
+                        <h3>Mathematics and Science Private Tutor</h3>
                         <span class="date">Jan 2022 - Present</span>
                         <p>ValorSpirit Academy</p>
                         <p>Assisting Learners and Students achieve greatness in academics.</p>
@@ -1355,7 +1443,7 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 (Updated) -->
+                <!-- Project 3 (Updated with hospital appointment image) -->
                 <div class="project-card">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Clinic Hospital Appointment Scheduler">
@@ -1646,7 +1734,7 @@
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
             
-            <p class="copyright">&copy; 2025 Neo Kenedy Nkidi. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 Neo Kennedy Nkidi. All Rights Reserved.</p>
         </div>
     </footer>
 
