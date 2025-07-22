@@ -15,6 +15,7 @@
             --accent2: #f72585;
             --dark: #0f172a;
             --light: #e2e8f0;
+            --medium-gray: #94a3b8;
             --success: #4ade80;
             --warning: #facc15;
             --danger: #ef4444;
@@ -1429,375 +1430,1283 @@
             transform: scale(1.1);
         }
         
-        /* AI Responses */
-        function getAIResponse(message) {
-            const lowerMessage = message.toLowerCase();
+        /* GRC Assistant */
+        .grc-assistant {
+            padding: 50px 0;
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+        
+        .grc-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--accent2), var(--cyber-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .grc-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+        
+        .grc-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .grc-chat {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .grc-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            max-width: 80%;
+            font-size: 0.95rem;
+        }
+        
+        .grc-message.user {
+            background: rgba(247, 37, 133, 0.2);
+            color: white;
+            margin-left: auto;
+            border: 1px solid rgba(247, 37, 133, 0.3);
+        }
+        
+        .grc-message.bot {
+            background: rgba(6, 182, 212, 0.2);
+            color: white;
+            margin-right: auto;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        
+        .grc-input-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .grc-input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        .grc-input:focus {
+            outline: none;
+            border-color: var(--cyber-blue);
+        }
+        
+        .grc-send {
+            background: linear-gradient(45deg, var(--accent2), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .grc-send:hover {
+            transform: scale(1.1);
+        }
+        
+        .grc-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .grc-feature {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .grc-feature:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .grc-feature h3 {
+            color: var(--accent2);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .grc-feature p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+        }
+        
+        .grc-feature ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .grc-feature li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .grc-feature li:before {
+            content: "•";
+            color: var(--accent2);
+            font-weight: bold;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
             
-            if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-                return "Hello! I'm Neo's AI Assistant. How can I help you today?";
-            } else if (lowerMessage.includes('skill') || lowerMessage.includes('technolog')) {
-                return "Neo has expertise in AI engineering, cybersecurity, data science, and software development. He's proficient in Python, Java, machine learning, and cloud technologies.";
-            } else if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
-                return "Neo has developed projects like FinSight Financial Intelligence, Load-Shedding Impact Predictor, and Indigenous Language Voice Assistant.";
-            } else if (lowerMessage.includes('experience') || lowerMessage.includes('job')) {
-                return "Neo has experience as an Examination Assistant, Trainee Radiographer, and has completed professional simulations with companies like Deloitte and Walmart.";
-            } else if (lowerMessage.includes('education') || lowerMessage.includes('degree')) {
-                return "Neo is a final-year Bachelor of Science in Information Technology student at North-West University in South Africa.";
-            } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
-                return "You can contact Neo at neonkidi296@gmail.com or +27 82 213 2330.";
-            } else if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
-                return "You can download Neo's resume by clicking the 'Download Resume' button in the navigation menu.";
-            } else if (lowerMessage.includes('github')) {
-                return "Neo's GitHub profile is github.com/NeoKnkidi7";
-            } else if (lowerMessage.includes('linkedin')) {
-                return "Neo's LinkedIn profile is linkedin.com/in/neo-kennedy-nkidi";
-            } else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
-                return "You're welcome! Feel free to ask anything else about Neo.";
-            } else {
-                return "I'm not sure how to answer that. You can ask about Neo's skills, projects, certifications, experience, or contact information.";
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .about-content,
+            .contact-content,
+            .grc-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-matrix {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .matrix-container {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         
-        // Audio recording simulation
-        let isRecording = false;
-        
-        document.getElementById('recordBtn').addEventListener('click', () => {
-            if (!isRecording) {
-                isRecording = true;
-                document.getElementById('recordBtn').innerHTML = '<i class="fas fa-circle"></i> Recording...';
-                document.getElementById('recordBtn').disabled = true;
-                
-                // Simulate recording with animation
-                document.querySelectorAll('.network-node').forEach(node => {
-                    node.classList.add('active');
-                });
-                
-                // Simulate processing after 3 seconds
-                setTimeout(() => {
-                    isRecording = false;
-                    document.getElementById('recordBtn').innerHTML = '<i class="fas fa-microphone"></i> Record Response';
-                    document.getElementById('recordBtn').disabled = false;
-                    
-                    // Update response text
-                    document.getElementById('response-text').innerHTML = '<i class="fas fa-check-circle"></i> Response recorded successfully! Analyzing...';
-                    
-                    // Simulate analysis after 2 seconds
-                    setTimeout(() => {
-                        // Random feedback examples
-                        const feedbacks = [
-                            "Your response was comprehensive and well-structured. You clearly explained the challenge and your solution. Consider adding more quantifiable results to strengthen your answer.",
-                            "Good example of a challenging project. You demonstrated problem-solving skills and technical expertise. Try to focus more on your specific contributions to the project.",
-                            "You effectively communicated your approach to time management. The example showed your ability to prioritize tasks. Next time, mention how you communicated with stakeholders about deadlines.",
-                            "Your problem-solving approach is methodical. You showed good debugging practices. Next time, mention any tools or techniques you used to solve the problem.",
-                            "Good understanding of Agile principles. You provided a clear example of working in an Agile team. You could improve by mentioning specific ceremonies or artifacts you worked with.",
-                            "You showed initiative in staying updated. The resources you mentioned are relevant. Consider adding how you applied new knowledge in your projects."
-                        ];
-                        
-                        document.getElementById('feedback-content').innerHTML = `
-                            <p><strong>Content:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[0]}.</p>
-                            <p><strong>Clarity:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[1]}.</p>
-                            <p><strong>Tone:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[2]}.</p>
-                            <p><strong>Improvement:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ').slice(3).join('. ')}.</p>
-                        `;
-                        
-                        // Add retry button
-                        const retryBtn = document.createElement('button');
-                        retryBtn.className = 'record-btn';
-                        retryBtn.innerHTML = '<i class="fas fa-redo"></i> Try Again';
-                        retryBtn.addEventListener('click', () => {
-                            document.getElementById('response-text').innerHTML = '<i class="fas fa-microphone"></i> Your response will be analyzed here for content, clarity, and emotional tone.';
-                            document.getElementById('feedback-content').innerHTML = 'No analysis available yet. Record a response to get feedback.';
-                            document.querySelector('.interview-recorder').appendChild(retryBtn);
-                        });
-                    }, 2000);
-                }, 3000);
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                backdrop-filter: blur(10px);
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
-        });
-        
-        // Next question button
-        document.getElementById('next-question').addEventListener('click', () => {
-            const questions = [
-                "Tell me about a time you faced a significant challenge and how you overcame it.",
-                "Describe a project you are most proud of and what your contribution was.",
-                "How do you handle tight deadlines and multiple projects?",
-                "Tell me about a time you had to learn a new technology quickly.",
-                "Describe a situation where you had to work with a difficult team member.",
-                "How do you approach problem-solving when you encounter a bug in your code?",
-                "What is your experience with Agile development methodologies?",
-                "How do you stay updated with the latest industry trends and technologies?"
-            ];
             
-            const currentQuestionIndex = Math.floor(Math.random() * questions.length);
-            document.getElementById('interview-question').innerHTML = `Question: "${questions[currentQuestionIndex]}"`;
-            document.getElementById('response-text').innerHTML = '<i class="fas fa-microphone"></i> Your response will be analyzed here for content, clarity, and emotional tone.';
-            document.getElementById('feedback-content').innerHTML = 'No analysis available yet. Record a response to get feedback.';
-        });
-        
-        // Cyber Range Simulator
-        const startRangeBtn = document.getElementById('startRangeBtn');
-        const defendBtn = document.getElementById('defendBtn');
-        const ddosBar = document.getElementById('ddos-attack-bar');
-        const ransomwareBar = document.getElementById('ransomware-bar');
-        const phishingBar = document.getElementById('phishing-bar');
-        const firewallBar = document.getElementById('firewall-bar');
-        const intrusionBar = document.getElementById('intrusion-bar');
-        const encryptionBar = document.getElementById('encryption-bar');
-        
-        let simulationActive = false;
-        
-        startRangeBtn.addEventListener('click', () => {
-            if (!simulationActive) {
-                simulationActive = true;
-                startRangeBtn.style.display = 'none';
-                defendBtn.style.display = 'inline-block';
-                
-                // Animate progress bars
-                ddosBar.style.width = '20%';
-                ransomwareBar.style.width = '15%';
-                phishingBar.style.width = '10%';
-                
-                firewallBar.style.width = '95%';
-                intrusionBar.style.width = '92%';
-                encryptionBar.style.width = '97%';
+            .nav-links.active {
+                display: flex;
             }
-        });
-        
-        defendBtn.addEventListener('click', () => {
-            if (simulationActive) {
-                simulationActive = false;
-                defendBtn.style.display = 'none';
-                startRangeBtn.style.display = 'inline-block';
-                
-                // Randomize attack levels to simulate new threats
-                ddosBar.style.width = Math.floor(Math.random() * 60 + 20) + '%';
-                ransomwareBar.style.width = Math.floor(Math.random() * 50 + 10) + '%';
-                phishingBar.style.width = Math.floor(Math.random() * 40) + '%';
+            
+            .mobile-toggle {
+                display: block;
             }
-        });
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+                padding-right: 20px;
+            }
+        }
         
-        // GRC Assistant
-        const grcInput = document.getElementById('grcInput');
-        const sendGrcBtn = document.getElementById('sendGrcBtn');
-        
-        sendGrcBtn.addEventListener('click', () => {
-            const input = grcInput.value.trim();
-            if (input) {
-                // Add user message
-                const userMessage = document.createElement('div');
-                userMessage.className = 'grc-message user';
-                userMessage.textContent = input;
-                document.querySelector('.grc-chat').appendChild(userMessage);
-                
-                // Clear input
-                grcInput.value = '';
-                
-                // Scroll to bottom
-                document.querySelector('.grc-chat').scrollTop = document.querySelector('.grc-chat').scrollHeight;
-                
-                // Simulate bot response
-                setTimeout(() => {
-                    const botMessage = document.createElement('div');
-                    botMessage.className = 'grc-message bot';
+        @media (max-width: 576px) {
+            .skills-matrix {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .matrix-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .grc-container {
+                flex-direction: column;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header & Navigation -->
+        <header>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-shield-alt"></i> Neo<span>Kennedy</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>AI & Cybersecurity Engineer</h1>
+                    <p>Transforming complex challenges into innovative solutions through the power of artificial intelligence and advanced security technologies.</p>
                     
-                    // Generate response based on input
-                    let response = "I can help with that. Based on your Google Cybersecurity, Microsoft Responsible AI, and Oracle Cloud Infrastructure certifications, I recommend reviewing your current security policies against the NIST Cybersecurity Framework.";
+                    <div class="hero-roles">
+                        <div class="role-tag">
+                            <i class="fas fa-robot"></i> AI Engineer
+                        </div>
+                        <div class="role-tag">
+                            <i class="fas fa-lock"></i> Cybersecurity Specialist
+                        </div>
+                        <div class="role-tag">
+                            <i class="fas fa-code"></i> Software Developer
+                        </div>
+                        <div class="role-tag">
+                            <i class="fas fa-chart-line"></i> Data Scientist
+                        </div>
+                    </div>
                     
-                    if (input.toLowerCase().includes('compliance') || input.toLowerCase().includes('governance')) {
-                        response = "Based on your PWC Cyber Security Consulting Simulation and Deloitte Technology Simulation experience, you should focus on implementing automated compliance monitoring tools and establishing clear governance workflows.";
-                    } else if (input.toLowerCase().includes('risk')) {
-                        response = "With your experience from Deloitte Cyber Job Simulation and TATA Cybersecurity Analyst Simulation, I recommend conducting regular risk assessments and implementing continuous monitoring for emerging threats.";
-                    } else if (input.toLowerCase().includes('data')) {
-                        response = "Based on your Google Business Intelligence and Oracle Data Science certifications, ensure your data protection strategies align with industry best practices and regulatory requirements.";
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-project-diagram"></i> View Projects
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="https://picsum.photos/seed/neokennedy/300/300.jpg" alt="Neo Kennedy Nkidi" class="profile-img">
+                        <div class="profile-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2 class="section-title">Specialized Features</h2>
+            <p class="section-subtitle">Cutting-edge tools and solutions designed to address the most challenging problems in AI and cybersecurity.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3 class="feature-title">AI Interview Coach</h3>
+                    <p class="feature-desc">Practice your interview skills with AI-powered feedback on content, clarity, and emotional tone.</p>
+                    <a href="#" class="feature-link">
+                        Try it now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card ai-interview-coach">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">AI Interview Coach</h3>
+                    <p class="feature-desc">Practice your interview skills with AI-powered feedback on content, clarity, and emotional tone.</p>
+                    
+                    <div class="interview-recorder">
+                        <div id="interview-question">Question: "Tell me about a time you faced a significant challenge and how you overcame it."</div>
+                        <div id="response-text"><i class="fas fa-microphone"></i> Your response will be analyzed here for content, clarity, and emotional tone.</div>
+                        <div id="feedback-content"></div>
+                        
+                        <div class="recorder-controls">
+                            <button id="recordBtn" class="recorder-btn">
+                                <i class="fas fa-microphone"></i> Record Response
+                            </button>
+                            <button id="stopBtn" class="recorder-btn stop-btn">
+                                <i class="fas fa-stop"></i> Stop Recording
+                            </button>
+                            <button id="analyzeBtn" class="recorder-btn analyze-btn">
+                                <i class="fas fa-chart-bar"></i> Analyze
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Cyber Attack Map</h3>
+                    <p class="feature-desc">Real-time visualization of global cyber threats with risk assessment and mitigation recommendations.</p>
+                    <a href="#" class="feature-link">
+                        View Map <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">GRC Assistant</h3>
+                    <p class="feature-desc">AI-powered Governance, Risk, and Compliance assistant for enterprise security operations.</p>
+                    <a href="#" class="feature-link">
+                        Explore Features <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cyber Attack Map -->
+        <section id="cyber-map-section" class="cyber-map-container">
+            <h2 class="map-title">Global Cyber Threat Intelligence</h2>
+            <p class="map-subtitle">Real-time monitoring of emerging threats across the globe with predictive analytics and defense recommendations.</p>
+            
+            <div class="cyber-map">
+                <div class="map-overlay">
+                    <div class="map-content">
+                        <h3>Live Cyber Threat Map</h3>
+                        <p>Monitoring global threats in real-time</p>
+                        
+                        <div class="map-stats">
+                            <div class="map-stat">
+                                <div class="map-stat-value">1,247</div>
+                                <div class="map-stat-label">Active Attacks</div>
+                            </div>
+                            <div class="map-stat">
+                                <div class="map-stat-value">87%</div>
+                                <div class="map-stat-label">Defense Rate</div>
+                            </div>
+                            <div class="map-stat">
+                                <div class="map-stat-value">42</div>
+                                <div class="map-stat-label">Countries Affected</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-network"></div>
+            </div>
+            
+            <div class="map-legend">
+                <div class="legend-title">Threat Levels</div>
+                <div class="legend-item">
+                    <div class="legend-color high-risk"></div>
+                    <span>High Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium-risk"></div>
+                    <span>Medium Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color low-risk"></div>
+                    <span>Low Risk</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRC Assistant Section -->
+        <section id="grc-assistant" class="grc-assistant">
+            <div class="container">
+                <h2 class="grc-title">Governance, Risk & Compliance Assistant</h2>
+                <p class="grc-subtitle">AI-powered tool for enterprise security operations, risk assessment, and compliance management.</p>
+                
+                <div class="grc-container">
+                    <div class="grc-chat">
+                        <div class="grc-message bot">
+                            Hello! I'm your GRC Assistant. How can I help with your security operations today?
+                        </div>
+                        <div class="grc-message user">
+                            What are the current compliance requirements for data protection?
+                        </div>
+                        <div class="grc-message bot">
+                            Based on your Google Cybersecurity certification, you should focus on GDPR compliance, implementing data encryption, and establishing access controls. Would you like specific recommendations?
+                        </div>
+                    </div>
+                    
+                    <div class="grc-features">
+                        <div class="grc-feature">
+                            <h3><i class="fas fa-clipboard-check"></i> Compliance Monitoring</h3>
+                            <p>Automated tracking of regulatory requirements and compliance status.</p>
+                            <ul>
+                                <li>Real-time compliance reporting</li>
+                                <li>Automated audit preparation</li>
+                                <li>Regulatory change management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grc-feature">
+                            <h3><i class="fas fa-chart-pie"></i> Risk Assessment</h3>
+                            <p>Advanced risk analysis with predictive threat modeling.</p>
+                            <ul>
+                                <li>Vulnerability scoring</li>
+                                <li>Threat probability analysis</li>
+                                <li>Impact assessment tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grc-input-container">
+                    <input type="text" class="grc-input" placeholder="Ask a question about security compliance...">
+                    <button class="grc-send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">A passionate AI and cybersecurity professional dedicated to creating innovative solutions for complex challenges.</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Neo Kennedy Nkidi, a final-year Bachelor of Science in Information Technology student at North-West University in South Africa. I specialize in AI engineering and cybersecurity with a focus on developing practical solutions to real-world problems.</p>
+                    
+                    <p>My journey in technology began with a fascination for how systems work and how they can be made more secure and intelligent. This passion has led me to develop expertise in multiple domains including machine learning, data science, software development, and network security.</p>
+                    
+                    <ul class="certifications-list">
+                        <li>Google Cybersecurity Professional Certificate</li>
+                        <li>Google Business Intelligence Professional Certificate</li>
+                        <li>Oracle Cloud Infrastructure Associate Certification</li>
+                        <li>Oracle Data Science Professional Certificate</li>
+                        <li>Microsoft Responsible AI Professional Certificate</li>
+                        <li>PWC Cyber Security Consulting Simulation</li>
+                        <li>Deloitte Technology Simulation</li>
+                        <li>TATA Cybersecurity Analyst Simulation</li>
+                    </ul>
+                    
+                    <h3>Key Projects</h3>
+                    <ul class="projects-list">
+                        <li>FinSight Financial Intelligence Platform</li>
+                        <li>Load-Shedding Impact Predictor</li>
+                        <li>Indigenous Language Voice Assistant</li>
+                        <li>Secure Cloud Migration Framework</li>
+                    </ul>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Professional Certifications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Completed Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Industry Simulations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number>2</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Matrix -->
+        <section id="skills" class="skills-matrix">
+            <h2 class="matrix-title">Skills Matrix</h2>
+            <p class="matrix-subtitle">A comprehensive overview of my technical competencies across different domains.</p>
+            
+            <div class="matrix-container">
+                <div class="matrix-item">
+                    <h4>Python Programming</h4>
+                    <p>Advanced proficiency in data analysis, machine learning, and automation.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Machine Learning</h4>
+                    <p>Experience with supervised and unsupervised learning algorithms.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Deep Learning</h4>
+                    <p>Neural networks, CNNs, and transformer architectures.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Java Development</h4>
+                    <p>Object-oriented programming and enterprise application development.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Network Security</h4>
+                    <p>Firewalls, intrusion detection, and secure network design.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Cryptography</h4>
+                    <p>Encryption algorithms, digital signatures, and cryptographic protocols.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Cloud Security</h4>
+                    <p>Securing cloud infrastructure and implementing security controls.</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Data Visualization</h4>
+                    <p>Creating interactive dashboards and data-driven insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My journey through education, internships, and professional simulations.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Examination Assistant</h3>
+                        <span class="date">North-West University | 2022 - Present</span>
+                        <p>Assisted with exam coordination and student support for Information Technology courses, gaining valuable teaching and communication skills.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Trainee Radiographer</h3>
+                        <span class="date">Mafikeng Provincial Hospital | 2021</span>
+                        <p>Completed clinical training in medical imaging, developing technical skills and patient care abilities in a healthcare environment.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Deloitte Cyber Security Consulting Simulation</h3>
+                        <span class="date">Deloitte Africa | 2023</span>
+                        <p>Participated in a professional simulation focused on cybersecurity consulting, threat analysis, and security strategy development.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Walmart Technology Simulation</h3>
+                        <span class="date">Walmart Global Tech | 2023</span>
+                        <p>Completed a technology-focused simulation addressing real-world retail technology challenges and digital transformation initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A selection of my most impactful technical projects and solutions.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/finance/600/400.jpg" alt="FinSight Financial Intelligence">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Finance</span>
+                        </div>
+                        <h3 class="project-title">FinSight Financial Intelligence</h3>
+                        <p class="project-desc">AI-powered financial analysis platform that provides real-time insights and predictive analytics for investment decisions.</p>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/energy/600/400.jpg" alt="Load-Shedding Impact Predictor">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Data Science</span>
+                            <span class="project-tag">Energy</span>
+                        </div>
+                        <h3 class="project-title">Load-Shedding Impact Predictor</h3>
+                        <p class="project-desc">Predictive model that forecasts the economic and social impact of power outages using historical data and machine learning.</p>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://picsum.photos/seed/language/600/400.jpg" alt="Indigenous Language Voice Assistant">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Voice Technology</span>
+                        </div>
+                        <h3 class="project-title">Indigenous Language Voice Assistant</h3>
+                        <p class="project-desc">Speech recognition system trained on indigenous South African languages to preserve linguistic heritage and improve accessibility.</p>
+                        <a href="#" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications">
+            <h2 class="section-title">Professional Certifications</h2>
+            <p class="section-subtitle">Industry-recognized credentials demonstrating my technical expertise and professional development.</p>
+            
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="cert-title">Google Cybersecurity Professional</h3>
+                    <div class="cert-status">Issued: May 2023</div>
+                    <p>Comprehensive cybersecurity training covering threats, vulnerabilities, and defensive strategies.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="cert-title">Google Business Intelligence</h3>
+                    <div class="cert-status">Issued: March 2023</div>
+                    <p>Advanced data analysis and visualization techniques for business intelligence applications.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="cert-title">Oracle Cloud Infrastructure</h3>
+                    <div class="cert-status">Issued: January 2023</div>
+                    <p>Cloud architecture, deployment, and management using Oracle Cloud Infrastructure.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="cert-title">Oracle Data Science</h3>
+                    <div class="cert-status">Issued: February 2023</div>
+                    <p>End-to-end data science workflows, machine learning, and predictive analytics.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Responsible AI</h3>
+                    <div class="cert-status">Issued: April 2023</div>
+                    <p>Ethical AI development practices and responsible implementation frameworks.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="cert-title">PWC Cyber Security Consulting</h3>
+                    <div class="cert-status">Completed: June 2023</div>
+                    <p>Professional simulation focused on cybersecurity consulting and threat analysis.</p>
+                    <a href="#" class="cert-link">View Credential <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a question or want to collaborate on a project? Reach out to me directly.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:neonkidi296@gmail.com">neonkidi296@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <a href="tel:+27822132330">+27 82 213 2330</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Mafikeng, South Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://linkedin.com/in/neo-kennedy-nkidi" target="_blank">linkedin.com/in/neo-kennedy-nkidi</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <h2 class="footer-logo">Neo<span>Kennedy</span></h2>
+                <p class="footer-text">Building the future of technology through innovation, security, and intelligent solutions.</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/NeoKnkidi7" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/neo-kennedy-nkidi" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/NeoKnkidi7" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:neonkidi296@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <p class="copyright">&copy; 2023 Neo Kennedy Nkidi. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Chatbot -->
+        <div class="chatbot-container">
+            <div class="chatbot-toggle" id="chatbot-toggle">
+                <i class="fas fa-robot"></i>
+            </div>
+            
+            <div class="ai-chat-container" id="chatbot-window">
+                <div class="ai-chat-header">
+                    <div class="ai-chat-title">
+                        <i class="fas fa-robot"></i> AI Assistant
+                    </div>
+                    <button class="ai-chat-close" id="chatbot-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="ai-chat-messages" id="chatbot-messages">
+                    <div class="ai-message bot">
+                        Hello! I'm Neo's AI Assistant. How can I help you today?
+                    </div>
+                </div>
+                
+                <div class="ai-chat-input">
+                    <input type="text" id="chatbot-input" placeholder="Type your message...">
+                    <button id="chatbot-send">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Mobile Navigation Toggle
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Timeline Animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Chatbot Functionality
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const chatbotClose = document.getElementById('chatbot-close');
+            const chatbotMessages = document.getElementById('chatbot-messages');
+            const chatbotInput = document.getElementById('chatbot-input');
+            const chatbotSend = document.getElementById('chatbot-send');
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.add('active');
+            });
+            
+            chatbotClose.addEventListener('click', () => {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            function addMessageToChat(message, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('ai-message');
+                messageElement.classList.add(sender);
+                messageElement.textContent = message;
+                chatbotMessages.appendChild(messageElement);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            function getAIResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                    return "Hello! I'm Neo's AI Assistant. How can I help you today?";
+                } else if (lowerMessage.includes('skill') || lowerMessage.includes('technolog')) {
+                    return "Neo has expertise in AI engineering, cybersecurity, data science, and software development. He's proficient in Python, Java, machine learning, and cloud technologies.";
+                } else if (lowerMessage.includes('project') || lowerMessage.includes('work')) {
+                    return "Neo has developed projects like FinSight Financial Intelligence, Load-Shedding Impact Predictor, and Indigenous Language Voice Assistant.";
+                } else if (lowerMessage.includes('experience') || lowerMessage.includes('job')) {
+                    return "Neo has experience as an Examination Assistant, Trainee Radiographer, and has completed professional simulations with companies like Deloitte and Walmart.";
+                } else if (lowerMessage.includes('education') || lowerMessage.includes('degree')) {
+                    return "Neo is a final-year Bachelor of Science in Information Technology student at North-West University in South Africa.";
+                } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
+                    return "You can contact Neo at neonkidi296@gmail.com or +27 82 213 2330.";
+                } else if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
+                    return "You can download Neo's resume by clicking the 'Download Resume' button in the navigation menu.";
+                } else if (lowerMessage.includes('github')) {
+                    return "Neo's GitHub profile is github.com/NeoKnkidi7";
+                } else if (lowerMessage.includes('linkedin')) {
+                    return "Neo's LinkedIn profile is linkedin.com/in/neo-kennedy-nkidi";
+                } else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+                    return "You're welcome! Feel free to ask anything else about Neo.";
+                } else {
+                    return "I'm not sure how to answer that. You can ask about Neo's skills, projects, certifications, experience, or contact information.";
+                }
+            }
+            
+            chatbotSend.addEventListener('click', () => {
+                const message = chatbotInput.value.trim();
+                if (message) {
+                    addMessageToChat(message, 'user');
+                    chatbotInput.value = '';
                     
-                    botMessage.textContent = response;
-                    document.querySelector('.grc-chat').appendChild(botMessage);
+                    // Simulate AI thinking
+                    setTimeout(() => {
+                        const response = getAIResponse(message);
+                        addMessageToChat(response, 'bot');
+                    }, 1000);
+                }
+            });
+            
+            chatbotInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    chatbotSend.click();
+                }
+            });
+            
+            // Audio recording simulation
+            let isRecording = false;
+            
+            document.getElementById('recordBtn').addEventListener('click', () => {
+                if (!isRecording) {
+                    isRecording = true;
+                    document.getElementById('recordBtn').innerHTML = '<i class="fas fa-circle"></i> Recording...';
+                    document.getElementById('recordBtn').disabled = true;
+                    
+                    // Simulate recording with animation
+                    document.querySelectorAll('.network-node').forEach(node => {
+                        node.classList.add('active');
+                    });
+                    
+                    // Simulate processing after 3 seconds
+                    setTimeout(() => {
+                        isRecording = false;
+                        document.getElementById('recordBtn').innerHTML = '<i class="fas fa-microphone"></i> Record Response';
+                        document.getElementById('recordBtn').disabled = false;
+                        
+                        // Update response text
+                        document.getElementById('response-text').innerHTML = '<i class="fas fa-check-circle"></i> Response recorded successfully! Analyzing...';
+                        
+                        // Simulate analysis after 2 seconds
+                        setTimeout(() => {
+                            // Random feedback examples
+                            const feedbacks = [
+                                "Your response was comprehensive and well-structured. You clearly explained the challenge and your solution. Consider adding more quantifiable results to strengthen your answer.",
+                                "Good example of a challenging project. You demonstrated problem-solving skills and technical expertise. Try to focus more on your specific contributions to the project.",
+                                "You effectively communicated your approach to time management. The example showed your ability to prioritize tasks. Next time, mention how you communicated with stakeholders about deadlines.",
+                                "Your problem-solving approach is methodical. You showed good debugging practices. Next time, mention any tools or techniques you used to solve the problem.",
+                                "Good understanding of Agile principles. You provided a clear example of working in an Agile team. You could improve by mentioning specific ceremonies or artifacts you worked with.",
+                                "You showed initiative in staying updated. The resources you mentioned are relevant. Consider adding how you applied new knowledge in your projects."
+                            ];
+                            
+                            document.getElementById('feedback-content').innerHTML = `
+                                <p><strong>Content:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[0]}.</p>
+                                <p><strong>Clarity:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[1]}.</p>
+                                <p><strong>Tone:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ')[2]}.</p>
+                                <p><strong>Improvement:</strong> ${feedbacks[Math.floor(Math.random() * feedbacks.length)].split('. ').slice(3).join('. ')}.</p>
+                            `;
+                            
+                            // Add retry button
+                            const retryBtn = document.createElement('button');
+                            retryBtn.className = 'record-btn';
+                            retryBtn.innerHTML = '<i class="fas fa-redo"></i> Try Again';
+                            retryBtn.addEventListener('click', () => {
+                                document.getElementById('response-text').innerHTML = '<i class="fas fa-microphone"></i> Your response will be analyzed here for content, clarity, and emotional tone.';
+                                document.getElementById('feedback-content').innerHTML = 'No analysis available yet. Record a response to get feedback.';
+                                document.querySelector('.interview-recorder').appendChild(retryBtn);
+                            });
+                        }, 2000);
+                    }, 3000);
+                }
+            });
+            
+            // Next question button
+            document.getElementById('next-question').addEventListener('click', () => {
+                const questions = [
+                    "Tell me about a time you faced a significant challenge and how you overcame it.",
+                    "Describe a project you are most proud of and what your contribution was.",
+                    "How do you handle tight deadlines and multiple projects?",
+                    "Tell me about a time you had to learn a new technology quickly.",
+                    "Describe a situation where you had to work with a difficult team member.",
+                    "How do you approach problem-solving when you encounter a bug in your code?",
+                    "What is your experience with Agile development methodologies?",
+                    "How do you stay updated with the latest industry trends and technologies?"
+                ];
+                
+                const currentQuestionIndex = Math.floor(Math.random() * questions.length);
+                document.getElementById('interview-question').innerHTML = `Question: "${questions[currentQuestionIndex]}"`;
+                document.getElementById('response-text').innerHTML = '<i class="fas fa-microphone"></i> Your response will be analyzed here for content, clarity, and emotional tone.';
+                document.getElementById('feedback-content').innerHTML = 'No analysis available yet. Record a response to get feedback.';
+            });
+            
+            // Cyber Range Simulator
+            const startRangeBtn = document.getElementById('startRangeBtn');
+            const defendBtn = document.getElementById('defendBtn');
+            const ddosBar = document.getElementById('ddos-attack-bar');
+            const ransomwareBar = document.getElementById('ransomware-bar');
+            const phishingBar = document.getElementById('phishing-bar');
+            const firewallBar = document.getElementById('firewall-bar');
+            const intrusionBar = document.getElementById('intrusion-bar');
+            const encryptionBar = document.getElementById('encryption-bar');
+            
+            let simulationActive = false;
+            
+            startRangeBtn.addEventListener('click', () => {
+                if (!simulationActive) {
+                    simulationActive = true;
+                    startRangeBtn.style.display = 'none';
+                    defendBtn.style.display = 'inline-block';
+                    
+                    // Animate progress bars
+                    ddosBar.style.width = '20%';
+                    ransomwareBar.style.width = '15%';
+                    phishingBar.style.width = '10%';
+                    
+                    firewallBar.style.width = '95%';
+                    intrusionBar.style.width = '92%';
+                    encryptionBar.style.width = '97%';
+                }
+            });
+            
+            defendBtn.addEventListener('click', () => {
+                if (simulationActive) {
+                    simulationActive = false;
+                    defendBtn.style.display = 'none';
+                    startRangeBtn.style.display = 'inline-block';
+                    
+                    // Randomize attack levels to simulate new threats
+                    ddosBar.style.width = Math.floor(Math.random() * 60 + 20) + '%';
+                    ransomwareBar.style.width = Math.floor(Math.random() * 50 + 10) + '%';
+                    phishingBar.style.width = Math.floor(Math.random() * 40) + '%';
+                }
+            });
+            
+            // GRC Assistant
+            const grcInput = document.getElementById('grcInput');
+            const sendGrcBtn = document.getElementById('sendGrcBtn');
+            
+            sendGrcBtn.addEventListener('click', () => {
+                const input = grcInput.value.trim();
+                if (input) {
+                    // Add user message
+                    const userMessage = document.createElement('div');
+                    userMessage.className = 'grc-message user';
+                    userMessage.textContent = input;
+                    document.querySelector('.grc-chat').appendChild(userMessage);
+                    
+                    // Clear input
+                    grcInput.value = '';
                     
                     // Scroll to bottom
                     document.querySelector('.grc-chat').scrollTop = document.querySelector('.grc-chat').scrollHeight;
-                }, 1000);
-            }
-        });
-        
-        // Chatbot functionality
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotWindow = document.getElementById('chatbot-window');
-        const chatbotClose = document.getElementById('chatbot-close');
-        const chatbotBody = document.getElementById('chatbot-body');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const chatbotSend = document.getElementById('chatbot-send');
-        
-        chatbotToggle.addEventListener('click', () => {
-            chatbotWindow.classList.add('active');
-        });
-        
-        chatbotClose.addEventListener('click', () => {
-            chatbotWindow.classList.remove('active');
-        });
-        
-        function addMessageToChat(message, sender) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('ai-message');
-            messageElement.classList.add(sender);
-            messageElement.textContent = message;
-            chatbotBody.appendChild(messageElement);
-            chatbotBody.scrollTop = chatbotBody.scrollHeight;
-        }
-        
-        chatbotSend.addEventListener('click', () => {
-            const message = chatbotInput.value.trim();
-            if (message) {
-                addMessageToChat(message, 'user');
-                chatbotInput.value = '';
-                
-                // Simulate AI thinking
-                setTimeout(() => {
-                    const response = getAIResponse(message);
-                    addMessageToChat(response, 'bot');
-                }, 1000);
-            }
-        });
-        
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                chatbotSend.click();
-            }
-        });
-        
-        // Initialize the cyber attack map
-        function initCyberAttackMap() {
-            const attackMap = document.getElementById('cyber-map');
-            const nodes = [];
-            const edges = [];
-            
-            // Create nodes
-            for (let i = 0; i < 30; i++) {
-                const node = document.createElement('div');
-                node.className = 'network-node';
-                node.style.left = `${Math.random() * 100}%`;
-                node.style.top = `${Math.random() * 100}%`;
-                attackMap.appendChild(node);
-                nodes.push(node);
-            }
-            
-            // Create edges
-            for (let i = 0; i < 40; i++) {
-                const edge = document.createElement('div');
-                edge.className = 'network-edge';
-                edge.style.left = `${Math.random() * 100}%`;
-                edge.style.top = `${Math.random() * 100}%`;
-                edge.style.width = `${Math.random() * 50 + 20}px`;
-                edge.style.transform = `rotate(${Math.random() * 360}deg)`;
-                attackMap.appendChild(edge);
-                edges.push(edge);
-            }
-            
-            // Simulate attacks
-            setInterval(() => {
-                const nodes = document.querySelectorAll('.network-node');
-                const edges = document.querySelectorAll('.network-edge');
-                
-                // Reset all nodes and edges
-                nodes.forEach(node => {
-                    node.className = 'network-node';
-                });
-                edges.forEach(edge => {
-                    edge.className = 'network-edge';
-                });
-                
-                // Add random threat
-                const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
-                randomNode.className = 'network-node danger';
-                
-                // Add warning nodes
-                for (let i = 0; i < 3; i++) {
-                    const warningNode = nodes[Math.floor(Math.random() * nodes.length)];
-                    if (!warningNode.classList.contains('danger')) {
-                        warningNode.className = 'network-node warning';
-                    }
+                    
+                    // Simulate bot response
+                    setTimeout(() => {
+                        const botMessage = document.createElement('div');
+                        botMessage.className = 'grc-message bot';
+                        
+                        // Generate response based on input
+                        let response = "I can help with that. Based on your Google Cybersecurity, Microsoft Responsible AI, and Oracle Cloud Infrastructure certifications, I recommend reviewing your current security policies against the NIST Cybersecurity Framework.";
+                        
+                        if (input.toLowerCase().includes('compliance') || input.toLowerCase().includes('governance')) {
+                            response = "Based on your PWC Cyber Security Consulting Simulation and Deloitte Technology Simulation experience, you should focus on implementing automated compliance monitoring tools and establishing clear governance workflows.";
+                        } else if (input.toLowerCase().includes('risk')) {
+                            response = "With your experience from Deloitte Cyber Job Simulation and TATA Cybersecurity Analyst Simulation, I recommend conducting regular risk assessments and implementing continuous monitoring for emerging threats.";
+                        } else if (input.toLowerCase().includes('data')) {
+                            response = "Based on your Google Business Intelligence and Oracle Data Science certifications, ensure your data protection strategies align with industry best practices and regulatory requirements.";
+                        }
+                        
+                        botMessage.textContent = response;
+                        document.querySelector('.grc-chat').appendChild(botMessage);
+                        
+                        // Scroll to bottom
+                        document.querySelector('.grc-chat').scrollTop = document.querySelector('.grc-chat').scrollHeight;
+                    }, 1000);
                 }
-                
-                // Add threat edges
-                for (let i = 0; i < 3; i++) {
-                    const randomEdge = edges[Math.floor(Math.random() * edges.length)];
-                    randomEdge.className = 'network-edge danger';
-                }
-            }, 5000);
-        }
-        
-        // Initialize the supply chain threat intelligence
-        function initSupplyChainNetwork() {
-            const supplyChainNetwork = document.getElementById('supplyChainNetwork');
-            const nodes = [];
-            const edges = [];
-            
-            // Create nodes
-            for (let i = 0; i < 25; i++) {
-                const node = document.createElement('div');
-                node.className = 'supply-chain-node';
-                node.innerHTML = '<i class="fas fa-server"></i>';
-                node.style.left = `${Math.random() * 100}%`;
-                node.style.top = `${Math.random() * 100}%`;
-                supplyChainNetwork.appendChild(node);
-                nodes.push(node);
-            }
-            
-            // Create edges
-            for (let i = 0; i < 40; i++) {
-                const edge = document.createElement('div');
-                edge.className = 'supply-chain-edge';
-                edge.style.left = `${Math.random() * 100}%`;
-                edge.style.top = `${Math.random() * 100}%`;
-                edge.style.width = `${Math.random() * 50 + 20}px`;
-                edge.style.transform = `rotate(${Math.random() * 360}deg)`;
-                supplyChainNetwork.appendChild(edge);
-                edges.push(edge);
-            }
-            
-            // Simulate threats
-            setInterval(() => {
-                const nodes = document.querySelectorAll('.supply-chain-node');
-                const edges = document.querySelectorAll('.supply-chain-edge');
-                
-                // Reset all nodes and edges
-                nodes.forEach(node => {
-                    node.className = 'supply-chain-node';
-                });
-                edges.forEach(edge => {
-                    edge.className = 'supply-chain-edge';
-                });
-                
-                // Add random threat
-                const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
-                randomNode.className = 'supply-chain-node danger';
-                
-                // Add warning nodes
-                for (let i = 0; i < 3; i++) {
-                    const warningNode = nodes[Math.floor(Math.random() * nodes.length)];
-                    if (!warningNode.classList.contains('danger')) {
-                        warningNode.className = 'supply-chain-node warning';
-                    }
-                }
-                
-                // Add threat edges
-                for (let i = 0; i < 3; i++) {
-                    const randomEdge = edges[Math.floor(Math.random() * edges.length)];
-                    randomEdge.className = 'supply-chain-edge danger';
-                }
-            }, 5000);
-        }
-        
-        // Initialize everything when the page loads
-        window.addEventListener('load', () => {
-            initCyberAttackMap();
-            initSupplyChainNetwork();
-            
-            // Add typing effect to AI messages
-            const botMessages = document.querySelectorAll('.ai-message.bot');
-            botMessages.forEach(message => {
-                message.classList.add('typing');
             });
-        });
-    </script>
-</body>
+            
+            // Initialize the cyber attack map
+            function initCyberAttackMap() {
+                const attackMap = document.getElementById('cyber-map');
+                const nodes = [];
+                const edges = [];
+                
+                // Create nodes
+                for (let i = 0; i < 30; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'network-node';
+                    node.style.left = `${Math.random() * 100}%`;
+                    node.style.top = `${Math.random() * 100}%`;
+                    attackMap.appendChild(node);
+                    nodes.push(node);
+                }
+                
+                // Create edges
+                for (let i = 0; i < 40; i++) {
+                    const edge = document.createElement('div');
+                    edge.className = 'network-edge';
+                    edge.style.left = `${Math.random() * 100}%`;
+                    edge.style.top = `${Math.random() * 100}%`;
+                    edge.style.width = `${Math.random() * 50 + 20}px`;
+                    edge.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    attackMap.appendChild(edge);
+                    edges.push(edge);
+                }
+                
+                // Simulate attacks
+                setInterval(() => {
+                    const nodes = document.querySelectorAll('.network-node');
+                    const edges = document.querySelectorAll('.network-edge');
+                    
+                    // Reset all nodes and edges
+                    nodes.forEach(node => {
+                        node.className = 'network-node';
+                    });
+                    edges.forEach(edge => {
+                        edge.className = 'network-edge';
+                    });
+                    
+                    // Add random threat
+                    const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+                    randomNode.className = 'network-node danger';
+                    
+                    // Add warning nodes
+                    for (let i = 0; i < 3; i++) {
+                        const warningNode = nodes[Math.floor(Math.random() * nodes.length)];
+                        if (!warningNode.classList.contains('danger')) {
+                            warningNode.className = 'network-node warning';
+                        }
+                    }
+                    
+                    // Add threat edges
+                    for (let i = 0; i < 3; i++) {
+                        const randomEdge = edges[Math.floor(Math.random() * edges.length)];
+                        randomEdge.className = 'network-edge danger';
+                    }
+                }, 5000);
+            }
+            
+            // Initialize the supply chain threat intelligence
+            function initSupplyChainNetwork() {
+                const supplyChainNetwork = document.getElementById('supplyChainNetwork');
+                const nodes = [];
+                const edges = [];
+                
+                // Create nodes
+                for (let i = 0; i < 25; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'supply-chain-node';
+                    node.innerHTML = '<i class="fas fa-server"></i>';
+                    node.style.left = `${Math.random() * 100}%`;
+                    node.style.top = `${Math.random() * 100}%`;
+                    supplyChainNetwork.appendChild(node);
+                    nodes.push(node);
+                }
+                
+                // Create edges
+                for (let i = 0; i < 40; i++) {
+                    const edge = document.createElement('div');
+                    edge.className = 'supply-chain-edge';
+                    edge.style.left = `${Math.random() * 100}%`;
+                    edge.style.top = `${Math.random() * 100}%`;
+                    edge.style.width = `${Math.random() * 50 + 20}px`;
+                    edge.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    supplyChainNetwork.appendChild(edge);
+                    edges.push(edge);
+                }
+                
+                // Simulate threats
+                setInterval(() => {
+                    const nodes = document.querySelectorAll('.supply-chain-node');
+                    const edges = document.querySelectorAll('.supply-chain-edge');
+                    
+                    // Reset all nodes and edges
+                    nodes.forEach(node => {
+                        node.className = 'supply-chain-node';
+                    });
+                    edges.forEach(edge => {
+                        edge.className = 'supply-chain-edge';
+                    });
+                    
+                    // Add random threat
+                    const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+                    randomNode.className = 'supply-chain-node danger';
+                    
+                    // Add warning nodes
+                    for (let i = 0; i < 3; i++) {
+                        const warningNode = nodes[Math.floor(Math.random() * nodes.length)];
+                        if (!warningNode.classList.contains('danger')) {
+                            warningNode.className = 'supply-chain-node warning';
+                        }
+                    }
+                    
+                    // Add threat edges
+                    for (let i = 0; i < 3; i++) {
+                        const randomEdge = edges[Math.floor(Math.random() * edges.length)];
+                        randomEdge.className = 'supply-chain-edge danger';
+                    }
+                }, 5000);
+            }
+            
+            // Initialize everything when the page loads
+            window.addEventListener('load', () => {
+                initCyberAttackMap();
+                initSupplyChainNetwork();
+                
+                // Add typing effect to AI messages
+                const botMessages = document.querySelectorAll('.ai-message.bot');
+                botMessages.forEach(message => {
+                    message.classList.add('typing');
+                });
+                
+                // Add GRC chat container
+                const grcSection = document.querySelector('.grc-assistant');
+                const grcChat = document.createElement('div');
+                grcChat.className = 'grc-chat';
+                grcSection.insertBefore(grcChat, grcSection.querySelector('.grc-input-container'));
+            });
+        </script>
+    </body>
 </html>
