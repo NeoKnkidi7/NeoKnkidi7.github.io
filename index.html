@@ -26,6 +26,8 @@
             --text-color: #2a3349; /* Slightly darker for better readability */
             --bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e6ecf7 100%); /* Softer gradient */
             --hero-gradient: linear-gradient(135deg, #4361ee 0%, #6c63ff 100%);
+            --glow: 0 0 20px rgba(99, 125, 255, 0.5);
+            --glow-intense: 0 0 30px rgba(99, 125, 255, 0.7);
         }
         [data-theme="dark"] {
             --primary: #5c7cff;
@@ -43,6 +45,8 @@
             --text-color: #eef2f8; /* Lighter text for better contrast */
             --bg-gradient: linear-gradient(135deg, #1a202c 0%, #222938 100%); /* Darker gradient */
             --hero-gradient: linear-gradient(135deg, #5c7cff 0%, #8a84ff 100%);
+            --glow: 0 0 20px rgba(138, 132, 255, 0.5);
+            --glow-intense: 0 0 30px rgba(138, 132, 255, 0.7);
         }
         * {
             margin: 0;
@@ -56,12 +60,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: var(--transition);
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
         section {
             padding: 100px 0;
@@ -785,12 +783,6 @@
         .form-group {
             margin-bottom: 25px;
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
         .form-control {
             width: 100%;
             padding: 15px;
@@ -917,6 +909,33 @@
             }
         }
         @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 80px);
+                background: var(--header-bg);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: var(--transition);
+                backdrop-filter: blur(10px);
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -978,6 +997,397 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Futuristic Features */
+        /* 3D Cards Effect */
+        .card-3d {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        .card-3d::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            transform: translateZ(-10px);
+            border-radius: inherit;
+        }
+        
+        /* Glowing Elements */
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(15px);
+            opacity: 0.5;
+            z-index: -1;
+            border-radius: inherit;
+        }
+        
+        /* Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Pulse Animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* AI Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1002;
+            width: 350px;
+            height: 450px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .chatbot-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chatbot-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .chat-message {
+            max-width: 80%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: var(--primary-light);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--text-color);
+            border-bottom-left-radius: 5px;
+        }
+        
+        .chatbot-input {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .chatbot-input input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(99, 125, 255, 0.3);
+        }
+        
+        .chatbot-input button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chatbot-input button:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1003;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .chatbot-toggle:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .chatbot-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .chatbot-toggle.active i {
+            transform: rotate(180deg);
+        }
+        
+        /* 3D Skill Visualization */
+        .skills-3d {
+            position: relative;
+            height: 300px;
+            perspective: 1000px;
+            margin: 40px 0;
+        }
+        
+        .skill-orbit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        
+        .skill-node {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .skill-node:hover {
+            transform: scale(1.1);
+            border-color: var(--primary);
+            box-shadow: var(--glow-intense);
+        }
+        
+        .skill-node i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .skill-node span {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Particles Background */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-30px) translateX(20px); }
+            50% { transform: translateY(-15px) translateX(-20px); }
+            75% { transform: translateY(30px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+        
+        /* Interactive Stats Counter */
+        .stats-counter {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        
+        .counter-item {
+            text-align: center;
+            animation: countUp 2s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .counter-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .counter-label {
+            font-size: 1rem;
+            color: var(--medium-gray);
+        }
+        
+        /* Futuristic Timeline */
+        .futuristic-timeline {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .timeline-track {
+            position: relative;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+            overflow: visible;
+        }
+        
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            border-radius: 2px;
+            animation: progress 3s ease-in-out forwards;
+        }
+        
+        @keyframes progress {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+            z-index: 2;
+        }
+        
+        .timeline-label {
+            position: absolute;
+            top: -30px;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            bottom: -30px;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            white-space: nowrap;
+        }
+        
+        /* Typing Animation */
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid var(--primary);
+            padding-right: 5px;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary); }
+        }
     </style>
 </head>
 <body>
@@ -993,6 +1403,38 @@
        download="Neo_Kennedy_Nkidi_Resume.pdf">
         <i class="fas fa-file-download"></i> Download Resume
     </a>
+    <!-- AI Chatbot Toggle Button -->
+    <div class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <!-- AI Chatbot Interface -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <span>Neo AI Assistant</span>
+            </div>
+            <div>
+                <i class="fas fa-times" id="chatbot-close"></i>
+            </div>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <div class="chat-message bot-message">
+                Hello! I'm Neo, your AI assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your message...">
+            <button id="chatbot-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Particles Background -->
+    <div class="particles-container" id="particles-container"></div>
+    
     <!-- Header -->
     <header id="header">
         <div class="container nav-container">
@@ -1041,7 +1483,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="profile-img">
+                <div class="profile-img floating">
                     <img src="https://raw.githubusercontent.com/NeoKnkidi7/NeoKnkidi7.github.io/main/profile.jpg" alt="Neo Kennedy Nkidi">
                 </div>
             </div>
@@ -1083,22 +1525,22 @@
                     
                     <p>Let's build something meaningful together!</p>
                     
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3>20+</h3>
-                            <p>Certifications & Badges</p>
+                    <div class="stats-counter">
+                        <div class="counter-item" style="animation-delay: 0.2s;">
+                            <div class="counter-value" data-target="20">0</div>
+                            <div class="counter-label">Certifications & Badges</div>
                         </div>
-                        <div class="stat-item">
-                            <h3>7</h3>
-                            <p>Projects Completed</p>
+                        <div class="counter-item" style="animation-delay: 0.4s;">
+                            <div class="counter-value" data-target="7">0</div>
+                            <div class="counter-label">Projects Completed</div>
                         </div>
-                        <div class="stat-item">
-                            <h3>6</h3>
-                            <p>Job Simulations Completed</p>
+                        <div class="counter-item" style="animation-delay: 0.6s;">
+                            <div class="counter-value" data-target="6">0</div>
+                            <div class="counter-label">Job Simulations Completed</div>
                         </div>
-                        <div class="stat-item">
-                            <h3>100%</h3>
-                            <p>Dedication to Excellence</p>
+                        <div class="counter-item" style="animation-delay: 0.8s;">
+                            <div class="counter-value" data-target="100">0</div>
+                            <div class="counter-label">Dedication to Excellence</div>
                         </div>
                     </div>
                 </div>
@@ -1132,7 +1574,7 @@
                     <div class="timeline-content">
                         <h3>Cyber Security Consulting Simulation</h3>
                         <span class="date">July 2025</span>
-                        <p>PWC - Developed skills in business judgment, document review, interviewing, and PowerPoint presentation.</p>
+                        <p>PWC - Developed skills in business judgment, document review, interviewing, and PowerPoint.</p>
                         <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/PWC_Cyber_Security_Consulting_Simulation_Certificate.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1140,7 +1582,7 @@
                     <div class="timeline-content">
                         <h3>Technology Job Simulation</h3>
                         <span class="date">July 2025</span>
-                        <p>Delloite - Enhanced skills in programming, formal communication, planning, and software development processes.</p>
+                        <p>Delloite - Enhanced skills in data structures, formal communication, planning, programming, Python, and software development processes.</p>
                         <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/Delloite_Technology_Job_Simulation_Certificate.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1156,7 +1598,7 @@
                     <div class="timeline-content">
                         <h3>Data Analytics Job Simulation</h3>
                         <span class="date">July 2025</span>
-                        <p>Quantium - Gained experience in commercial thinking, data analysis, data visualization, and statistical testing.</p>
+                        <p>Quantium - Gained experience in commercial thinking, communication skills, data analysis, data validation, data visualization, data wrangling, presentation skills, programming, and statistical testing.</p>
                         <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/Quantium_Data_Analytics_Job_Simulation_Certificate.pdf" target="_blank" class="project-link">View Certificate <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1189,6 +1631,33 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Futuristic Timeline Visualization -->
+            <div class="futuristic-timeline">
+                <div class="timeline-track">
+                    <div class="timeline-progress"></div>
+                    <div class="timeline-marker" style="left: 0%;">
+                        <div class="timeline-label">Career Start</div>
+                        <div class="timeline-date">2022</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 25%;">
+                        <div class="timeline-label">First Certifications</div>
+                        <div class="timeline-date">2023</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 50%;">
+                        <div class="timeline-label">Degree Progress</div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 75%;">
+                        <div class="timeline-label">Advanced Certifications</div>
+                        <div class="timeline-date">2025</div>
+                    </div>
+                    <div class="timeline-marker" style="left: 100%;">
+                        <div class="timeline-label">Career Goal</div>
+                        <div class="timeline-date">2026</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Skills Section -->
@@ -1196,6 +1665,32 @@
         <div class="container">
             <h2 class="section-title">My Skills</h2>
             <p class="section-subtitle">Technical competencies I've developed through academic work and practical experience.</p>
+            
+            <!-- 3D Skill Visualization -->
+            <div class="skills-3d">
+                <div class="skill-orbit">
+                    <div class="skill-node" style="top: 10%; left: 50%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-code"></i>
+                        <span>Programming</span>
+                    </div>
+                    <div class="skill-node" style="top: 30%; left: 20%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Web Dev</span>
+                    </div>
+                    <div class="skill-node" style="top: 70%; left: 30%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-brain"></i>
+                        <span>AI & Data</span>
+                    </div>
+                    <div class="skill-node" style="top: 60%; left: 70%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cybersecurity</span>
+                    </div>
+                    <div class="skill-node" style="top: 20%; left: 80%; transform: translate(-50%, -50%);">
+                        <i class="fas fa-database"></i>
+                        <span>Databases</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="skills-content">
                 <div class="skill-category">
@@ -1404,7 +1899,7 @@
             
             <div class="projects-grid">
                 <!-- Project 1: FinSight -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1611&q=80" alt="FinSight Financial Intelligence Platform">
                     </div>
@@ -1422,7 +1917,7 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Load-Shedding Impact Predictor">
                     </div>
@@ -1439,7 +1934,7 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="Indigenous Language Voice Assistant">
                     </div>
@@ -1456,7 +1951,7 @@
                 </div>
                 
                 <!-- Project 4: Clinic Hospital Appointment Scheduler -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="Clinic Hospital Appointment Scheduler">
                     </div>
@@ -1473,7 +1968,7 @@
                 </div>
                 
                 <!-- Project 5: AI Resume Optimizer -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="AI Resume Optimizer">
                     </div>
@@ -1490,7 +1985,7 @@
                 </div>
                 
                 <!-- Project 6: GBV Resource Navigator -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="GBV Resource Navigator">
                     </div>
@@ -1507,7 +2002,7 @@
                 </div>
                 
                 <!-- Project 7: SA Crime Hotspot Predictor -->
-                <div class="project-card">
+                <div class="project-card card-3d">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1665&q=80" alt="SA Crime Hotspot Predictor">
                     </div>
@@ -1533,7 +2028,7 @@
             
             <div class="cert-grid">
                 <!-- Completed Certifications -->
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-google"></i>
                     </div>
@@ -1542,7 +2037,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleBusinessIntelligenceCertificate_Badge20250708-28-a02hgk.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -1551,7 +2046,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleCybersecurityProfessionalCertificateV2_Badge20250713-27-o4vhjt.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-headset"></i>
                     </div>
@@ -1560,7 +2055,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleITSupportProfessionalCertificatev2_Badge20250711-27-aszdy.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
@@ -1569,7 +2064,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleProjectManagementProfessionalCertificatev2_Badge20250713-28-h6tp8p.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1578,7 +2073,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Neo%20-%20Certificate%20-%20MSAISkillsDev%20Course%20-%2020250421192703.png" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -1588,7 +2083,7 @@
                 </div>
                 
                 <!-- Microsoft AI Certifications -->
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1597,7 +2092,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_AI_Fundamentals_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1606,7 +2101,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_Generative_AI_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1615,7 +2110,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_Search_Technology_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1624,7 +2119,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_Responsible_AI_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1633,7 +2128,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_Copilot_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -1642,8 +2137,8 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft_AI_and_Accessibility_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <!-- Oracle Certifications -->
-                <div class="cert-card">
+                <!-- Oracle Cloud Certifications -->
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-oracle"></i>
                     </div>
@@ -1652,7 +2147,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Oracle_Cloud_AI_Foundations_Associate_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-oracle"></i>
                     </div>
@@ -1661,7 +2156,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Oracle_Cloud_Data_Science_Professional_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fab fa-oracle"></i>
                     </div>
@@ -1671,7 +2166,7 @@
                 </div>
                 
                 <!-- Deloitte Cyber Job Simulation -->
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -1681,7 +2176,7 @@
                 </div>
                 
                 <!-- Forage Job Simulations -->
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
@@ -1690,7 +2185,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Walmart_Advanced_Software_Engineering_Job_Simulation_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-user-shield"></i>
                     </div>
@@ -1699,7 +2194,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/TATA_Cybersecurity_Analyst_Job_Simulation_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
@@ -1708,7 +2203,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/PWC_Cyber_Security_Consulting_Simulation_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -1717,7 +2212,7 @@
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Delloite_Technology_Job_Simulation_Certificate.pdf" target="_blank" class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 
-                <div class="cert-card">
+                <div class="cert-card card-3d">
                     <div class="cert-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -1827,6 +2322,8 @@
             <p class="copyright">&copy; 2025 Neo Kennedy Nkidi. All Rights Reserved.</p>
         </div>
     </footer>
+    
+    <!-- Scripts -->
     <script>
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
@@ -1951,6 +2448,225 @@
         });
         // Set current year in copyright
         document.querySelector('.copyright').innerHTML = `&copy; ${new Date().getFullYear()} Neo Kennedy Nkidi. All Rights Reserved.`;
+        
+        // AI Chatbot Implementation
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatbotClose = document.getElementById('chatbot-close');
+        const chatbotBody = document.getElementById('chatbot-body');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSend = document.getElementById('chatbot-send');
+        
+        // Toggle chatbot visibility
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.style.display = 'flex';
+            chatbotToggle.classList.add('active');
+            chatbotInput.focus();
+        });
+        
+        chatbotClose.addEventListener('click', () => {
+            chatbotContainer.style.display = 'none';
+            chatbotToggle.classList.remove('active');
+        });
+        
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'chat-message user-message';
+            userMessage.textContent = message;
+            chatbotBody.appendChild(userMessage);
+            
+            // Clear input
+            chatbotInput.value = '';
+            
+            // Scroll to bottom
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            
+            // Show typing indicator
+            const typingIndicator = document.createElement('div');
+            typingIndicator.className = 'chat-message bot-message typing';
+            typingIndicator.innerHTML = '<span class="typing-text">Neo is typing</span>';
+            chatbotBody.appendChild(typingIndicator);
+            
+            // Scroll to bottom
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            
+            // Simulate AI response after delay
+            setTimeout(() => {
+                // Remove typing indicator
+                chatbotBody.removeChild(typingIndicator);
+                
+                // Get AI response
+                const aiResponse = getAIResponse(message);
+                
+                // Add AI message
+                const botMessage = document.createElement('div');
+                botMessage.className = 'chat-message bot-message';
+                botMessage.textContent = aiResponse;
+                chatbotBody.appendChild(botMessage);
+                
+                // Scroll to bottom
+                chatbotBody.scrollTop = chatbotBody.scrollHeight;
+            }, 1500);
+        }
+        
+        // Send message on button click
+        chatbotSend.addEventListener('click', sendMessage);
+        
+        // Send message on Enter key
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Simple AI response function
+        function getAIResponse(message) {
+            message = message.toLowerCase();
+            
+            if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                return "Hello! I'm Neo, your AI assistant. How can I help you today?";
+            } else if (message.includes('name') || message.includes('who are you')) {
+                return "I'm Neo, your personal AI assistant. I'm here to help you with information about Neo Kennedy Nkidi, his skills, projects, and achievements.";
+            } else if (message.includes('project') || message.includes('projects')) {
+                return "Neo has worked on several exciting projects including FinSight Financial Intelligence, Load-Shedding Impact Predictor, Indigenous Language Voice Assistant, and more. Would you like to know about a specific project?";
+            } else if (message.includes('skill') || message.includes('skills')) {
+                return "Neo has expertise in programming (Java, Python, C#), web development, AI & data science, cybersecurity, and more. He's earned multiple certifications in these areas.";
+            } else if (message.includes('certification') || message.includes('certificate') || message.includes('cert')) {
+                return "Neo has earned numerous certifications including Google Business Intelligence, Cybersecurity, and IT Support, as well as Microsoft AI certifications and Oracle Cloud certifications.";
+            } else if (message.includes('experience') || message.includes('job')) {
+                return "Neo has experience as an Examination Assistant, Volunteer Radiographer, and has completed multiple job simulations in software engineering, cybersecurity, data analytics, and technology consulting.";
+            } else if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
+                return "You can reach Neo at neonkidi296@gmail.com or +27 82 213 2330. He's also active on LinkedIn and GitHub.";
+            } else if (message.includes('education') || message.includes('study') || message.includes('university')) {
+                return "Neo is currently completing his Bachelor of Science in Information Technology at North-West University in South Africa.";
+            } else if (message.includes('help')) {
+                return "I can help you with information about Neo's skills, projects, certifications, experience, and contact details. Just ask me a question!";
+            } else {
+                return "I'm not sure how to answer that. You can ask me about Neo's skills, projects, certifications, experience, or contact information.";
+            }
+        }
+        
+        // Particles Background
+        const particlesContainer = document.getElementById('particles-container');
+        
+        function createParticles() {
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // 3D Skill Visualization Animation
+        const skillOrbit = document.querySelector('.skill-orbit');
+        
+        function updateSkillOrbit() {
+            const time = Date.now() * 0.0001;
+            const skillNodes = document.querySelectorAll('.skill-node');
+            
+            skillNodes.forEach((node, index) => {
+                const angle = (index / skillNodes.length) * Math.PI * 2 + time;
+                const radius = 150;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+                
+                node.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+            });
+            
+            requestAnimationFrame(updateSkillOrbit);
+        }
+        
+        // Start 3D animation
+        updateSkillOrbit();
+        
+        // Futuristic Timeline Progress Animation
+        const timelineProgress = document.querySelector('.timeline-progress');
+        const timelineMarkers = document.querySelectorAll('.timeline-marker');
+        
+        function animateTimeline() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.body.scrollHeight;
+            
+            // Calculate progress percentage
+            const progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
+            
+            // Update timeline progress
+            timelineProgress.style.width = `${progress}%`;
+            
+            // Update active marker
+            timelineMarkers.forEach(marker => {
+                const markerPosition = marker.getBoundingClientRect().top + window.scrollY;
+                const markerHeight = marker.offsetHeight;
+                
+                if (scrollPosition >= markerPosition - windowHeight / 2 && 
+                    scrollPosition <= markerPosition + markerHeight - windowHeight / 2) {
+                    marker.style.transform = 'translateY(-50%) scale(1.2)';
+                    marker.style.color = 'var(--accent)';
+                    marker.style.boxShadow = '0 0 15px var(--accent)';
+                } else {
+                    marker.style.transform = 'translateY(-50%) scale(1)';
+                    marker.style.color = '';
+                    marker.style.boxShadow = '';
+                }
+            });
+            
+            requestAnimationFrame(animateTimeline);
+        }
+        
+        // Start timeline animation
+        animateTimeline();
+        
+        // Typing Animation for Section Titles
+        const sectionTitles = document.querySelectorAll('.section-title');
+        
+        function typeTitle(element, text, index = 0) {
+            if (index === 0) {
+                element.textContent = '';
+            }
+            
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                setTimeout(() => typeTitle(element, text, index + 1), 100);
+            }
+        }
+        
+        // Start typing animation for visible section titles
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    typeTitle(entry.target, entry.target.textContent);
+                    titleObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        sectionTitles.forEach(title => {
+            titleObserver.observe(title);
+        });
     </script>
 </body>
 </html>
