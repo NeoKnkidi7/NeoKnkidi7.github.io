@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo Kenedy Nkidi | AI & Cybersecurity Engineer</title>
+    <title>Neo Kenedy Nkidi | IT Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #4361ee;
@@ -16,54 +14,54 @@
             --primary-dark: #3a56d4;
             --secondary: #6c63ff;
             --accent: #8b5cf6;
-            --ai-blue: #00c7ff;
-            --cyber-green: #00ff9d;
-            --data-purple: #9d4edd;
-            --devops-orange: #ff6b00;
-            --ux-pink: #ff2d75;
-            --neon-gradient: linear-gradient(45deg, var(--ai-blue), var(--cyber-green), var(--data-purple));
-            --light: #f8f9ff;
-            --light-gray: #eef2f8;
-            --medium-gray: #a0aec0;
-            --dark: #0f172a;
-            --darker: #020617;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            --shadow: 0 15px 40px -15px rgba(67, 97, 238, 0.3);
-            --radius: 16px;
-            --card-bg: rgba(15, 23, 42, 0.8);
-            --header-bg: rgba(15, 23, 42, 0.95);
-            --text-color: #e2e8f0;
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-        
-        [data-theme="light"] {
-            --primary: #5c7cff;
-            --primary-light: #7d9aff;
-            --primary-dark: #4a6df0;
-            --secondary: #8a84ff;
-            --accent: #9d8cff;
-            --ai-blue: #0077cc;
-            --cyber-green: #00cc88;
-            --data-purple: #7b3cbd;
-            --devops-orange: #e65c00;
-            --ux-pink: #e61e6b;
+            --ai-color: #00d2ff;
+            --cyber-color: #00ff9d;
+            --data-color: #ff00c8;
+            --dev-color: #ffd166;
             --light: #f8f9ff;
             --light-gray: #eef2f8;
             --medium-gray: #a0aec0;
             --dark: #2d3748;
             --darker: #1a202c;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --shadow: 0 15px 40px -15px rgba(67, 97, 238, 0.15);
+            --radius: 16px;
             --card-bg: rgba(255, 255, 255, 0.95);
             --header-bg: rgba(248, 249, 255, 0.98);
             --text-color: #2a3349;
             --bg-gradient: linear-gradient(135deg, #f0f5ff 0%, #e6ecf7 100%);
+            --hero-gradient: linear-gradient(135deg, #4361ee 0%, #6c63ff 100%);
+            --cyber-gradient: linear-gradient(135deg, #1a2a6c, #b21f1f, #001510);
+            --ai-gradient: linear-gradient(135deg, #0072ff, #00c6ff);
+            --data-gradient: linear-gradient(135deg, #654ea3, #da98b4);
+            --dev-gradient: linear-gradient(135deg, #ff7e5f, #feb47b);
         }
-        
+        [data-theme="dark"] {
+            --primary: #5c7cff;
+            --primary-light: #7d9aff;
+            --primary-dark: #4a6df0;
+            --secondary: #8a84ff;
+            --accent: #9d8cff;
+            --ai-color: #00d2ff;
+            --cyber-color: #00ff9d;
+            --data-color: #ff00c8;
+            --dev-color: #ffd166;
+            --light: #1a202c;
+            --light-gray: #2d3748;
+            --medium-gray: #a0aec0;
+            --dark: #e2e8f0;
+            --darker: #f8f9ff;
+            --card-bg: rgba(26, 32, 44, 0.95);
+            --header-bg: rgba(26, 32, 44, 0.98);
+            --text-color: #eef2f8;
+            --bg-gradient: linear-gradient(135deg, #1a202c 0%, #222938 100%);
+            --hero-gradient: linear-gradient(135deg, #5c7cff 0%, #8a84ff 100%);
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
@@ -71,22 +69,16 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: var(--transition);
-            min-height: 100vh;
         }
-        
         .container {
             width: 90%;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 10;
         }
-        
         section {
             padding: 100px 0;
         }
-        
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 3rem;
@@ -94,36 +86,23 @@
             margin-bottom: 20px;
             position: relative;
             display: inline-block;
-            background: var(--neon-gradient);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: titleGradient 8s ease infinite;
-            background-size: 300% 300%;
+            background-size: 200% 200%;
         }
-        
         @keyframes titleGradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--medium-gray);
-            max-width: 800px;
+            max-width: 700px;
             margin-bottom: 60px;
         }
-        
-        /* Background Canvas */
-        #vanta-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
         /* Theme Toggle */
         .theme-toggle {
             position: fixed;
@@ -144,101 +123,15 @@
             transition: var(--transition);
             animation: pulse 2s infinite;
         }
-        
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 199, 255, 0.4); }
-            70% { box-shadow: 0 0 0 12px rgba(0, 199, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 199, 255, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(67, 97, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
         }
-        
         .theme-toggle:hover {
             transform: translateY(-3px) rotate(15deg);
-            background: var(--ai-blue);
+            background: var(--primary);
             color: white;
-        }
-        
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            background: var(--header-bg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: var(--shadow);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo span {
-            color: var(--ai-blue);
-            text-shadow: 0 0 10px rgba(0, 199, 255, 0.5);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            position: relative;
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover {
-            color: var(--ai-blue);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--ai-blue);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-color);
         }
         
         /* Resume Float Button */
@@ -247,7 +140,7 @@
             bottom: 30px;
             right: 30px;
             z-index: 1000;
-            background: var(--ai-blue);
+            background: var(--primary);
             color: white;
             padding: 15px 25px;
             border-radius: 50px;
@@ -258,14 +151,83 @@
             gap: 10px;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            backdrop-filter: blur(10px);
         }
         
         .resume-float:hover {
             background: var(--primary-dark);
             transform: translateY(-5px);
         }
-        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            background: var(--header-bg);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span {
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -277,7 +239,6 @@
             background: var(--hero-gradient);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
-        
         .hero::before {
             content: '';
             position: absolute;
@@ -286,12 +247,11 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 20%);
             z-index: 0;
             animation: gradient-move 20s infinite alternate;
         }
-        
         @keyframes gradient-move {
             0% { transform: translate(0, 0); }
             25% { transform: translate(5%, 5%); }
@@ -299,7 +259,6 @@
             75% { transform: translate(5%, -5%); }
             100% { transform: translate(0, 0); }
         }
-        
         .hero-content {
             display: flex;
             align-items: center;
@@ -308,18 +267,15 @@
             position: relative;
             z-index: 10;
         }
-        
         .hero-text {
             flex: 1;
         }
-        
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: center;
             position: relative;
         }
-        
         .profile-img {
             width: 300px;
             height: 300px;
@@ -346,20 +302,18 @@
             object-fit: cover;
             transition: all 0.5s ease;
         }
-        
         .hero-image::before {
             content: '';
             position: absolute;
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: var(--ai-blue);
+            background: var(--primary);
             opacity: 0.2;
             filter: blur(80px);
             z-index: -1;
             animation: pulse 6s ease-in-out infinite;
         }
-        
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: 4rem;
@@ -368,21 +322,18 @@
             margin-bottom: 20px;
             color: white;
         }
-        
         .hero h1 span {
             background: linear-gradient(90deg, white, #e0e7ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
         }
-        
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 30px;
             color: rgba(255, 255, 255, 0.9);
             max-width: 600px;
         }
-        
         .hero-roles {
             font-size: 1.5rem;
             font-weight: 600;
@@ -390,19 +341,12 @@
             color: rgba(255, 255, 255, 0.95);
             line-height: 1.4;
         }
-        
-        .hero-roles span {
-            background: var(--neon-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
         .hero-btns {
             display: flex;
             gap: 20px;
             margin-top: 40px;
+            flex-wrap: wrap;
         }
-        
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -416,9 +360,7 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
-            backdrop-filter: blur(10px);
         }
-        
         .btn::before {
             content: '';
             position: absolute;
@@ -430,31 +372,25 @@
             transition: width 0.5s ease;
             z-index: -1;
         }
-        
         .btn:hover::before {
             width: 100%;
         }
-        
         .btn-primary {
-            background: var(--ai-blue);
-            color: white;
+            background: white;
+            color: var(--primary);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
-        
         .btn-primary:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
-        
         .btn-secondary {
             background: transparent;
             color: white;
             border: 2px solid white;
         }
-        
         .btn-secondary:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
         
         .btn-resume {
@@ -462,38 +398,103 @@
             color: white;
             border: 2px solid var(--accent);
         }
-        
         .btn-resume:hover {
             background: transparent;
             color: white;
         }
-        
+        /* Role Badges */
+        .role-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .role-badge {
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: badgePulse 4s infinite alternate;
+        }
+        .role-badge.ai {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--ai-color);
+            border: 1px solid var(--ai-color);
+        }
+        .role-badge.cyber {
+            background: rgba(0, 255, 157, 0.15);
+            color: var(--cyber-color);
+            border: 1px solid var(--cyber-color);
+        }
+        .role-badge.data {
+            background: rgba(255, 0, 200, 0.15);
+            color: var(--data-color);
+            border: 1px solid var(--data-color);
+        }
+        .role-badge.dev {
+            background: rgba(255, 209, 102, 0.15);
+            color: var(--dev-color);
+            border: 1px solid var(--dev-color);
+        }
+        @keyframes badgePulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0,0,0,0.1); }
+            100% { transform: scale(1.05); box-shadow: 0 0 15px 5px rgba(0,0,0,0.2); }
+        }
         /* About Section */
         .about {
             position: relative;
         }
-        
         .about-content {
             display: flex;
             align-items: center;
             gap: 60px;
         }
-        
         .about-text {
             flex: 1;
         }
-        
         .about-text p {
             margin-bottom: 20px;
             font-size: 1.1rem;
             color: var(--text-color);
         }
-        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .stat-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .stat-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .stat-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
         .certifications-list {
             margin: 20px 0;
             padding-left: 20px;
         }
-        
         .certifications-list li {
             margin-bottom: 15px;
             position: relative;
@@ -501,125 +502,111 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        
         .certifications-list li:before {
             content: "✅";
             position: absolute;
             left: 0;
             top: 2px;
-            color: var(--ai-blue);
+            color: var(--primary);
         }
-        
         .projects-list {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
-        
         .projects-list li {
-            background: rgba(0, 199, 255, 0.1);
+            background: rgba(67, 97, 238, 0.1);
             padding: 12px 20px;
             border-radius: 8px;
             font-weight: 500;
             transition: var(--transition);
         }
-        
         .projects-list li:hover {
-            background: rgba(0, 199, 255, 0.2);
+            background: rgba(67, 97, 238, 0.2);
             transform: translateY(-3px);
         }
-        
         /* Experience Section */
-        .experience {
+        .timeline {
             position: relative;
-            background: var(--cyber-gradient);
-            color: white;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
-        .experience .section-title,
-        .experience .section-subtitle {
-            color: white;
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
         }
-        
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
-        
-        .experience-card {
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        .timeline-content {
             background: var(--card-bg);
+            padding: 30px;
             border-radius: var(--radius);
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
             box-shadow: var(--shadow);
         }
-        
-        .experience-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--cyber-green);
+        .timeline-content:hover {
+            transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
-        
-        .experience-card h3 {
-            font-size: 1.3rem;
+        .timeline-content h3 {
+            color: var(--primary);
             margin-bottom: 10px;
-            color: var(--cyber-green);
         }
-        
-        .experience-card p {
-            color: var(--medium-gray);
-            margin-bottom: 15px;
+        .timeline-content .date {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
         }
-        
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        
-        .skill-tag {
-            background: rgba(0, 255, 157, 0.15);
-            color: var(--cyber-green);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
         /* Skills Section */
-        .skills {
-            position: relative;
-        }
-        
         .skills-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
-        
         .skill-category {
             background: var(--card-bg);
             padding: 30px;
             border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition);
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
         }
-        
         .skill-category:hover {
             transform: translateY(-5px);
-            border-color: var(--ai-blue);
+            border-color: var(--primary);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
         .skill-category h3 {
             font-size: 1.5rem;
             margin-bottom: 25px;
@@ -628,37 +615,31 @@
             gap: 10px;
             color: var(--text-color);
         }
-        
         .skill-category h3 i {
-            color: var(--ai-blue);
+            color: var(--primary);
         }
-        
         .skill-item {
             margin-bottom: 20px;
         }
-        
         .skill-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
             color: var(--text-color);
         }
-        
         .skill-bar {
             height: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.05);
             border-radius: 5px;
             overflow: hidden;
         }
-        
         .skill-progress {
             height: 100%;
-            background: var(--ai-blue);
+            background: var(--primary);
             border-radius: 5px;
             position: relative;
             transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
         }
-        
         .skill-progress::after {
             content: '';
             position: absolute;
@@ -669,359 +650,157 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             animation: progress-shine 2s infinite;
         }
-        
-        /* Projects Section */
-        .projects {
-            position: relative;
+        @keyframes progress-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
-        
+        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
-        
         .project-card {
             background: var(--card-bg);
             border-radius: var(--radius);
             overflow: hidden;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             transform-style: preserve-3d;
             perspective: 1000px;
             box-shadow: var(--shadow);
         }
-        
         .project-card:hover {
             transform: translateY(-10px) rotateY(5deg);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--ai-blue);
+            border-color: var(--primary);
         }
-        
         .project-img {
             height: 220px;
             overflow: hidden;
             position: relative;
         }
-        
         .project-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.5s ease;
+            transition: var(--transition);
         }
-        
         .project-card:hover .project-img img {
             transform: scale(1.1);
         }
-        
         .project-content {
             padding: 25px;
         }
-        
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 15px;
         }
-        
         .project-tag {
-            background: rgba(0, 199, 255, 0.15);
-            color: var(--ai-blue);
+            background: rgba(67, 97, 238, 0.15);
+            color: var(--primary);
             padding: 5px 12px;
             border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
         }
-        
         .project-title {
             font-size: 1.5rem;
             margin-bottom: 12px;
             color: var(--text-color);
         }
-        
         .project-desc {
             color: var(--medium-gray);
             margin-bottom: 20px;
         }
-        
         .project-link {
             display: inline-flex;
             align-items: center;
-            color: var(--ai-blue);
+            color: var(--primary);
             font-weight: 600;
             text-decoration: none;
             gap: 8px;
             transition: var(--transition);
         }
-        
         .project-link:hover {
             gap: 12px;
             color: var(--primary-light);
         }
-        
         /* Certifications Section */
         .certifications {
-            background: var(--darker);
+            background: var(--light-gray);
             padding: 100px 0;
             clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
         }
-        
-        .certifications .section-title,
-        .certifications .section-subtitle {
-            color: white;
-        }
-        
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
             margin-top: 50px;
         }
-        
         .cert-card {
             background: var(--card-bg);
             border-radius: var(--radius);
             padding: 30px;
             text-align: center;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
         }
-        
         .cert-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: var(--ai-blue);
+            border-color: var(--primary);
         }
-        
         .cert-icon {
             font-size: 3rem;
-            color: var(--ai-blue);
+            color: var(--primary);
             margin-bottom: 20px;
         }
-        
         .cert-title {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--text-color);
         }
-        
         .cert-status {
             color: var(--secondary);
             font-weight: 600;
             font-size: 0.9rem;
         }
-        
         .cert-link {
             display: inline-block;
             margin-top: 15px;
             padding: 8px 16px;
-            background: rgba(0, 199, 255, 0.1);
-            color: var(--ai-blue);
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
             border-radius: 30px;
             font-weight: 500;
             text-decoration: none;
             transition: var(--transition);
         }
-        
         .cert-link:hover {
-            background: var(--ai-blue);
+            background: var(--primary);
             color: white;
             transform: translateY(-3px);
         }
-        
-        /* Dashboard Section */
-        .dashboard {
-            background: var(--darker);
-            padding: 100px 0;
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
-        }
-        
-        .dashboard .section-title,
-        .dashboard .section-subtitle {
-            color: white;
-        }
-        
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .dashboard-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .dashboard-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--ai-blue);
-        }
-        
-        .dashboard-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-        }
-        
-        .dashboard-card h3 i {
-            color: var(--ai-blue);
-        }
-        
-        .chart-container {
-            height: 250px;
-            position: relative;
-        }
-        
-        .cyber-map {
-            height: 250px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: var(--radius);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .learning-path {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .path-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: var(--transition);
-        }
-        
-        .path-item:hover {
-            background: rgba(0, 199, 255, 0.1);
-            transform: translateX(10px);
-        }
-        
-        .path-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--ai-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-        
-        .path-content h4 {
-            margin-bottom: 5px;
-        }
-        
-        .path-content p {
-            font-size: 0.9rem;
-            color: var(--medium-gray);
-        }
-        
-        /* AI Projects Section */
-        .ai-projects {
-            background: var(--darker);
-            padding: 100px 0;
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
-        }
-        
-        .ai-projects .section-title,
-        .ai-projects .section-subtitle {
-            color: white;
-        }
-        
-        .ai-projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .ai-project-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            box-shadow: var(--shadow);
-        }
-        
-        .ai-project-card:hover {
-            transform: translateY(-10px) rotateY(5deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: var(--ai-blue);
-        }
-        
-        .ai-project-header {
-            background: var(--ai-blue);
-            color: white;
-            padding: 15px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .ai-project-content {
-            padding: 20px;
-        }
-        
-        .ai-project-desc {
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .ai-project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        
-        .ai-project-tag {
-            background: rgba(0, 199, 255, 0.15);
-            color: var(--ai-blue);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
         /* Contact Section */
         .contact {
             position: relative;
         }
-        
         .contact-content {
             display: flex;
             gap: 60px;
         }
-        
         .contact-info {
             flex: 1;
         }
-        
+        .contact-form {
+            flex: 1;
+        }
         .contact-item {
             display: flex;
             align-items: flex-start;
@@ -1029,66 +808,53 @@
             margin-bottom: 30px;
             transition: var(--transition);
         }
-        
         .contact-item:hover {
             transform: translateX(10px);
         }
-        
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: rgba(0, 199, 255, 0.1);
+            background: rgba(67, 97, 238, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: var(--ai-blue);
+            color: var(--primary);
             transition: var(--transition);
         }
-        
         .contact-item:hover .contact-icon {
-            background: var(--ai-blue);
+            background: var(--primary);
             color: white;
             transform: translateY(-5px);
         }
-        
         .contact-text h3 {
             font-size: 1.3rem;
             margin-bottom: 5px;
             color: var(--text-color);
         }
-        
         .contact-text p, .contact-text a {
             color: var(--medium-gray);
             text-decoration: none;
             transition: var(--transition);
         }
-        
         .contact-text a:hover {
-            color: var(--ai-blue);
+            color: var(--primary);
         }
-        
-        .contact-form {
-            flex: 1;
-        }
-        
         .form-group {
             margin-bottom: 25px;
         }
-        
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--text-color);
         }
-        
         .form-control {
             width: 100%;
             padding: 15px;
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             border-radius: 8px;
             color: var(--text-color);
             font-family: 'Poppins', sans-serif;
@@ -1097,58 +863,48 @@
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
         }
-        
         .form-control:focus {
             outline: none;
-            border-color: var(--ai-blue);
-            box-shadow: 0 0 0 3px rgba(0, 199, 255, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
         }
-        
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-        
         .btn-block {
             display: block;
             width: 100%;
         }
-        
         /* Footer */
         footer {
-            background: var(--darker);
+            background: var(--light-gray);
             padding: 60px 0 30px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
             clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
         }
-        
         .footer-logo {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--text-color);
         }
-        
         .footer-logo span {
-            color: var(--ai-blue);
-            text-shadow: 0 0 10px rgba(0, 199, 255, 0.5);
+            color: var(--primary);
         }
-        
         .footer-text {
             color: var(--medium-gray);
             max-width: 600px;
             margin: 0 auto 30px;
         }
-        
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 40px;
         }
-        
         .social-link {
             width: 50px;
             height: 50px;
@@ -1163,335 +919,212 @@
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow);
         }
-        
         .social-link:hover {
-            background: var(--ai-blue);
+            background: var(--primary);
             color: white;
             transform: translateY(-5px) rotate(15deg);
         }
-        
+        .cert-badge {
+            display: inline-block;
+            background: rgba(114, 9, 183, 0.15);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            font-weight: 600;
+        }
         .copyright {
             color: var(--medium-gray);
             font-size: 0.9rem;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
-        /* AI Chatbot */
-        .chatbot-container {
+        /* AI Assistant */
+        .ai-assistant {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
             z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--ai-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
+            transition: var(--transition);
+            animation: aiPulse 2s infinite alternate;
+        }
+        @keyframes aiPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.5); }
+            100% { transform: scale(1.1); box-shadow: 0 0 20px 10px rgba(0, 210, 255, 0.3); }
+        }
+        .ai-assistant:hover {
+            transform: scale(1.1);
+        }
+        .ai-chat-container {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
             width: 350px;
             height: 450px;
             background: var(--card-bg);
             border-radius: var(--radius);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: var(--shadow);
+            z-index: 999;
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transform: translateY(100px);
+            transform: translateY(20px);
             opacity: 0;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            visibility: hidden;
+            transition: var(--transition);
         }
-        
-        .chatbot-container.open {
+        .ai-chat-container.active {
             transform: translateY(0);
             opacity: 1;
+            visibility: visible;
         }
-        
-        .chatbot-header {
-            background: var(--ai-blue);
+        .ai-chat-header {
+            background: var(--primary);
             color: white;
-            padding: 15px 20px;
+            padding: 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .chatbot-header h3 {
+        .ai-chat-header h3 {
             font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin: 0;
         }
-        
-        .chatbot-close {
+        .ai-chat-close {
             background: transparent;
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
         }
-        
-        .chatbot-messages {
+        .ai-chat-messages {
             flex: 1;
-            padding: 20px;
+            padding: 15px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
-        
-        .message {
+        .ai-message {
             max-width: 80%;
-            padding: 12px 15px;
+            padding: 10px 15px;
             border-radius: 18px;
+            font-size: 0.9rem;
             animation: fadeIn 0.3s ease;
         }
-        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
-        .user-message {
+        .ai-message.user {
+            background: rgba(67, 97, 238, 0.1);
             align-self: flex-end;
-            background: var(--ai-blue);
-            color: white;
             border-bottom-right-radius: 5px;
         }
-        
-        .bot-message {
+        .ai-message.bot {
+            background: rgba(0, 210, 255, 0.1);
             align-self: flex-start;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
             border-bottom-left-radius: 5px;
         }
-        
-        .chatbot-input {
-            padding: 15px;
+        .ai-chat-input {
             display: flex;
-            gap: 10px;
-            background: rgba(15, 23, 42, 0.8);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            background: var(--light-gray);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
-        .chatbot-input input {
+        .ai-chat-input input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+        .ai-chat-input button {
+            background: var(--primary);
+            color: white;
             border: none;
             border-radius: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            outline: none;
-        }
-        
-        .chatbot-input input:focus {
-            border-color: var(--ai-blue);
-        }
-        
-        .chatbot-input button {
-            background: var(--ai-blue);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px 15px;
+            margin-left: 10px;
             cursor: pointer;
             transition: var(--transition);
         }
-        
-        .chatbot-input button:hover {
-            transform: scale(1.1);
+        .ai-chat-input button:hover {
+            background: var(--primary-dark);
         }
-        
-        .typing {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-        }
-        
-        .typing span {
-            height: 8px;
-            width: 8px;
-            border-radius: 50%;
-            background: var(--medium-gray);
-            display: inline-block;
-            margin: 0 2px;
-            animation: typing 1s infinite ease-in-out;
-        }
-        
-        .typing span:nth-child(1) {
-            animation-delay: 0s;
-        }
-        
-        .typing span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .typing span:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        @keyframes typing {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        /* Chatbot toggle button */
-        .chatbot-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1001;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--ai-blue);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(0, 199, 255, 0.7);
-            transition: var(--transition);
-        }
-        
-        .chatbot-toggle:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 0 35px rgba(0, 199, 255, 0.9);
-        }
-        
-        /* Interview Coach */
-        .interview-coach {
-            background: var(--darker);
-            padding: 100px 0;
-            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
-        }
-        
-        .coach-container {
-            background: var(--card-bg);
-            border-radius: var(--radius);
+        /* Cyber Attack Map */
+        .cyber-map-container {
+            background: var(--cyber-gradient);
             padding: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow);
-        }
-        
-        .coach-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .coach-content {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .question-section {
-            flex: 1;
-        }
-        
-        .question-prompt {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--text-color);
-        }
-        
-        .recorder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .record-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--ai-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--glow);
-            transition: var(--transition);
-        }
-        
-        .record-btn.recording {
-            background: var(--ux-pink);
-            box-shadow: 0 0 20px rgba(255, 45, 117, 0.7);
-            animation: pulse 1.5s infinite;
-        }
-        
-        .record-btn i {
-            font-size: 1.5rem;
-            color: white;
-        }
-        
-        .timer {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: var(--text-color);
-        }
-        
-        .analysis-result {
-            background: rgba(255, 255, 255, 0.05);
             border-radius: var(--radius);
-            padding: 20px;
-            min-height: 200px;
-        }
-        
-        .sentiment-score {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .sentiment-bar {
-            flex: 1;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            margin: 50px 0;
+            position: relative;
             overflow: hidden;
         }
-        
-        .sentiment-fill {
-            height: 100%;
-            background: var(--devops-orange);
-            width: 75%;
-        }
-        
-        .feedback-points {
-            margin-top: 15px;
-        }
-        
-        .feedback-points li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+        .cyber-map {
+            height: 400px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius);
             position: relative;
+            overflow: hidden;
         }
-        
-        .feedback-points li:before {
-            content: "•";
+        .attack-point {
             position: absolute;
-            left: 0;
-            color: var(--ai-blue);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--cyber-color);
+            box-shadow: 0 0 15px 5px var(--cyber-color);
+            animation: attackPulse 1.5s infinite alternate;
         }
-        
+        @keyframes attackPulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.5); opacity: 1; }
+        }
+        .attack-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--cyber-color), transparent);
+            transform-origin: left;
+            animation: attackLine 1.5s forwards;
+        }
+        @keyframes attackLine {
+            0% { width: 0; opacity: 0; }
+            100% { width: var(--line-length); opacity: 1; }
+        }
+        .map-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+        }
+        .map-stat h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--cyber-color);
+        }
         /* Responsive Design */
-        @media (max-width: 1200px) {
-            .coach-content {
-                flex-direction: column;
-            }
-        }
-        
         @media (max-width: 992px) {
             .hero-content, .about-content, .contact-content {
                 flex-direction: column;
+            }
+            
+            .hero-text, .about-text, .contact-info, .contact-form {
+                width: 100%;
             }
             
             .hero h1 {
@@ -1518,12 +1151,7 @@
             .projects-list {
                 grid-template-columns: 1fr;
             }
-            .chatbot-container {
-                width: 300px;
-                height: 400px;
-            }
         }
-        
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -1565,7 +1193,7 @@
                 gap: 15px;
             }
             
-            .projects-grid, .cert-grid, .dashboard-grid {
+            .projects-grid, .cert-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1579,18 +1207,24 @@
                 padding: 12px 20px;
                 font-size: 0.9rem;
             }
-            .chatbot-container {
-                width: 100%;
-                height: 70vh;
-                bottom: 0;
-                right: 0;
-                border-radius: var(--radius) var(--radius) 0 0;
+            
+            .ai-assistant {
+                bottom: 100px;
+                left: 20px;
+            }
+            
+            .ai-chat-container {
+                width: calc(100% - 40px);
+                left: 20px;
             }
         }
-        
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .hero-roles {
+                font-size: 1.1rem;
             }
             
             .section-title {
@@ -1608,7 +1242,6 @@
                 font-size: 0.8rem;
             }
         }
-        
         /* Added animation for section entrance */
         @keyframes fadeInUp {
             from {
@@ -1631,64 +1264,155 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Floating animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        /* Cyber Range Simulator */
+        .simulator-container {
+            background: var(--cyber-gradient);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
+        .simulator-header {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
         }
-        
-        /* Glowing effect */
-        .glow-effect {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--ai-blue) 0%, transparent 70%);
-            opacity: 0.1;
-            z-index: -1;
-            animation: pulse-glow 4s infinite alternate;
+        .simulator-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
-        
-        @keyframes pulse-glow {
-            0% { transform: scale(1); opacity: 0.1; }
-            100% { transform: scale(1.5); opacity: 0.2; }
+        .simulator-panel {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius);
+            padding: 20px;
+            color: white;
+        }
+        .simulator-panel h3 {
+            color: var(--cyber-color);
+            margin-bottom: 15px;
+        }
+        .simulator-status {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        .simulator-progress {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .simulator-progress-bar {
+            height: 100%;
+            background: var(--cyber-color);
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        .simulator-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .simulator-btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .simulator-btn:hover {
+            background: var(--cyber-color);
+            color: black;
+        }
+        /* Skills Matrix */
+        .skills-matrix {
+            background: var(--ai-gradient);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+        }
+        .matrix-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .matrix-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            color: white;
+            transition: var(--transition);
+        }
+        .matrix-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .matrix-item h4 {
+            margin-bottom: 10px;
+        }
+        .matrix-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        /* AI Interview Coach */
+        .interview-coach {
+            background: var(--data-gradient);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+        }
+        .coach-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            color: white;
+        }
+        .coach-panel {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+        .coach-panel h3 {
+            margin-bottom: 20px;
+            color: var(--data-color);
+        }
+        .coach-question {
+            margin-bottom: 20px;
+        }
+        .coach-response {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            min-height: 100px;
+        }
+        .coach-btn {
+            background: var(--data-color);
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .coach-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <!-- Background Canvas -->
-    <div id="vanta-bg"></div>
-    
     <!-- Theme Toggle -->
     <div class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
-    </div>
-    
-    <!-- AI Chatbot -->
-    <div class="chatbot-toggle" id="chatbot-toggle">
-        <i class="fas fa-robot"></i>
-    </div>
-    
-    <div class="chatbot-container" id="chatbot-container">
-        <div class="chatbot-header">
-            <h3><i class="fas fa-robot"></i> Neo's AI Assistant</h3>
-            <button class="chatbot-close" id="chatbot-close"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="chatbot-messages" id="chatbot-messages">
-            <div class="message bot-message">
-                Hello! I'm Neo's AI Assistant. How can I help you today?
-            </div>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" id="chatbot-input" placeholder="Ask me about Neo's skills, projects, or certifications...">
-            <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
-        </div>
     </div>
     
     <!-- Resume Float Button -->
@@ -1698,6 +1422,27 @@
        download="Neo_Kennedy_Nkidi_Resume.pdf">
         <i class="fas fa-file-download"></i> Download Resume
     </a>
+    
+    <!-- AI Assistant -->
+    <div class="ai-assistant" id="ai-assistant">
+        <i class="fas fa-robot"></i>
+    </div>
+    
+    <div class="ai-chat-container" id="ai-chat-container">
+        <div class="ai-chat-header">
+            <h3>Neo's AI Assistant</h3>
+            <button class="ai-chat-close" id="ai-chat-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="ai-chat-messages" id="ai-chat-messages">
+            <div class="ai-message bot">
+                Hello! I'm Neo's AI assistant. How can I help you today? You can ask about his skills, projects, or experience.
+            </div>
+        </div>
+        <div class="ai-chat-input">
+            <input type="text" id="ai-chat-input" placeholder="Ask me about Neo...">
+            <button id="ai-chat-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
     
     <!-- Header -->
     <header id="header">
@@ -1714,11 +1459,8 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#ai-projects">AI Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#interview">Interview Coach</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
                     <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/Resume%20of%20Neo%20Kenedy%20Nkidi.pdf" 
@@ -1737,19 +1479,39 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span>Neo Kenedy Nkidi</span></h1>
-                <p class="hero-roles">AI Engineer · <span>Cybersecurity Analyst</span> · <span>Generative AI Specialist</span> · Data Scientist ·  Software Engineer </p>
-                <p>Final-year IT student at North-West University specializing in AI, cybersecurity, and cloud solutions. Transforming complex challenges into innovative, data-driven solutions.</p>
+                <p class="hero-roles">AI Engineer • Cybersecurity Analyst • Data Scientist • Software Engineer</p>
+                <p>Final-year Bachelor of Science in Information Technology student at North-West University, passionate about transforming challenges into innovative solutions.</p>
+                
+                <div class="role-badges">
+                    <div class="role-badge ai">
+                        <i class="fas fa-brain"></i> AI Engineer
+                    </div>
+                    <div class="role-badge cyber">
+                        <i class="fas fa-shield-alt"></i> Cybersecurity Analyst
+                    </div>
+                    <div class="role-badge data">
+                        <i class="fas fa-chart-line"></i> Data Scientist
+                    </div>
+                    <div class="role-badge dev">
+                        <i class="fas fa-code"></i> Software Engineer
+                    </div>
+                </div>
+                
                 <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
-                    <a href="#ai-projects" class="btn btn-secondary">AI Innovations</a>
-                    <a href="#dashboard" class="btn btn-resume">Skills Dashboard</a>
+                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/Resume%20of%20Neo%20Kenedy%20Nkidi.pdf" 
+                       class="btn btn-resume" 
+                       target="_blank" 
+                       download="Neo_Kennedy_Nkidi_Resume.pdf">
+                        <i class="fas fa-file-download"></i> Download Resume
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="profile-img float-animation">
+                <div class="profile-img">
                     <img src="https://raw.githubusercontent.com/NeoKnkidi7/NeoKnkidi7.github.io/main/profile.jpg" alt="Neo Kennedy Nkidi">
                 </div>
-                <div class="glow-effect"></div>
             </div>
         </div>
     </section>
@@ -1762,41 +1524,44 @@
             
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm Neo Kenedy Nkidi, an IT professional specializing in AI, cybersecurity, and cloud solutions. Currently completing my BSc in Information Technology at North-West University, I've built expertise through academic excellence and industry certifications.</p>
+                    <p>I'm Neo Kenedy Nkidi, an IT professional specializing in AI, cybersecurity, and data science. Currently completing my BSc in Information Technology at North-West University, I've built a strong foundation focused on creating innovative solutions to real-world problems.</p>
                     
-                    <p>My technical arsenal includes:</p>
+                    <p>My expertise spans across multiple domains:</p>
                     
                     <ul class="certifications-list">
-                        <li><strong>AI Engineering:</strong> Generative AI, NLP, Deep Learning, Responsible AI</li>
-                        <li><strong>Cybersecurity:</strong> Threat Analysis, Network Security, Ethical Hacking</li>
-                        <li><strong>Data Science:</strong> BigQuery, Tableau, Predictive Analytics</li>
-                        <li><strong>Full-Stack Development:</strong> React, Node.js, Python</li>
+                        <li><strong>AI Engineering:</strong> Developing cutting-edge AI solutions with expertise in machine learning, NLP, and generative AI</li>
+                        <li><strong>Cybersecurity:</strong> Protecting systems with knowledge of network security, threat analysis, and ethical hacking</li>
+                        <li><strong>Data Science:</strong> Transforming data into insights with advanced analytics and visualization techniques</li>
+                        <li><strong>Software Development:</strong> Building robust applications using modern web technologies and cloud platforms</li>
                     </ul>
                     
-                    <p>I've developed innovative solutions such as:</p>
+                    <p>I've earned industry-recognized certifications from leading organizations including Google, Microsoft, Oracle, and Deloitte. My academic journey includes distinctions in Artificial Intelligence, Descriptive Statistics, and Communication Skills.</p>
+                    
+                    <p>My projects address critical challenges such as:</p>
                     
                     <ul class="projects-list">
+                        <li>Load-Shedding Impact Predictor</li>
+                        <li>Indigenous Language Voice Assistant</li>
+                        <li>GBV Resource Navigator</li>
+                        <li>SA Crime Hotspot Predictor</li>
+                        <li>AI Resume Optimizer</li>
                         <li>FinSight Financial Intelligence Platform</li>
-                        <li>AI-Powered Resume Optimizer</li>
-                        <li>Supply Chain Threat Intelligence System</li>
-                        <li>Generative AI Content Auditor</li>
-                        <li>Cybersecurity Attack Simulator</li>
                     </ul>
                     
-                    <p>I thrive at the intersection of technology and human impact, building solutions that address real-world challenges while staying at the forefront of emerging technologies.</p>
+                    <p>I'm passionate about solving complex problems at the intersection of technology and human needs, and I'm seeking opportunities to bring my expertise to impactful projects and teams.</p>
                     
                     <div class="about-stats">
                         <div class="stat-item">
-                            <h3>25+</h3>
-                            <p>Certifications</p>
+                            <h3>12+</h3>
+                            <p>Projects Completed</p>
                         </div>
                         <div class="stat-item">
-                            <h3>7</h3>
-                            <p>Projects</p>
+                            <h3>20+</h3>
+                            <p>Certifications Earned</p>
                         </div>
                         <div class="stat-item">
-                            <h3>6</h3>
-                            <p>Job Simulations</p>
+                            <h3>5</h3>
+                            <p>Google Certifications</p>
                         </div>
                         <div class="stat-item">
                             <h3>100%</h3>
@@ -1808,122 +1573,151 @@
         </div>
     </section>
     
+    <!-- Cyber Attack Map -->
+    <div class="container">
+        <div class="cyber-map-container">
+            <h2 class="section-title" style="color: white;">Live Cyber Attack Map</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Real-time visualization of simulated cyber threats</p>
+            
+            <div class="cyber-map" id="cyber-map">
+                <!-- Attack points will be generated by JavaScript -->
+            </div>
+            
+            <div class="map-stats">
+                <div class="map-stat">
+                    <h3>128</h3>
+                    <p>Attacks Blocked</p>
+                </div>
+                <div class="map-stat">
+                    <h3>24</h3>
+                    <p>Threats Detected</p>
+                </div>
+                <div class="map-stat">
+                    <h3>99.8%</h3>
+                    <p>System Integrity</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Experience Section -->
     <section class="experience" id="experience">
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <p class="section-subtitle">My professional journey and roles</p>
             
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="experience-card-header">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div>
-                            <div class="experience-card-title">Advanced Software Engineering</div>
-                            <div class="experience-card-org">Walmart Global Tech - Forage</div>
-                        </div>
-                    </div>
-                    <div class="experience-card-desc">
-                        Simulated advanced software engineering role focusing on data structures, optimization, and relational database design.
-                    </div>
-                    <div class="experience-card-skills">
-                        <span class="experience-card-tag">Java</span>
-                        <span class="experience-card-tag">Python</span>
-                        <span class="experience-card-tag">Data Structures</span>
-                        <span class="experience-card-tag">SQL</span>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Examination Assistant</h3>
+                        <span class="date">Nov 2024 - Dec 2024</span>
+                        <p>Department of Basic Education, South Africa</p>
+                        <p>Assisted in managing examination processes and ensuring smooth administration of national assessments.</p>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-card-header">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div>
-                            <div class="experience-card-title">Cybersecurity Analyst</div>
-                            <div class="experience-card-org">TATA - Forage</div>
-                        </div>
-                    </div>
-                    <div class="experience-card-desc">
-                        Performed threat analysis, vulnerability assessment, and security solution design.
-                    </div>
-                    <div class="experience-card-skills">
-                        <span class="experience-card-tag">IAM</span>
-                        <span class="experience-card-tag">Critical Thinking</span>
-                        <span class="experience-card-tag">Problem Solving</span>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Volunteer/Trainee Radiographer</h3>
+                        <span class="date">April 2022 - May 2022</span>
+                        <p>Taylor Bequest Hospital</p>
+                        <p>Supported radiology department operations and gained experience in healthcare technology systems.</p>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-card-header">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-consulting"></i>
-                        </div>
-                        <div>
-                            <div class="experience-card-title">Cyber Security Consulting</div>
-                            <div class="experience-card-org">PWC - Forage</div>
-                        </div>
-                    </div>
-                    <div class="experience-card-desc">
-                        Conducted document reviews and interviewed stakeholders to assess cybersecurity posture.
-                    </div>
-                    <div class="experience-card-skills">
-                        <span class="experience-card-tag">Research</span>
-                        <span class="experience-card-tag">Networking</span>
-                        <span class="experience-card-tag">Communication</span>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Information System Project Manager (Academic)</h3>
+                        <span class="date">Feb 2024 - Nov 2024</span>
+                        <p>Howard University</p>
+                        <p>Managed development and implementation of information systems to support university operations.</p>
                     </div>
                 </div>
-                
-                <div class="experience-card">
-                    <div class="experience-card-header">
-                        <div class="experience-card-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        <div>
-                            <div class="experience-card-title">Technology Job Simulation</div>
-                            <div class="experience-card-org">Delloite - Forage</div>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mathematics and Science Private Tutor</h3>
+                        <span class="date">Jan 2022 - Present</span>
+                        <p>ValorSpirit Academy</p>
+                        <p>Assisting Learners and Students achieve greatness in academics.</p>
                     </div>
-                    <div class="experience-card-desc">
-                        Developed software solutions and analyzed technology requirements for business problems.
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst Intern</h3>
+                        <span class="date">Jun 2025 - Present</span>
+                        <p>Deloitte Cybersecurity</p>
+                        <p>Performed threat analysis and vulnerability assessments for enterprise clients.</p>
                     </div>
-                    <div class="experience-card-skills">
-                        <span class="experience-card-tag">Python</span>
-                        <span class="experience-card-tag">Software Development</span>
-                        <span class="experience-card-tag">Planning</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI Research Assistant</h3>
+                        <span class="date">Mar 2025 - Present</span>
+                        <p>North-West University AI Lab</p>
+                        <p>Researching NLP applications for indigenous languages and developing AI models.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
+    <!-- Skills Matrix -->
+    <div class="container">
+        <div class="skills-matrix">
+            <h2 class="section-title" style="color: white;">Skills Matrix Dashboard</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Dynamic visualization of my technical competencies</p>
+            
+            <div class="matrix-container">
+                <div class="matrix-item">
+                    <h4>AI & ML</h4>
+                    <p>Machine Learning, Deep Learning, NLP</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Cybersecurity</h4>
+                    <p>Threat Analysis, Network Security, Ethical Hacking</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Data Science</h4>
+                    <p>Data Analysis, Visualization, Predictive Modeling</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Cloud Computing</h4>
+                    <p>OCI, AWS, Google Cloud Platform</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Web Development</h4>
+                    <p>React, Node.js, Full Stack</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Programming</h4>
+                    <p>Python, Java, C#, JavaScript</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>DevOps</h4>
+                    <p>CI/CD, Docker, Kubernetes</p>
+                </div>
+                <div class="matrix-item">
+                    <h4>Project Management</h4>
+                    <p>Agile, Risk Management, Stakeholder Engagement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Technical competencies developed through academic and practical experience</p>
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">My technical competencies across multiple domains</p>
             
             <div class="skills-content">
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Generative AI</span>
+                            <span>Machine Learning</span>
                             <span>95%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Natural Language Processing</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1937,7 +1731,25 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
+                            <span>NLP</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
                             <span>Computer Vision</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Generative AI</span>
                             <span>88%</span>
                         </div>
                         <div class="skill-bar">
@@ -1950,15 +1762,6 @@
                     <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Threat Analysis</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
                             <span>Network Security</span>
                             <span>90%</span>
                         </div>
@@ -1968,119 +1771,309 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Ethical Hacking</span>
-                            <span>88%</span>
+                            <span>Threat Analysis</span>
+                            <span>92%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
+                            <div class="skill-progress" style="width: 92%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-header">
-                            <span>Security Auditing</span>
+                            <span>Ethical Hacking</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 87%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Security Compliance</span>
                             <span>85%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Incident Response</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Data Science</h3>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Data Analysis</span>
+                            <span>94%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 94%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Data Visualization</span>
+                            <span>93%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 93%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Big Data</span>
+                            <span>86%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 86%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>SQL</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span>Predictive Modeling</span>
+                            <span>91%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 91%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Dashboard Section -->
-    <section class="dashboard" id="dashboard">
-        <div class="container">
-            <h2 class="section-title">AI-Powered Dashboard</h2>
-            <p class="section-subtitle">Interactive visualizations of my skills, projects, and learning pathways</p>
+    <!-- Cyber Range Simulator -->
+    <div class="container">
+        <div class="simulator-container">
+            <div class="simulator-header">
+                <h2 class="section-title" style="color: var(--cyber-color);">Cyber Range Simulator</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Experience real-time cyber attack/defense scenarios</p>
+            </div>
             
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-chart-network"></i> Skills Matrix</h3>
-                    <div class="chart-container">
-                        <canvas id="skillsRadarChart"></canvas>
+            <div class="simulator-content">
+                <div class="simulator-panel">
+                    <h3>Attack Simulation</h3>
+                    <p>Simulated threats based on real-world attack patterns</p>
+                    
+                    <div class="simulator-status">
+                        <span>DDoS Attack</span>
+                        <span>High Severity</span>
+                    </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 75%"></div>
+                    </div>
+                    
+                    <div class="simulator-status">
+                        <span>Ransomware</span>
+                        <span>Medium Severity</span>
+                    </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 45%"></div>
+                    </div>
+                    
+                    <div class="simulator-status">
+                        <span>Phishing</span>
+                        <span>Low Severity</span>
+                    </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 30%"></div>
                     </div>
                 </div>
                 
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-globe-americas"></i> Cyber Attack Map</h3>
-                    <div class="cyber-map" id="cyber-map">
-                        <!-- Attack nodes and lines will be generated by JS -->
+                <div class="simulator-panel">
+                    <h3>Defense Systems</h3>
+                    <p>Security measures deployed to counter threats</p>
+                    
+                    <div class="simulator-status">
+                        <span>Firewall</span>
+                        <span>Active</span>
                     </div>
-                </div>
-                
-                <div class="dashboard-card">
-                    <h3><i class="fas fa-route"></i> Learning Pathway</h3>
-                    <div class="learning-path">
-                        <div class="path-item">
-                            <div class="path-icon" style="background: var(--ai-blue);">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="path-content">
-                                <h4>Advanced Generative AI</h4>
-                                <p>Master multimodal AI systems and creative applications</p>
-                            </div>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-icon" style="background: var(--cyber-green);">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="path-content">
-                                <h4>Cloud Security Architecture</h4>
-                                <p>Design secure cloud infrastructure on OCI and AWS</p>
-                            </div>
-                        </div>
-                        <div class="path-item">
-                            <div class="path-icon" style="background: var(--data-purple);">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <div class="path-content">
-                                <h4>Real-time Data Engineering</h4>
-                                <p>Build streaming data pipelines with Kafka and Spark</p>
-                            </div>
-                        </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 90%"></div>
+                    </div>
+                    
+                    <div class="simulator-status">
+                        <span>Intrusion Detection</span>
+                        <span>Active</span>
+                    </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 85%"></div>
+                    </div>
+                    
+                    <div class="simulator-status">
+                        <span>Encryption</span>
+                        <span>Active</span>
+                    </div>
+                    <div class="simulator-progress">
+                        <div class="simulator-progress-bar" style="width: 95%"></div>
+                    </div>
+                    
+                    <div class="simulator-controls">
+                        <button class="simulator-btn">Deploy Countermeasures</button>
+                        <button class="simulator-btn">Analyze Threats</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">Innovative Projects</h2>
-            <p class="section-subtitle">Cutting-edge solutions showcasing technical expertise</p>
+            <p class="section-subtitle">Cutting-edge solutions showcasing my technical abilities</p>
             
             <div class="projects-grid">
+                <!-- Project 1: FinSight -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo/1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="FinSight Financial Intelligence Platform">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1611&q=80" alt="FinSight Financial Intelligence Platform">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">AI</span>
-                            <span class="project-tag">OCI</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">Finance</span>
                         </div>
                         <h3 class="project-title">FinSight Financial Intelligence</h3>
                         <p class="project-desc">AI-powered platform for accountants, actuaries & bankers featuring automated data processing, predictive analytics, and compliance checks.</p>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://ai-powered-financial-tool-for-professionals.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
+                <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo/1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Cyber Attack Simulator">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Load-Shedding Impact Predictor">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Cybersecurity</span>
                             <span class="project-tag">Python</span>
-                            <span class="project-tag">OCI</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">API Integration</span>
                         </div>
-                        <h3 class="project-title">Cyber Range Simulator</h3>
-                        <p class="project-desc">Virtual lab simulating attack/defense scenarios with adaptive AI threat actors that evolve based on user defenses.</p>
+                        <h3 class="project-title">Load-Shedding Impact Predictor</h3>
+                        <p class="project-desc">Forecasts Eskom outages and correlates with economic activity using Scikit-learn/XGBoost and EskomSePush API.</p>
+                        <a href="https://gmrbd3olwagdnpprs4aafc.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1715&q=80" alt="Indigenous Language Voice Assistant">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Hugging Face</span>
+                        </div>
+                        <h3 class="project-title">Indigenous Language Voice Assistant</h3>
+                        <p class="project-desc">Bridges digital divides for Zulu/Tswana speakers using Mozilla DeepSpeech and Hugging Face Transformers.</p>
+                        <a href="https://indigenous-language-voice-assistant.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Clinic Hospital Appointment Scheduler -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Clinic Hospital Appointment Scheduler">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Streamlit</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                        <h3 class="project-title">Clinic Hospital Appointment Scheduler</h3>
+                        <p class="project-desc">An appointment scheduling system for community clinics and hospitals to manage patient bookings efficiently.</p>
+                        <a href="https://community-clinic-hospital-appointment-scheduler.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 5: AI Resume Optimizer -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="AI Resume Optimizer">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Streamlit</span>
+                        </div>
+                        <h3 class="project-title">AI Resume Optimizer</h3>
+                        <p class="project-desc">An AI-powered tool that analyzes and optimizes resumes for job applications using NLP techniques.</p>
+                        <a href="https://ai-resume-optimizer-application.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 6: GBV Resource Navigator -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="GBV Resource Navigator">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">PWA</span>
+                        </div>
+                        <h3 class="project-title">GBV Resource Navigator with Offline Sync</h3>
+                        <p class="project-desc">Help survivors find shelters/legal aid during connectivity gaps using Next.js and Firebase.</p>
+                        <a href="https://gbv-resource-navigator-with-offline-sync.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 7: SA Crime Hotspot Predictor -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1665&q=80" alt="SA Crime Hotspot Predictor">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">GeoPandas</span>
+                            <span class="project-tag">AWS</span>
+                        </div>
+                        <h3 class="project-title">SA Crime Hotspot Predictor</h3>
+                        <p class="project-desc">Predicts crime hotspots using SAPS open crime stats, Python GeoPandas, and AWS.</p>
+                        <a href="https://sa-crime-hotspot-predictor.streamlit.app/" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project 8: AI Interview Coach -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="AI Interview Coach">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Speech Analysis</span>
+                        </div>
+                        <h3 class="project-title">AI Interview Coach</h3>
+                        <p class="project-desc">Analyzes interview responses using emotion detection and provides feedback to improve performance.</p>
                         <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -2088,196 +2081,193 @@
         </div>
     </section>
     
-    <!-- AI Projects Section -->
-    <section class="ai-projects" id="ai-projects">
-        <div class="container">
-            <h2 class="section-title">AI-Powered Innovations</h2>
-            <p class="section-subtitle">Cutting-edge projects demonstrating my expertise in artificial intelligence and machine learning</p>
+    <!-- AI Interview Coach -->
+    <div class="container">
+        <div class="interview-coach">
+            <h2 class="section-title" style="color: white;">AI Interview Coach</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.8);">Practice and improve your interview skills with AI feedback</p>
             
-            <div class="ai-projects-grid">
-                <div class="ai-project-card">
-                    <div class="ai-project-header">
-                        <i class="fas fa-robot"></i> AI Interview Coach with Emotion AI
+            <div class="coach-container">
+                <div class="coach-panel">
+                    <h3>Practice Interview</h3>
+                    <div class="coach-question">
+                        <p>Question: "Tell me about a time you faced a significant challenge and how you overcame it."</p>
                     </div>
-                    <div class="ai-project-content">
-                        <p>Integrates Whisper API for speech analysis and Google's Perspective API for tone detection. Provides feedback on interview answers—tying to your Copilot/Generative AI certifications.</p>
-                        <div class="ai-project-tech">
-                            <span class="ai-project-tag">Whisper API</span>
-                            <span class="ai-project-tag">Perspective API</span>
-                            <span class="ai-project-tag">NLP</span>
-                        </div>
+                    <button class="coach-btn" id="record-btn"><i class="fas fa-microphone"></i> Record Response</button>
+                    <div class="coach-response" id="coach-response">
+                        <p>Your response will be analyzed here for content, clarity, and emotional tone.</p>
                     </div>
                 </div>
-                
-                <div class="ai-project-card">
-                    <div class="ai-project-header">
-                        <i class="fas fa-shield-virus"></i> Live Cyber Attack Map
+                <div class="coach-panel">
+                    <h3>Feedback Analysis</h3>
+                    <div class="coach-question">
+                        <p>Analysis based on your recorded response:</p>
                     </div>
-                    <div class="ai-project-content">
-                        <p>Real-time visualization of simulated attacks (e.g., DDoS, ransomware) mitigated using techniques from Google Cyber cert.</p>
-                        <div class="ai-project-tech">
-                            <span class="ai-project-tag">OCI Logging Analytics</span>
-                            <span class="ai-project-tag">MITRE ATT&CK</span>
-                        </div>
+                    <div class="coach-response">
+                        <p><strong>Content:</strong> Comprehensive example with clear challenge and resolution</p>
+                        <p><strong>Clarity:</strong> Well-structured response with good flow</p>
+                        <p><strong>Tone:</strong> Confident and professional</p>
+                        <p><strong>Improvement:</strong> Add more quantifiable results to strengthen impact</p>
                     </div>
-                </div>
-                
-                <div class="ai-project-card">
-                    <div class="ai-project-header">
-                        <i class="fas fa-route"></i> Adaptive Learning Pathway Generator
-                    </div>
-                    <div class="ai-project-content">
-                        <p>Recommends personalized upskilling routes (e.g., "Based on your AI Fluency cert, study transformers next"). Uses collaborative filtering (from Quantium sim).</p>
-                        <div class="ai-project-tech">
-                            <span class="ai-project-tag">Collaborative Filtering</span>
-                            <span class="ai-project-tag">Recommendation Systems</span>
-                        </div>
-                    </div>
+                    <button class="coach-btn"><i class="fas fa-sync-alt"></i> Try Another Question</button>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Cloud Solutions Section -->
-    <section class="cloud-solutions" id="cloud-solutions">
-        <div class="container">
-            <h2 class="section-title">Cloud-Native Solutions</h2>
-            <p class="section-subtitle">Enterprise-grade solutions leveraging cloud technologies</p>
-            
-            <div class="ai-projects-grid">
-                <div class="ai-project-card">
-                    <div class="ai-project-header">
-                        <i class="fas fa-truck"></i> Supply Chain Threat Intelligence Platform
-                    </div>
-                    <div class="ai-project-content">
-                        <p>Leverages Oracle Cloud (certified) to ingest IoT sensor data + threat feeds, predicting disruptions using time-series forecasting.</p>
-                        <div class="ai-project-tech">
-                            <span class="ai-project-tag">OCI Generative AI</span>
-                            <span class="ai-project-tag">BigQuery</span>
-                            <span class="ai-project-tag">Tableau</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="ai-project-card">
-                    <div class="ai-project-header">
-                        <i class="fas fa-tasks"></i> Automated GRC Assistant
-                    </div>
-                    <div class="ai-project-content">
-                        <p>Chatbot using RAG (Retrieval-Augmented Generation) to answer compliance queries (e.g., "Does this workflow meet NIST CSF?"). Trained on your PWC/Deloitte job sims.</p>
-                        <div class="ai-project-tech">
-                            <span class="ai-project-tag">OCI Generative AI Service</span>
-                            <span class="ai-project-tag">LangChain</span>
-                            <span class="ai-project-tag">React</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
     
     <!-- Certifications Section -->
     <section class="certifications" id="certifications">
         <div class="container">
             <h2 class="section-title">Certifications & Achievements</h2>
-            <p class="section-subtitle">Professional credentials validating expertise</p>
+            <p class="section-subtitle">Professional certifications I've earned and currently pursuing</p>
             
             <div class="cert-grid">
+                <!-- Google Certifications -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="cert-title">Google Business Intelligence</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleBusinessIntelligenceCertificate_Badge20250708-28-a02hgk.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="cert-title">Google Cybersecurity</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleCybersecurityProfessionalCertificateV2_Badge20250713-27-o4vhjt.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="cert-title">Google IT Support</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleITSupportProfessionalCertificatev2_Badge20250711-27-aszdy.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="cert-title">Google Project Management</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/GoogleProjectManagementProfessionalCertificatev2_Badge20250713-28-h6tp8p.pdf" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <!-- Microsoft Certifications -->
                 <div class="cert-card">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
-                    <h3 class="cert-title">Generative AI Professional</h3>
-                    <p class="cert-status">Microsoft</p>
-                    <span class="cert-badge">
-                        <i class="fas fa-certificate"></i> Issued: July 18, 2025
-                    </span>
-                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft%20AI%20Fundamentals%20-%20Neo%20Kenedy%20Nkidi.pdf" class="cert-link" target="_blank">View Certificate</a>
+                    <h3 class="cert-title">Microsoft AI Fundamentals</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Neo%20-%20Certificate%20-%20MSAISkillsDev%20Course%20-%2020250421192703.png" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Generative AI</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Responsible AI</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="cert-title">Microsoft Copilot</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <!-- Oracle Certifications -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="cert-title">Oracle AI Foundations</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
                 
                 <div class="cert-card">
                     <div class="cert-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="cert-title">Data Science Professional</h3>
-                    <p class="cert-status">Oracle University</p>
-                    <span class="cert-badge">
-                        <i class="fas fa-certificate"></i> Issued: July 22, 2025
-                    </span>
-                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Oracle%20Cloud%20Infrastructure%2025%20Certified%20Data%20Science%20Professional%20-%20Neo%20Kenedy%20Nkidi.pdf" class="cert-link" target="_blank">View Certificate</a>
+                    <h3 class="cert-title">Oracle Data Science</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
                 
                 <div class="cert-card">
                     <div class="cert-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="cert-title">Generative AI Professional</h3>
-                    <p class="cert-status">Oracle University</p>
-                    <span class="cert-badge">
-                        <i class="fas fa-certificate"></i> Issued: July 18, 2025
-                    </span>
-                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Oracle%20Cloud%20Infrastructure%2025%20Certified%20Generative%20AI%20Professional%20-%20Neo%20Kenedy%20Nkidi.pdf" class="cert-link" target="_blank">View Certificate</a>
+                    <h3 class="cert-title">Oracle Generative AI</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <!-- Forage Job Simulations -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="cert-title">Deloitte Cyber Simulation</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
                 
                 <div class="cert-card">
                     <div class="cert-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3 class="cert-title">AI Fundamentals</h3>
-                    <p class="cert-status">Microsoft</p>
-                    <span class="cert-badge">
-                        <i class="fas fa-certificate"></i> Issued: July 18, 2025
-                    </span>
-                    <a href="https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/blob/main/Microsoft%20AI%20Fundamentals%20-%20Neo%20Kenedy%20Nkidi.pdf" class="cert-link" target="_blank">View Certificate</a>
+                    <h3 class="cert-title">Walmart Software Engineering</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Interview Coach Section -->
-    <section class="interview-coach" id="interview">
-        <div class="container">
-            <h2 class="section-title">AI Interview Coach</h2>
-            <p class="section-subtitle">Practice and refine your interview skills with AI-powered feedback</p>
-            
-            <div class="coach-container">
-                <div class="coach-header">
-                    <h3>Technical Interview Simulator</h3>
-                    <p>Answer common technical interview questions and receive real-time feedback</p>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="cert-title">TATA Cybersecurity</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
-                <div class="coach-content">
-                    <div class="question-section">
-                        <div class="question-prompt">
-                            "Explain the difference between supervised and unsupervised learning, and provide an example of when you would use each approach."
-                        </div>
-                        
-                        <div class="recorder">
-                            <div class="record-btn" id="record-btn">
-                                <i class="fas fa-microphone"></i>
-                            </div>
-                            <div class="timer" id="timer">00:00</div>
-                        </div>
-                        
-                        <button class="btn btn-primary">Submit Answer</button>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="analysis-section">
-                        <h4><i class="fas fa-chart-line"></i> Performance Analysis</h4>
-                        <div class="sentiment-score">
-                            <span>Confidence:</span>
-                            <div class="sentiment-bar">
-                                <div class="sentiment-fill"></div>
-                            </div>
-                            <span>75%</span>
-                        </div>
-                        
-                        <h5>Feedback:</h5>
-                        <ul class="feedback-points">
-                            <li>Good explanation of core concepts</li>
-                            <li>Provide more specific real-world examples</li>
-                            <li>Consider mentioning semi-supervised learning</li>
-                            <li>Watch filler words ("um", "like")</li>
-                        </ul>
+                    <h3 class="cert-title">PWC Cyber Consulting</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
+                    <h3 class="cert-title">Quantium Data Analytics</h3>
+                    <p class="cert-status">Completed</p>
+                    <a href="#" class="cert-link" target="_blank">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -2287,7 +2277,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Have a project in mind or want to discuss opportunities?</p>
+            <p class="section-subtitle">Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
             
             <div class="contact-content">
                 <div class="contact-info">
@@ -2313,7 +2303,17 @@
                     
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>North West University, South Africa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="contact-text">
                             <h3>LinkedIn</h3>
@@ -2361,7 +2361,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">Neo<span>.</span></div>
-            <p class="footer-text">AI Engineer · Cybersecurity Specialist · Cloud Solutions Architect</p>
+            <p class="footer-text">AI Engineer • Cybersecurity Analyst • Data Scientist • Software Engineer</p>
             
             <div class="social-links">
                 <a href="https://github.com/NeoKnkidi7" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
@@ -2375,23 +2375,6 @@
     </footer>
     
     <script>
-        // Initialize Vanta.js background
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x00c7ff,
-            backgroundColor: 0x0f172a,
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 17.00
-        });
-        
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -2435,17 +2418,26 @@
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
         
+        // Set initial theme based on system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+        
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.getAttribute('data-theme') || 'dark';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const currentTheme = document.body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.body.setAttribute('data-theme', newTheme);
+            
             if (newTheme === 'light') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
-            } else {
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
             }
+            
             // Save theme preference
             localStorage.setItem('theme', newTheme);
         });
@@ -2454,14 +2446,36 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             document.body.setAttribute('data-theme', savedTheme);
-            if (savedTheme === 'light') {
+            if (savedTheme === 'dark') {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
             }
         }
         
-        // Animate elements when they come into view
+        // Animate skill bars when they come into view
+        const skillBars = document.querySelectorAll('.skill-progress');
         const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 300);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+        
+        // Scroll reveal for sections
+        const sections = document.querySelectorAll('section');
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('section-visible');
@@ -2469,233 +2483,177 @@
             });
         }, { threshold: 0.1 });
         
-        document.querySelectorAll('section').forEach(section => {
+        sections.forEach(section => {
             section.classList.add('section-hidden');
-            observer.observe(section);
+            sectionObserver.observe(section);
         });
         
-        document.querySelectorAll('.timeline-item').forEach(item => {
+        timelineItems.forEach(item => {
             item.classList.add('section-hidden');
-            observer.observe(item);
-        });
-        
-        // Skills Radar Chart
-        const skillsCtx = document.getElementById('skillsRadarChart').getContext('2d');
-        const skillsChart = new Chart(skillsCtx, {
-            type: 'radar',
-            data: {
-                labels: ['AI/ML', 'Cybersecurity', 'Cloud', 'Data Science', 'DevOps', 'Full-Stack'],
-                datasets: [{
-                    label: 'Skill Level',
-                    data: [95, 92, 90, 88, 85, 90],
-                    backgroundColor: 'rgba(0, 199, 255, 0.2)',
-                    borderColor: '#00c7ff',
-                    pointBackgroundColor: '#00c7ff',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#00c7ff'
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        angleLines: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        grid: {
-                            color: 'rgba(255, 255, 255, 0.1)'
-                        },
-                        pointLabels: {
-                            color: '#e2e8f0',
-                            font: {
-                                size: 12
-                            }
-                        },
-                        ticks: {
-                            backdropColor: 'transparent',
-                            color: 'rgba(255, 255, 255, 0.5)',
-                            stepSize: 20
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: '#e2e8f0'
-                        }
-                    }
-                }
-            }
-        });
-        
-        // Cyber Attack Map Simulation
-        const cyberMap = document.getElementById('cyber-map');
-        function createAttackSimulation() {
-            // Clear previous nodes
-            cyberMap.innerHTML = '';
-            
-            // Create attack nodes
-            for (let i = 0; i < 15; i++) {
-                const node = document.createElement('div');
-                node.classList.add('attack-node');
-                node.style.left = `${Math.random() * 100}%`;
-                node.style.top = `${Math.random() * 100}%`;
-                cyberMap.appendChild(node);
-                
-                // Create attack lines
-                if (i > 0) {
-                    const prevNode = cyberMap.children[i-1];
-                    const line = document.createElement('div');
-                    line.classList.add('attack-line');
-                    
-                    const x1 = parseFloat(prevNode.style.left) * cyberMap.offsetWidth / 100;
-                    const y1 = parseFloat(prevNode.style.top) * cyberMap.offsetHeight / 100;
-                    const x2 = parseFloat(node.style.left) * cyberMap.offsetWidth / 100;
-                    const y2 = parseFloat(node.style.top) * cyberMap.offsetHeight / 100;
-                    
-                    const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-                    const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-                    
-                    line.style.width = `${length}px`;
-                    line.style.left = `${x1}px`;
-                    line.style.top = `${y1}px`;
-                    line.style.transform = `rotate(${angle}deg)`;
-                    
-                    cyberMap.appendChild(line);
-                }
-            }
-        }
-        
-        // Initialize and refresh attack simulation
-        createAttackSimulation();
-        setInterval(createAttackSimulation, 5000);
-        
-        // Resume Float Button
-        const resumeFloat = document.querySelector('.resume-float');
-        resumeFloat.addEventListener('click', () => {
-            window.open('https://github.com/NeoKnkidi7/NeoKnkidi7.github.io/raw/main/Resume%20of%20Neo%20Kenedy%20Nkidi.pdf', '_blank');
-        });
-        
-        // Chatbot functionality
-        const chatbotToggle = document.getElementById('chatbot-toggle');
-        const chatbotContainer = document.getElementById('chatbot-container');
-        const chatbotClose = document.getElementById('chatbot-close');
-        const chatbotMessages = document.getElementById('chatbot-messages');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const chatbotSend = document.getElementById('chatbot-send');
-        
-        chatbotToggle.addEventListener('click', () => {
-            chatbotContainer.classList.toggle('open');
-        });
-        
-        chatbotClose.addEventListener('click', () => {
-            chatbotContainer.classList.remove('open');
-        });
-        
-        function addMessage(text, isUser = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('message');
-            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-            messageDiv.textContent = text;
-            chatbotMessages.appendChild(messageDiv);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }
-        
-        function getBotResponse(input) {
-            input = input.toLowerCase().trim();
-            
-            // Define responses based on keywords
-            if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-                return "Hello! I'm Neo's AI Assistant. How can I help you today?";
-            } else if (input.includes('certification') || input.includes('cert')) {
-                return "Neo has numerous certifications including Microsoft AI Fundamentals, Generative AI, Oracle Cloud AI, and Google Cybersecurity. You can find them in the Certifications section.";
-            } else if (input.includes('skill') || input.includes('expertise')) {
-                return "Neo specializes in AI engineering, cybersecurity, cloud solutions, data science, and full-stack development. Check the Skills section for details.";
-            } else if (input.includes('project') || input.includes('work')) {
-                return "Neo has developed projects like FinSight Financial Intelligence, Cyber Range Simulator, and AI Resume Optimizer. Explore the Projects section to learn more.";
-            } else if (input.includes('experience') || input.includes('job')) {
-                return "Neo has completed simulations with Walmart Global Tech, TATA, PWC, and Deloitte. See the Experience section for details.";
-            } else if (input.includes('ai') || input.includes('artificial intelligence')) {
-                return "Neo is certified in Microsoft AI Fundamentals, Generative AI, and Oracle Cloud AI. He has developed several AI-powered applications.";
-            } else if (input.includes('cyber') || input.includes('security')) {
-                return "Neo holds Google Cybersecurity certification and has completed cybersecurity simulations with TATA and Deloitte. He specializes in threat analysis and network security.";
-            } else if (input.includes('contact') || input.includes('reach')) {
-                return "You can reach Neo at neonkidi296@gmail.com or +27 82 213 2330. He's also active on LinkedIn and GitHub.";
-            } else if (input.includes('help')) {
-                return "I can tell you about Neo's certifications, skills, projects, and experience. Just ask!";
-            } else {
-                return "I'm not sure how to answer that. You can ask me about Neo's education, skills, projects, or contact information.";
-            }
-        }
-        
-        chatbotSend.addEventListener('click', () => {
-            if (chatbotInput.value.trim() !== '') {
-                addMessage(chatbotInput.value, true);
-                const response = getBotResponse(chatbotInput.value);
-                setTimeout(() => {
-                    addMessage(response);
-                }, 1000);
-                chatbotInput.value = '';
-            }
-        });
-        
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                chatbotSend.click();
-            }
-        });
-        
-        // Interview Coach functionality
-        const recordBtn = document.getElementById('record-btn');
-        const timer = document.getElementById('timer');
-        let isRecording = false;
-        let seconds = 0;
-        let timerInterval;
-        
-        recordBtn.addEventListener('click', () => {
-            isRecording = !isRecording;
-            
-            if (isRecording) {
-                recordBtn.classList.add('recording');
-                recordBtn.innerHTML = '<i class="fas fa-stop"></i>';
-                
-                // Start timer
-                seconds = 0;
-                timer.textContent = '00:00';
-                timerInterval = setInterval(() => {
-                    seconds++;
-                    const mins = Math.floor(seconds / 60);
-                    const secs = seconds % 60;
-                    timer.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-                }, 1000);
-            } else {
-                recordBtn.classList.remove('recording');
-                recordBtn.innerHTML = '<i class="fas fa-microphone"></i>';
-                
-                // Stop timer
-                clearInterval(timerInterval);
-            }
+            sectionObserver.observe(item);
         });
         
         // Form submission
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Form validation would go here
-            addMessage(`Form submitted: ${document.getElementById('name').value}`, true);
-            addMessage("Thank you for your message! Neo will get back to you soon.", false);
+            alert('Thank you for your message, Neo will get back to you soon!');
             contactForm.reset();
         });
         
         // Set current year in copyright
         document.querySelector('.copyright').innerHTML = `&copy; ${new Date().getFullYear()} Neo Kennedy Nkidi. All Rights Reserved.`;
         
-        // Chatbot greeting on page load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                addMessage("Welcome to Neo's portfolio! How can I assist you?");
-            }, 2000);
+        // AI Assistant Chat
+        const aiAssistant = document.getElementById('ai-assistant');
+        const aiChatContainer = document.getElementById('ai-chat-container');
+        const aiChatClose = document.getElementById('ai-chat-close');
+        const aiChatMessages = document.getElementById('ai-chat-messages');
+        const aiChatInput = document.getElementById('ai-chat-input');
+        const aiChatSend = document.getElementById('ai-chat-send');
+        
+        aiAssistant.addEventListener('click', () => {
+            aiChatContainer.classList.toggle('active');
         });
+        
+        aiChatClose.addEventListener('click', () => {
+            aiChatContainer.classList.remove('active');
+        });
+        
+        // AI responses
+        const aiResponses = {
+            "hello": "Hello! How can I help you today?",
+            "hi": "Hi there! What can I tell you about Neo?",
+            "skills": "Neo has expertise in AI engineering, cybersecurity, data science, and software development. He's proficient in Python, Java, machine learning, and cloud technologies.",
+            "projects": "Neo has developed several innovative projects including FinSight Financial Intelligence, Load-Shedding Impact Predictor, Indigenous Language Voice Assistant, and SA Crime Hotspot Predictor.",
+            "experience": "Neo has experience as an Examination Assistant, Trainee Radiographer, Information System Project Manager, and Private Tutor. He's also completed several professional simulations with companies like Deloitte and Walmart.",
+            "education": "Neo is a final-year Bachelor of Science in Information Technology student at North-West University in South Africa.",
+            "contact": "You can contact Neo via email at neonkidi296@gmail.com or phone at 082 213 2330. He's also on LinkedIn and GitHub.",
+            "certifications": "Neo holds certifications from Google (Business Intelligence, Cybersecurity, IT Support, Project Management), Microsoft (AI Fundamentals, Generative AI), Oracle (AI Foundations, Data Science), and has completed job simulations with Deloitte, Walmart, TATA, PWC, and Quantium.",
+            "resume": "You can download Neo's resume by clicking the 'Download Resume' button in the top right corner of the portfolio.",
+            "default": "I'm Neo's AI assistant. I can answer questions about his skills, projects, experience, education, certifications, and how to contact him. What would you like to know?"
+        };
+        
+        function getAIResponse(question) {
+            const lowerQuestion = question.toLowerCase();
+            
+            if (lowerQuestion.includes('skill') || lowerQuestion.includes('technolog')) {
+                return aiResponses["skills"];
+            } else if (lowerQuestion.includes('project') || lowerQuestion.includes('work')) {
+                return aiResponses["projects"];
+            } else if (lowerQuestion.includes('experience') || lowerQuestion.includes('job')) {
+                return aiResponses["experience"];
+            } else if (lowerQuestion.includes('education') || lowerQuestion.includes('degree')) {
+                return aiResponses["education"];
+            } else if (lowerQuestion.includes('contact') || lowerQuestion.includes('email') || lowerQuestion.includes('phone')) {
+                return aiResponses["contact"];
+            } else if (lowerQuestion.includes('certif') || lowerQuestion.includes('cert')) {
+                return aiResponses["certifications"];
+            } else if (lowerQuestion.includes('resume') || lowerQuestion.includes('cv')) {
+                return aiResponses["resume"];
+            } else if (lowerQuestion.includes('hello') || lowerQuestion.includes('hi')) {
+                return aiResponses["hello"];
+            } else {
+                return aiResponses["default"];
+            }
+        }
+        
+        function addMessageToChat(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('ai-message');
+            messageElement.classList.add(sender);
+            messageElement.textContent = message;
+            aiChatMessages.appendChild(messageElement);
+            aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        }
+        
+        aiChatSend.addEventListener('click', () => {
+            const message = aiChatInput.value.trim();
+            if (message) {
+                addMessageToChat(message, 'user');
+                aiChatInput.value = '';
+                
+                // Simulate AI thinking
+                setTimeout(() => {
+                    const response = getAIResponse(message);
+                    addMessageToChat(response, 'bot');
+                }, 1000);
+            }
+        });
+        
+        aiChatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                aiChatSend.click();
+            }
+        });
+        
+        // Cyber Attack Map
+        const cyberMap = document.getElementById('cyber-map');
+        
+        function createAttackPoint() {
+            const attackPoint = document.createElement('div');
+            attackPoint.classList.add('attack-point');
+            
+            // Random position on map
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            attackPoint.style.left = `${x}%`;
+            attackPoint.style.top = `${y}%`;
+            
+            // Random attack type
+            const attackTypes = ['ddos', 'ransomware', 'phishing', 'malware'];
+            attackPoint.dataset.type = attackTypes[Math.floor(Math.random() * attackTypes.length)];
+            
+            cyberMap.appendChild(attackPoint);
+            
+            // Create attack line to a random target
+            if (Math.random() > 0.5) {
+                const targetX = 50 + (Math.random() - 0.5) * 30;
+                const targetY = 50 + (Math.random() - 0.5) * 30;
+                
+                const dx = targetX - x;
+                const dy = targetY - y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+                
+                const attackLine = document.createElement('div');
+                attackLine.classList.add('attack-line');
+                attackLine.style.left = `${x}%`;
+                attackLine.style.top = `${y}%`;
+                attackLine.style.width = '0';
+                attackLine.style.setProperty('--line-length', `${distance}%`);
+                attackLine.style.transform = `rotate(${angle}deg)`;
+                
+                cyberMap.appendChild(attackLine);
+                
+                // Animate the line
+                setTimeout(() => {
+                    attackLine.style.width = `${distance}%`;
+                }, 10);
+                
+                // Remove elements after animation
+                setTimeout(() => {
+                    attackPoint.remove();
+                    attackLine.remove();
+                }, 1500);
+            } else {
+                // Remove point after animation
+                setTimeout(() => {
+                    attackPoint.remove();
+                }, 1500);
+            }
+        }
+        
+        // Initialize cyber attack simulation
+        setInterval(createAttackPoint, 800);
+        
+        // Create initial attack points
+        for (let i = 0; i < 10; i++) {
+            setTimeout(() => {
+                createAttackPoint();
+            }, i * 300);
+        }
     </script>
 </body>
 </html>
