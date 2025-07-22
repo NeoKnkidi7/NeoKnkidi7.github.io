@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo Kennedy Nkidi | AI & Cybersecurity Engineer</title>
+    <title>Neo Kenedy Nkidi | AI & Cybersecurity Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
     <style>
         :root {
             --primary: #4361ee;
             --secondary: #3a0ca3;
             --accent: #7209b7;
             --accent2: #f72585;
-            --dark: #1a1a2e;
+            --dark: #0f172a;
             --light: #e2e8f0;
             --success: #4ade80;
             --warning: #facc15;
@@ -22,6 +22,9 @@
             --cyber-purple: #8b5cf6;
             --ai-green: #10b981;
             --data-orange: #f97316;
+            --matrix-green: #00ff41;
+            --neon-pink: #ff00ff;
+            --hacker-red: #ff3131;
         }
         
         * {
@@ -34,8 +37,11 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             color: var(--light);
-            overflow-x: hidden;
             line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(114, 9, 183, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(247, 37, 133, 0.1) 0%, transparent 30%);
         }
         
         .container {
@@ -138,8 +144,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(114, 9, 183, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(247, 37, 133, 0.2) 0%, transparent 30%);
+                radial-gradient(circle at 10% 20%, rgba(114, 9, 183, 0.2) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(247, 37, 133, 0.2) 0%, transparent 30%);
             z-index: -1;
         }
         
@@ -182,6 +188,7 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
         }
         
         .hero-roles {
@@ -283,6 +290,9 @@
             overflow: hidden;
             border: 3px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             animation: float 6s ease-in-out infinite;
         }
         
@@ -296,6 +306,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: all 0.5s ease;
         }
         
         .profile-glow {
@@ -308,13 +319,13 @@
         }
         
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.2; }
-            100% { transform: scale(1); opacity: 0.5; }
+            0% { box-shadow: 0 0 0 0 rgba(114, 9, 183, 0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(114, 9, 183, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(114, 9, 183, 0); }
         }
         
-        /* About Section */
-        .about {
+        /* Features Section */
+        .features {
             padding: 100px 0;
             position: relative;
         }
@@ -339,215 +350,64 @@
             border-radius: 2px;
         }
         
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin-bottom: 60px;
         }
         
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .stat-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            background: linear-gradient(90deg, var(--accent2), var(--cyber-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Skills Section */
-        .skills {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .skills-content {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .skill-category {
+        .feature-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
-        .skill-category:hover {
-            transform: translateY(-5px);
+        .feature-card:hover {
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .skill-category h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--light);
-        }
-        
-        .skill-category h3 i {
-            color: var(--accent2);
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            color: var(--light);
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent2), var(--cyber-blue));
-            border-radius: 5px;
-            position: relative;
-            transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-        }
-        
-        .skill-progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: progress-shine 2s infinite;
-        }
-        
-        @keyframes progress-shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* Projects Section */
-        .projects {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px) rotateY(5deg);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             border-color: var(--accent2);
         }
         
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-        
-        .project-content {
-            padding: 25px;
-        }
-        
-        .project-tags {
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent2);
+            margin-bottom: 20px;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 10px;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
             margin-bottom: 15px;
-        }
-        
-        .project-tag {
-            background: rgba(6, 182, 212, 0.2);
-            color: var(--cyber-blue);
-            padding: 5px 12px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(6, 182, 212, 0.3);
-        }
-        
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
             color: var(--light);
+            font-weight: 600;
         }
         
-        .project-desc {
+        .feature-desc {
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
+            flex-grow: 1;
         }
         
-        .project-link {
+        .feature-link {
             display: inline-flex;
             align-items: center;
             color: var(--accent2);
@@ -557,310 +417,774 @@
             transition: all 0.3s ease;
         }
         
-        .project-link:hover {
+        .feature-link:hover {
             gap: 12px;
             color: var(--cyber-blue);
         }
         
-        /* Certifications Section */
-        .certifications {
-            padding: 100px 0;
-            position: relative;
+        /* AI Interview Coach */
+        .ai-interview-coach {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
         }
         
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        .ai-interview-coach:hover {
+            border-color: var(--ai-green);
         }
         
-        .cert-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .ai-interview-coach .feature-icon {
+            color: var(--ai-green);
+        }
+        
+        .ai-interview-coach .feature-link:hover {
+            color: var(--ai-green);
+        }
+        
+        .interview-recorder {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
+            gap: 15px;
         }
         
-        .cert-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent2);
+        .recorder-controls {
+            display: flex;
+            gap: 10px;
         }
         
-        .cert-icon {
-            font-size: 2.5rem;
+        .recorder-btn {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .record-btn {
+            background: rgba(247, 37, 133, 0.2);
             color: var(--accent2);
-            margin-bottom: 20px;
         }
         
-        .cert-title {
-            font-size: 1.3rem;
+        .record-btn:hover {
+            background: rgba(247, 37, 133, 0.4);
+        }
+        
+        .stop-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+            display: none;
+        }
+        
+        .stop-btn:hover {
+            background: rgba(239, 68, 68, 0.4);
+        }
+        
+        .analyze-btn {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--ai-green);
+            display: none;
+        }
+        
+        .analyze-btn:hover {
+            background: rgba(16, 185, 129, 0.4);
+        }
+        
+        .recorder-status {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+        
+        /* Cyber Attack Map */
+        .cyber-attack-map {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .cyber-attack-map:hover {
+            border-color: var(--danger);
+        }
+        
+        .cyber-attack-map .feature-icon {
+            color: var(--danger);
+        }
+        
+        .cyber-attack-map .feature-link:hover {
+            color: var(--danger);
+        }
+        
+        .attack-map-container {
+            margin-top: 20px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.7);
+            z-index: 2;
+        }
+        
+        .map-content {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-title {
+            font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 10px;
+            color: var(--danger);
+        }
+        
+        .map-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .map-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .map-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--danger);
+        }
+        
+        .map-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Learning Pathway Generator */
+        .learning-pathway {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        
+        .learning-pathway:hover {
+            border-color: var(--cyber-blue);
+        }
+        
+        .learning-pathway .feature-icon {
+            color: var(--cyber-blue);
+        }
+        
+        .learning-pathway .feature-link:hover {
+            color: var(--cyber-blue);
+        }
+        
+        .pathway-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .pathway-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .pathway-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .pathway-step:hover {
+            background: rgba(6, 182, 212, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--cyber-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: 600;
             color: var(--light);
         }
         
-        .cert-status {
-            color: var(--cyber-blue);
+        .step-desc {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Skills Matrix Dashboard */
+        .skills-matrix {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        .skills-matrix:hover {
+            border-color: var(--ai-green);
+        }
+        
+        .skills-matrix .feature-icon {
+            color: var(--ai-green);
+        }
+        
+        .skills-matrix .feature-link:hover {
+            color: var(--ai-green);
+        }
+        
+        .matrix-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .matrix-legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+        
+        .high {
+            background: linear-gradient(45deg, #10b981, #34d399);
+        }
+        
+        .medium {
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+        }
+        
+        .low {
+            background: linear-gradient(45deg, #6b7280, #9ca3af);
+        }
+        
+        /* Cyber Range Simulator */
+        .cyber-range {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        
+        .cyber-range:hover {
+            border-color: var(--danger);
+        }
+        
+        .cyber-range .feature-icon {
+            color: var(--danger);
+        }
+        
+        .cyber-range .feature-link:hover {
+            color: var(--danger);
+        }
+        
+        .range-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .range-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 2px;
+            height: 100%;
+        }
+        
+        .range-cell {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .range-cell.active {
+            background: rgba(239, 68, 68, 0.7);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        
+        .range-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .range-btn {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+        
+        .range-btn:hover {
+            background: rgba(239, 68, 68, 0.4);
+        }
+        
+        /* Responsible AI Auditor */
+        .ai-auditor {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .ai-auditor:hover {
+            border-color: var(--cyber-purple);
+        }
+        
+        .ai-auditor .feature-icon {
+            color: var(--cyber-purple);
+        }
+        
+        .ai-auditor .feature-link:hover {
+            color: var(--cyber-purple);
+        }
+        
+        .auditor-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .auditor-input {
+            display: flex;
+            gap: 10px;
             margin-bottom: 15px;
         }
         
-        .cert-link {
-            display: inline-block;
-            margin-top: auto;
-            padding: 8px 16px;
-            background: rgba(114, 9, 183, 0.2);
-            color: var(--accent2);
-            border-radius: 30px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(114, 9, 183, 0.3);
-        }
-        
-        .cert-link:hover {
-            background: rgba(114, 9, 183, 0.4);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        /* Experience Section */
-        .experience {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--accent2), var(--cyber-blue));
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            border-radius: 2px;
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 15px;
-            transition: all 0.3s ease;
+        .auditor-input input {
+            flex: 1;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
         }
         
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent2);
+        .auditor-input input:focus {
+            outline: none;
+            border-color: var(--cyber-purple);
         }
         
-        .timeline-content h3 {
-            color: var(--accent2);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-content .date {
-            color: var(--cyber-blue);
+        .auditor-btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 10px;
-            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            background: linear-gradient(45deg, var(--cyber-purple), #a78bfa);
+            color: white;
         }
         
-        .timeline-content p {
-            color: rgba(255, 255, 255, 0.9);
+        .auditor-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
         }
         
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, var(--accent2), var(--cyber-blue));
-            border-radius: 50%;
-            top: 20px;
-            z-index: 1;
+        .auditor-results {
+            display: flex;
+            gap: 15px;
         }
         
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
+        .auditor-result {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.3);
         }
         
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
+        .result-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .high-risk {
+            color: var(--danger);
+        }
+        
+        .medium-risk {
+            color: var(--warning);
+        }
+        
+        .low-risk {
+            color: var(--success);
+        }
+        
+        /* Supply Chain Threat Intelligence */
+        .supply-chain {
+            background: rgba(249, 115, 22, 0.05);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+        
+        .supply-chain:hover {
+            border-color: var(--data-orange);
+        }
+        
+        .supply-chain .feature-icon {
+            color: var(--data-orange);
+        }
+        
+        .supply-chain .feature-link:hover {
+            color: var(--data-orange);
+        }
+        
+        .supply-chain-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            height: 200px;
             position: relative;
         }
         
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+        .supply-network {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         
-        .contact-info {
+        .node {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .node:hover {
+            transform: scale(1.2);
+            background: var(--data-orange);
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.7);
+        }
+        
+        .node.warning {
+            background: rgba(249, 115, 22, 0.7);
+            animation: pulse 2s infinite;
+        }
+        
+        .node.danger {
+            background: rgba(239, 68, 68, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .node.safe {
+            background: rgba(16, 185, 129, 0.7);
+        }
+        
+        .edge {
+            position: absolute;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            transform-origin: left center;
+            z-index: -1;
+        }
+        
+        .edge.warning {
+            background: rgba(249, 115, 22, 0.7);
+        }
+        
+        .edge.danger {
+            background: rgba(239, 68, 68, 0.7);
+        }
+        
+        .edge.safe {
+            background: rgba(16, 185, 129, 0.7);
+        }
+        
+        .network-legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+        
+        .threat-legend {
+            background: rgba(239, 68, 68, 0.7);
+        }
+        
+        .warning-legend {
+            background: rgba(249, 115, 22, 0.7);
+        }
+        
+        .safe-legend {
+            background: rgba(16, 185, 129, 0.7);
+        }
+        
+        /* GRC Assistant */
+        .grc-assistant {
+            background: rgba(16, 185, 129, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        .grc-assistant:hover {
+            border-color: var(--ai-green);
+        }
+        
+        .grc-assistant .feature-icon {
+            color: var(--ai-green);
+        }
+        
+        .grc-assistant .feature-link:hover {
+            color: var(--ai-green);
+        }
+        
+        .grc-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .grc-chat {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 10px;
+            overflow-y: auto;
+            padding: 10px;
         }
         
-        .contact-item {
+        .grc-message {
+            padding: 8px 12px;
+            border-radius: 8px;
+            max-width: 80%;
+            font-size: 0.9rem;
+        }
+        
+        .grc-user {
+            align-self: flex-end;
+            background: rgba(16, 185, 129, 0.2);
+            color: white;
+        }
+        
+        .grc-bot {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .grc-input {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
+            gap: 10px;
+        }
+        
+        .grc-input input {
+            flex: 1;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .grc-input input:focus {
+            outline: none;
+            border-color: var(--ai-green);
+        }
+        
+        .grc-input button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
+            border: none;
+            background: linear-gradient(45deg, var(--ai-green), #34d399);
+            color: white;
         }
         
-        .contact-item:hover {
-            transform: translateX(10px);
+        .grc-input button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
         }
         
-        .contact-icon {
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 60px 0 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light);
+            background: linear-gradient(90deg, var(--accent2), var(--cyber-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .social-link {
             width: 50px;
             height: 50px;
-            background: rgba(6, 182, 212, 0.2);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            color: var(--cyber-blue);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover .contact-icon {
-            background: var(--cyber-blue);
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        .contact-text h3 {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
             color: var(--light);
-        }
-        
-        .contact-text p, .contact-text a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
-        .contact-text a:hover {
-            color: var(--accent2);
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-form:hover {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--light);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--light);
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--cyber-blue);
-            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .btn-block {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        .social-link:hover {
             background: linear-gradient(45deg, var(--accent2), var(--accent));
             color: white;
-            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+            transform: translateY(-5px) rotate(15deg);
         }
         
-        .btn-block:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(247, 37, 133, 0.4);
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Chatbot Section */
+        /* Chatbot */
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -937,7 +1261,7 @@
         
         .chatbot-body {
             flex: 1;
-            padding: 20px;
+            padding: 15px;
             overflow-y: auto;
             max-height: 300px;
         }
@@ -951,10 +1275,10 @@
         }
         
         .user-message {
-            background: rgba(6, 182, 212, 0.2);
+            background: rgba(247, 37, 133, 0.2);
             color: white;
             margin-left: auto;
-            border: 1px solid rgba(6, 182, 212, 0.3);
+            border: 1px solid rgba(247, 37, 133, 0.3);
             border-bottom-right-radius: 5px;
         }
         
@@ -981,12 +1305,12 @@
             border-radius: 8px;
             color: white;
             font-family: 'Poppins', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
         
         .chatbot-input input:focus {
             outline: none;
-            border-color: var(--cyber-blue);
+            border-color: var(--accent2);
         }
         
         .chatbot-send {
@@ -1001,71 +1325,6 @@
         
         .chatbot-send:hover {
             transform: scale(1.1);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(15, 23, 42, 0.8);
-            padding: 60px 0 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .footer-logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--light);
-            background: linear-gradient(90deg, var(--accent2), var(--cyber-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .footer-text {
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: var(--light);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-        
-        .social-link:hover {
-            background: linear-gradient(45deg, var(--accent2), var(--accent));
-            color: white;
-            transform: translateY(-5px) rotate(15deg);
-        }
-        
-        .copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         /* Responsive Design */
@@ -1182,6 +1441,28 @@
         .delay-4 {
             animation-delay: 0.8s;
         }
+        
+        /* Typing effect for AI responses */
+        .typing {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .typing::after {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: white;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -1243,6 +1524,124 @@
                 <div class="profile-container">
                     <img src="https://raw.githubusercontent.com/NeoKnkidi7/NeoKnkidi7.github.io/main/profile.jpg" alt="Neo Kennedy Nkidi">
                     <div class="profile-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Advanced Capabilities</h2>
+            <p class="section-subtitle">Explore my cutting-edge AI and cybersecurity tools</p>
+            
+            <div class="features-grid">
+                <!-- AI Interview Coach -->
+                <div class="feature-card ai-interview-coach fade-in-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Interview Coach</h3>
+                    <p class="feature-desc">Practice mock interviews with emotion AI analysis using Whisper API and Google's Perspective API for tone detection and feedback.</p>
+                    <div class="interview-recorder">
+                        <div class="recorder-controls">
+                            <button class="record-btn" id="recordBtn">
+                                <i class="fas fa-microphone"></i> Start Recording
+                            </button>
+                            <button class="stop-btn" id="stopBtn" style="display: none;">
+                                <i class="fas fa-stop"></i> Stop
+                            </button>
+                            <button class="analyze-btn" id="analyzeBtn" style="display: none;">
+                                <i class="fas fa-chart-line"></i> Analyze
+                            </button>
+                        </div>
+                        <div class="recorder-status" id="recorderStatus">Ready to record your interview response</div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Cyber Attack Map -->
+                <div class="feature-card cyber-attack-map fade-in-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-virus"></i>
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Live Cyber Attack Map</h3>
+                    <p class="feature-desc">Real-time visualization of simulated attacks using techniques from Google Cyber cert with OCI logging analytics.</p>
+                    <div class="attack-map-container">
+                        <div class="map-overlay">
+                            <div class="map-content">
+                                <div class="map-title">Global Attack Simulation</div>
+                                <div class="map-stats">
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="ddosCount">12</div>
+                                        <div class="map-stat-label">DDoS Attacks</div>
+                                    </div>
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="ransomwareCount">5</div>
+                                        <div class="map-stat-label">Ransomware</div>
+                                    </div>
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="malwareCount">8</div>
+                                        <div class="map-stat-label">Malware</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-network" id="attackMap"></div>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <div class="legend-color threat-legend"></div>
+                                <span>High Risk</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color warning-legend"></div>
+                                <span>Medium Risk</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color safe-legend"></div>
+                                <span>Low Risk</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">View Map <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Learning Pathway Generator -->
+                <div class="feature-card learning-pathway fade-in-up delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">Learning Pathway Generator</h3>
+                    <p class="feature-desc">Personalized upskilling recommendations using collaborative filtering based on your Quantium simulation experience.</p>
+                    <div class="pathway-container">
+                        <div class="pathway-steps">
+                            <div class="pathway-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Complete AI Fundamentals</div>
+                                    <div class="step-desc">Master core AI concepts and machine learning basics</div>
+                                </div>
+                            </div>
+                            <div class="pathway-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Deep Learning Specialization</div>
+                                    <div class="step-desc">Dive into neural networks and advanced architectures</div>
+                                </div>
+                            </div>
+                            <div class="pathway-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Generative AI Applications</div>
+                                    <div class="step-desc">Explore LLMs, transformers, and creative AI tools</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Generate Path <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1529,6 +1928,318 @@
         </div>
     </section>
     
+    <!-- Advanced AI & Cybersecurity Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Advanced Capabilities</h2>
+            <p class="section-subtitle">Interactive demonstrations of my AI and cybersecurity expertise</p>
+            
+            <div class="features-grid">
+                <!-- AI Interview Coach -->
+                <div class="feature-card ai-interview-coach fade-in-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI Interview Coach</h3>
+                    <p class="feature-desc">Practice mock interviews with emotion AI analysis using Whisper API and Google's Perspective API for tone detection and feedback.</p>
+                    <div class="interview-recorder">
+                        <div class="recorder-controls">
+                            <button class="record-btn" id="recordBtn">
+                                <i class="fas fa-microphone"></i> Start Recording
+                            </button>
+                            <button class="stop-btn" id="stopBtn" style="display: none;">
+                                <i class="fas fa-stop"></i> Stop
+                            </button>
+                            <button class="analyze-btn" id="analyzeBtn" style="display: none;">
+                                <i class="fas fa-chart-line"></i> Analyze
+                            </button>
+                        </div>
+                        <div class="recorder-status" id="recorderStatus">Ready to record your interview response</div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Cyber Attack Map -->
+                <div class="feature-card cyber-attack-map fade-in-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-virus"></i>
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Live Cyber Attack Map</h3>
+                    <p class="feature-desc">Real-time visualization of simulated attacks using techniques from Google Cyber cert with OCI logging analytics.</p>
+                    <div class="attack-map-container">
+                        <div class="map-overlay">
+                            <div class="map-content">
+                                <div class="map-title">Global Attack Simulation</div>
+                                <div class="map-stats">
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="ddosCount">12</div>
+                                        <div class="map-stat-label">DDoS Attacks</div>
+                                    </div>
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="ransomwareCount">5</div>
+                                        <div class="map-stat-label">Ransomware</div>
+                                    </div>
+                                    <div class="map-stat">
+                                        <div class="map-stat-value" id="malwareCount">8</div>
+                                        <div class="map-stat-label">Malware</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-network" id="attackMap"></div>
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <div class="legend-color threat-legend"></div>
+                                <span>High Risk</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color warning-legend"></div>
+                                <span>Medium Risk</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color safe-legend"></div>
+                                <span>Low Risk</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">View Map <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Learning Pathway Generator -->
+                <div class="feature-card learning-pathway fade-in-up delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">Learning Pathway Generator</h3>
+                    <p class="feature-desc">Personalized upskilling recommendations using collaborative filtering based on your Quantium simulation experience.</p>
+                    <div class="pathway-container">
+                        <div class="pathway-steps">
+                            <div class="pathway-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Complete AI Fundamentals</div>
+                                    <div class="step-desc">Master core AI concepts and machine learning basics</div>
+                                </div>
+                            </div>
+                            <div class="pathway-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Deep Learning Specialization</div>
+                                    <div class="step-desc">Dive into neural networks and advanced architectures</div>
+                                </div>
+                            </div>
+                            <div class="pathway-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Generative AI Applications</div>
+                                    <div class="step-desc">Explore LLMs, transformers, and creative AI tools</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Generate Path <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Advanced AI & Cybersecurity Features (Part 2) -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <!-- Self-Updating Skills Matrix Dashboard -->
+                <div class="feature-card ai-interview-coach fade-in-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="feature-title">Skills Matrix Dashboard</h3>
+                    <p class="feature-desc">NLP-driven dashboard analyzing certifications/job simulations to generate dynamic skills heatmap with D3.js visualization.</p>
+                    <div class="interview-recorder">
+                        <div class="matrix-container">
+                            <div class="matrix-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color high"></div>
+                                    <span>High Proficiency</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color medium"></div>
+                                    <span>Medium Proficiency</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color low"></div>
+                                    <span>Low Proficiency</span>
+                                </div>
+                            </div>
+                            <div id="skillsMatrix"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Explore Matrix <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Cyber Range Simulator -->
+                <div class="feature-card cyber-attack-map fade-in-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="feature-title">Cyber Range Simulator</h3>
+                    <p class="feature-desc">Virtual lab simulating attack/defense scenarios with adaptive threat actors that evolve based on user defenses.</p>
+                    <div class="attack-map-container">
+                        <div class="range-container">
+                            <div class="range-grid" id="cyberRange"></div>
+                            <div class="range-controls">
+                                <button class="range-btn" id="startRangeBtn">
+                                    <i class="fas fa-play"></i> Start Simulation
+                                </button>
+                                <button class="range-btn" id="defendBtn" style="display: none;">
+                                    <i class="fas fa-shield-alt"></i> Deploy Defense
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Launch Simulator <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Responsible AI Auditor -->
+                <div class="feature-card learning-pathway fade-in-up delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Responsible AI Auditor</h3>
+                    <p class="feature-desc">Tool that scans AI-generated content for deepfakes, bias, or misinformation using convolutional VAEs and SHAP values.</p>
+                    <div class="pathway-container">
+                        <div class="auditor-container">
+                            <div class="auditor-input">
+                                <input type="text" id="aiInput" placeholder="Enter AI-generated text to analyze...">
+                                <button class="auditor-btn" id="analyzeAiBtn">
+                                    <i class="fas fa-search"></i> Analyze
+                                </button>
+                            </div>
+                            <div class="auditor-results">
+                                <div class="auditor-result">
+                                    <div class="result-title">
+                                        <i class="fas fa-exclamation-triangle" style="color: var(--danger);"></i> 
+                                        Bias Detection
+                                    </div>
+                                    <div class="result-value high-risk" id="biasValue">Low Risk</div>
+                                </div>
+                                <div class="auditor-result">
+                                    <div class="result-title">
+                                        <i class="fas fa-robot" style="color: var(--accent2);"></i> 
+                                        Deepfake Probability
+                                    </div>
+                                    <div class="result-value medium-risk" id="deepfakeValue">Medium Risk</div>
+                                </div>
+                                <div class="auditor-result">
+                                    <div class="result-title">
+                                        <i class="fas fa-ban" style="color: var(--danger);"></i> 
+                                        Misinformation Risk
+                                    </div>
+                                    <div class="result-value low-risk" id="misinfoValue">Low Risk</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Audit Content <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cloud-Native Solutions -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Cloud-Native Solutions</h2>
+            <p class="section-subtitle">Leveraging Oracle Cloud Infrastructure for innovative applications</p>
+            
+            <div class="features-grid">
+                <!-- Supply Chain Threat Intelligence -->
+                <div class="feature-card cyber-attack-map fade-in-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 class="feature-title">Supply Chain Threat Intelligence</h3>
+                    <p class="feature-desc">Leverages Oracle Cloud to ingest IoT sensor data + threat feeds, predicting disruptions using time-series forecasting.</p>
+                    <div class="attack-map-container">
+                        <div class="supply-chain-container">
+                            <div class="supply-network" id="supplyChainNetwork"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Explore Platform <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Automated GRC Assistant -->
+                <div class="feature-card learning-pathway fade-in-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Automated GRC Assistant</h3>
+                    <p class="feature-desc">Chatbot using RAG to answer compliance queries, trained on PWC/Deloitte job simulations with OCI Generative AI Service.</p>
+                    <div class="pathway-container">
+                        <div class="grc-container">
+                            <div class="grc-chat">
+                                <div class="grc-message bot-message">
+                                    Hello! I'm your GRC Assistant. How can I help with compliance today?
+                                </div>
+                            </div>
+                            <div class="grc-input">
+                                <input type="text" id="grcInput" placeholder="Ask a compliance question...">
+                                <button class="grc-btn" id="sendGrcBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="feature-link" target="_blank">Chat with GRC Assistant <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Multidisciplinary IT professional specializing in AI, cybersecurity, and data science</p>
+            
+            <div class="about-content">
+                <div class="about-text fade-in-up delay-1">
+                    <p>I'm Neo Kennedy Nkidi, a final-year BSc IT student at North-West University with a diverse skill set spanning AI, cybersecurity, data science, and software engineering. I've earned 15+ industry certifications from Microsoft, Google, Oracle, and Deloitte, demonstrating my commitment to continuous learning.</p>
+                    
+                    <p>My academic journey includes distinctions in Artificial Intelligence, Descriptive Statistics, Problem Solving for Managers, and Communication Skills. I've applied these skills to develop innovative solutions addressing local and social challenges.</p>
+                    
+                    <p>My project portfolio showcases my ability to create practical, data-driven solutions using technologies like Python, React, Node.js, and various AI frameworks. I'm passionate about solving complex problems at the intersection of technology and human needs.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Certifications</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>7</h3>
+                            <p>Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5+</h3>
+                            <p>Experience Areas</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Dedication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
@@ -1536,6 +2247,7 @@
             <p class="section-subtitle">Innovative solutions addressing real-world challenges</p>
             
             <div class="projects-grid">
+                <!-- Project 1: FinSight -->
                 <div class="project-card fade-in-up delay-1">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo/1555066931-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="FinSight Financial Intelligence Platform">
@@ -1553,6 +2265,7 @@
                     </div>
                 </div>
                 
+                <!-- Project 2: Load-Shedding Impact Predictor -->
                 <div class="project-card fade-in-up delay-2">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo/1581595219319-6952d7a0d1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Load-Shedding Impact Predictor">
@@ -1569,6 +2282,7 @@
                     </div>
                 </div>
                 
+                <!-- Project 3: Indigenous Language Voice Assistant -->
                 <div class="project-card fade-in-up delay-3">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo/1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1611&q=80" alt="Indigenous Language Voice Assistant">
@@ -1585,6 +2299,7 @@
                     </div>
                 </div>
                 
+                <!-- Project 4: GBV Resource Navigator -->
                 <div class="project-card fade-in-up delay-4">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo/1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="GBV Resource Navigator">
@@ -1611,7 +2326,7 @@
             <p class="section-subtitle">Industry-recognized credentials and professional development</p>
             
             <div class="cert-grid">
-                <!-- Completed Certifications -->
+                <!-- Microsoft Certifications -->
                 <div class="cert-card fade-in-up delay-1">
                     <div class="cert-icon">
                         <i class="fab fa-microsoft"></i>
@@ -1885,15 +2600,8 @@
     </div>
     
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
         // Mobile Navigation Toggle
         const mobileToggle = document.getElementById('mobile-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -1920,98 +2628,587 @@
             }
         });
         
-        // Animate skill bars when they come into view
-        const skillBars = document.querySelectorAll('.skill-progress');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const width = entry.target.style.width;
-                    entry.target.style.width = '0';
-                    setTimeout(() => {
-                        entry.target.style.width = width;
-                    }, 300);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
+        // AI Interview Coach
+        const recordBtn = document.getElementById('recordBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const recorderStatus = document.getElementById('recorderStatus');
         
-        skillBars.forEach(bar => {
-            observer.observe(bar);
+        let isRecording = false;
+        
+        recordBtn.addEventListener('click', () => {
+            if (!isRecording) {
+                isRecording = true;
+                recordBtn.style.display = 'none';
+                stopBtn.style.display = 'inline-block';
+                analyzeBtn.style.display = 'inline-block';
+                recorderStatus.textContent = 'Recording in progress...';
+                recorderStatus.style.color = 'var(--accent2)';
+                
+                // Simulate recording with animation
+                const nodes = document.querySelectorAll('.network-node');
+                nodes.forEach(node => {
+                    node.classList.add('active');
+                });
+            }
         });
         
-        // Scroll reveal for sections
-        const sections = document.querySelectorAll('section');
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        sections.forEach(section => {
-            section.classList.add('section-hidden');
-            sectionObserver.observe(section);
+        stopBtn.addEventListener('click', () => {
+            if (isRecording) {
+                isRecording = false;
+                stopBtn.style.display = 'none';
+                analyzeBtn.style.display = 'inline-block';
+                recorderStatus.textContent = 'Recording stopped. Click Analyze to process your response.';
+                recorderStatus.style.color = 'var(--cyber-blue)';
+                
+                // Simulate stopping recording
+                const nodes = document.querySelectorAll('.network-node');
+                nodes.forEach(node => {
+                    node.classList.remove('active');
+                });
+            }
         });
         
-        // Timeline animation
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        timelineItems.forEach(item => {
-            timelineObserver.observe(item);
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+        analyzeBtn.addEventListener('click', () => {
+            stopBtn.style.display = 'none';
+            analyzeBtn.style.display = 'none';
+            recordBtn.style.display = 'inline-block';
+            recorderStatus.textContent = 'Analyzing your response...';
+            recorderStatus.style.color = 'var(--ai-green)';
             
-            // In a real application, you would send this data to a server
-            // For demo purposes, we'll show a success message
-            const formData = {
-                name, email, subject, message
-            };
-            
-            console.log('Form submitted:', formData);
-            
-            // Create a success message element
-            const successMessage = document.createElement('div');
-            successMessage.style.position = 'fixed';
-            successMessage.style.top = '20px';
-            successMessage.style.left = '50%';
-            successMessage.style.transform = 'translateX(-50%)';
-            successMessage.style.background = 'rgba(16, 185, 129, 0.9)';
-            successMessage.style.color = 'white';
-            successMessage.style.padding = '15px 30px';
-            successMessage.style.borderRadius = '8px';
-            successMessage.style.zIndex = '2000';
-            successMessage.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
-            successMessage.textContent = 'Message sent successfully! I will get back to you soon.';
-            
-            document.body.appendChild(successMessage);
-            
-            // Remove the message after 5 seconds
+            // Simulate analysis with animation
             setTimeout(() => {
-                successMessage.style.opacity = '0';
-                successMessage.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    document.body.removeChild(successMessage);
-                }, 500);
-            }, 5000);
+                recorderStatus.textContent = 'Analysis complete! Your response shows strong technical knowledge with excellent communication clarity.';
+                recorderStatus.style.color = 'var(--ai-green)';
+                
+                // Show analysis results
+                const analysisResults = `
+                    <div class="analysis-result">
+                        <div class="result-title">Communication Analysis</div>
+                        <div class="result-score high-risk">Excellent Clarity</div>
+                        <p>Your response is well-structured with clear technical terminology and logical flow.</p>
+                    </div>
+                    <div class="analysis-result">
+                        <div class="result-title">Technical Accuracy</div>
+                        <div class="result-score medium-risk">Good</div>
+                        <p>Your technical concepts are accurate but could include more specific examples.</p>
+                    </div>
+                    <div class="analysis-result">
+                        <div class="result-title">Confidence Level</div>
+                        <div class="result-score high-risk">High</div>
+                        <p>Your response demonstrates strong confidence in your technical abilities.</p>
+                    </div>
+                `;
+                
+                // Create results container
+                const resultsContainer = document.createElement('div');
+                resultsContainer.className = 'analysis-results';
+                resultsContainer.innerHTML = analysisResults;
+                
+                // Replace recorder status with results
+                const recorderContainer = document.querySelector('.interview-recorder');
+                recorderContainer.innerHTML = '';
+                recorderContainer.appendChild(resultsContainer);
+                
+                // Add retry button
+                const retryBtn = document.createElement('button');
+                retryBtn.className = 'record-btn';
+                retryBtn.innerHTML = '<i class="fas fa-redo"></i> Try Again';
+                retryBtn.style.marginTop = '15px';
+                retryBtn.addEventListener('click', () => {
+                    location.reload();
+                });
+                recorderContainer.appendChild(retryBtn);
+                
+            }, 2000);
+        });
+        
+        // Cyber Attack Map
+        const attackMap = document.getElementById('attackMap');
+        const ddosCount = document.getElementById('ddosCount');
+        const ransomwareCount = document.getElementById('ransomwareCount');
+        const malwareCount = document.getElementById('malwareCount');
+        
+        // Create network nodes
+        for (let i = 0; i < 30; i++) {
+            const node = document.createElement('div');
+            node.className = 'network-node';
+            node.style.left = `${Math.random() * 100}%`;
+            node.style.top = `${Math.random() * 100}%`;
+            attackMap.appendChild(node);
+        }
+        
+        // Create network edges
+        for (let i = 0; i < 40; i++) {
+            const edge = document.createElement('div');
+            edge.className = 'network-edge';
+            edge.style.left = `${Math.random() * 100}%`;
+            edge.style.top = `${Math.random() * 100}%`;
+            edge.style.width = `${Math.random() * 50 + 20}px`;
+            edge.style.transform = `rotate(${Math.random() * 360}deg)`;
+            attackMap.appendChild(edge);
+        }
+        
+        // Simulate attack data
+        let ddos = 12;
+        let ransomware = 5;
+        let malware = 8;
+        
+        // Update attack counts
+        function updateAttackCounts() {
+            ddosCount.textContent = ddos;
+            ransomwareCount.textContent = ransomware;
+            malwareCount.textContent = malware;
+        }
+        
+        // Simulate random attacks
+        setInterval(() => {
+            const attackType = Math.floor(Math.random() * 3);
+            if (attackType === 0) {
+                ddos++;
+            } else if (attackType === 1) {
+                ransomware++;
+            } else {
+                malware++;
+            }
+            updateAttackCounts();
             
-            // Reset the form
-            contactForm.reset();
+            // Highlight random nodes
+            const nodes = document.querySelectorAll('.network-node');
+            nodes.forEach(node => {
+                node.classList.remove('warning', 'danger');
+            });
+            
+            const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+            const randomType = Math.floor(Math.random() * 3);
+            if (randomType === 0) {
+                randomNode.classList.add('warning');
+            } else if (randomType === 1) {
+                randomNode.classList.add('danger');
+            }
+        }, 3000);
+        
+        // Learning Pathway Generator
+        const pathwaySteps = document.querySelector('.pathway-steps');
+        
+        // Add click event to pathway steps
+        document.querySelectorAll('.pathway-step').forEach(step => {
+            step.addEventListener('click', () => {
+                // Highlight selected step
+                document.querySelectorAll('.pathway-step').forEach(s => {
+                    s.style.border = 'none';
+                });
+                step.style.border = '2px solid var(--ai-green)';
+                
+                // Show detailed info
+                const stepNumber = step.querySelector('.step-number').textContent;
+                const stepTitle = step.querySelector('.step-title').textContent;
+                
+                const detailInfo = document.createElement('div');
+                detailInfo.className = 'step-detail';
+                detailInfo.innerHTML = `
+                    <div class="detail-title">${stepTitle} Details</div>
+                    <p>Based on your Google AI Fluency certification and Oracle Cloud Infrastructure certifications, this step focuses on:</p>
+                    <ul class="detail-list">
+                        <li>Advanced AI model training techniques</li>
+                        <li>Integration with OCI AI Services</li>
+                        <li>Real-world implementation strategies</li>
+                        <li>Performance optimization methods</li>
+                    </ul>
+                    <div class="detail-resources">
+                        <div class="resource-item">
+                            <i class="fas fa-book"></i> Advanced Machine Learning with Python
+                        </div>
+                        <div class="resource-item">
+                            <i class="fas fa-video"></i> OCI AI Services Masterclass
+                        </div>
+                        <div class="resource-item">
+                            <i class="fas fa-code"></i> Practical AI Implementation Lab
+                        </div>
+                    </div>
+                `;
+                
+                // Add detail info below the step
+                step.appendChild(detailInfo);
+                
+                // Remove detail info from other steps
+                document.querySelectorAll('.pathway-step').forEach(s => {
+                    if (s !== step && s.querySelector('.step-detail')) {
+                        s.querySelector('.step-detail').remove();
+                    }
+                });
+            });
+        });
+        
+        // Skills Matrix Dashboard
+        const skillsMatrix = document.getElementById('skillsMatrix');
+        
+        // Create skills matrix visualization
+        const skillsData = {
+            labels: ['AI/ML', 'Cybersecurity', 'Data Science', 'Cloud', 'DevOps', 'Web Dev', 'Mobile Dev', 'UI/UX'],
+            datasets: [{
+                label: 'Current Skills',
+                data: [85, 80, 90, 75, 70, 85, 65, 75],
+                backgroundColor: 'rgba(114, 9, 183, 0.2)',
+                borderColor: 'rgba(114, 9, 183, 0.8)',
+                borderWidth: 2,
+                pointBackgroundColor: 'rgba(114, 9, 183, 1)',
+                pointRadius: 5,
+                pointHoverRadius: 7
+            }, {
+                label: 'Industry Demand',
+                data: [95, 90, 85, 80, 75, 70, 65, 60],
+                backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                borderColor: 'rgba(6, 182, 212, 0.8)',
+                borderWidth: 2,
+                pointBackgroundColor: 'rgba(6, 182, 212, 1)',
+                pointRadius: 5,
+                pointHoverRadius: 7
+            }]
+        };
+        
+        // Create radar chart
+        new Chart(skillsMatrix, {
+            type: 'radar',
+            data: skillsData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)'
+                        },
+                        pointLabels: {
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            font: {
+                                size: 12,
+                                family: "'Poppins', sans-serif"
+                            }
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: 'rgba(255, 255, 255, 0.5)',
+                            font: {
+                                size: 10
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            font: {
+                                family: "'Poppins', sans-serif"
+                            },
+                            boxWidth: 15,
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(15, 23, 42, 0.8)',
+                        titleColor: 'rgba(255, 255, 255, 0.9)',
+                        bodyColor: 'rgba(255, 255, 255, 0.9)',
+                        borderColor: 'rgba(114, 9, 183, 0.5)',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.2
+                    }
+                }
+            }
+        });
+        
+        // Cyber Range Simulator
+        const cyberRange = document.getElementById('cyberRange');
+        
+        // Create cyber range grid
+        for (let i = 0; i < 64; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'range-cell';
+            cyberRange.appendChild(cell);
+        }
+        
+        // Add edges
+        for (let i = 0; i < 32; i++) {
+            const edge = document.createElement('div');
+            edge.className = 'range-edge';
+            edge.style.width = `${Math.random() * 50 + 20}px`;
+            edge.style.left = `${Math.random() * 100}%`;
+            edge.style.top = `${Math.random() * 100}%`;
+            edge.style.transform = `rotate(${Math.random() * 360}deg)`;
+            cyberRange.appendChild(edge);
+        }
+        
+        // Simulate attacks in the cyber range
+        const startRangeBtn = document.getElementById('startRangeBtn');
+        const defendBtn = document.getElementById('defendBtn');
+        
+        let simulationActive = false;
+        
+        startRangeBtn.addEventListener('click', () => {
+            if (!simulationActive) {
+                simulationActive = true;
+                startRangeBtn.style.display = 'none';
+                defendBtn.style.display = 'inline-block';
+                
+                // Start attack simulation
+                const cells = document.querySelectorAll('.range-cell');
+                const edges = document.querySelectorAll('.range-edge');
+                
+                // Reset all cells and edges
+                cells.forEach(cell => {
+                    cell.className = 'range-cell';
+                });
+                edges.forEach(edge => {
+                    edge.className = 'range-edge';
+                });
+                
+                // Simulate attack propagation
+                let attackIndex = 0;
+                const attackInterval = setInterval(() => {
+                    if (attackIndex < 30) {
+                        const randomCell = cells[Math.floor(Math.random() * cells.length)];
+                        randomCell.className = 'range-cell danger';
+                        
+                        // Add some warning cells
+                        for (let i = 0; i < 5; i++) {
+                            const warningCell = cells[Math.floor(Math.random() * cells.length)];
+                            if (!warningCell.classList.contains('danger')) {
+                                warningCell.className = 'range-cell warning';
+                            }
+                        }
+                        
+                        // Add some safe cells
+                        for (let i = 0; i < 10; i++) {
+                            const safeCell = cells[Math.floor(Math.random() * cells.length)];
+                            if (!safeCell.classList.contains('danger') && !safeCell.classList.contains('warning')) {
+                                safeCell.className = 'range-cell safe';
+                            }
+                        }
+                        
+                        // Add some edges
+                        for (let i = 0; i < 3; i++) {
+                            const randomEdge = edges[Math.floor(Math.random() * edges.length)];
+                            randomEdge.className = 'range-edge danger';
+                        }
+                        
+                        attackIndex++;
+                    } else {
+                        clearInterval(attackInterval);
+                    }
+                }, 300);
+            }
+        });
+        
+        defendBtn.addEventListener('click', () => {
+            if (simulationActive) {
+                simulationActive = false;
+                defendBtn.style.display = 'none';
+                startRangeBtn.style.display = 'inline-block';
+                
+                // Reset all cells and edges
+                const cells = document.querySelectorAll('.range-cell');
+                const edges = document.querySelectorAll('.range-edge');
+                
+                cells.forEach(cell => {
+                    cell.className = 'range-cell';
+                });
+                edges.forEach(edge => {
+                    edge.className = 'range-edge';
+                });
+            }
+        });
+        
+        // Responsible AI Auditor
+        const aiInput = document.getElementById('aiInput');
+        const analyzeAiBtn = document.getElementById('analyzeAiBtn');
+        const biasValue = document.getElementById('biasValue');
+        const deepfakeValue = document.getElementById('deepfakeValue');
+        const misinfoValue = document.getElementById('misinfoValue');
+        
+        analyzeAiBtn.addEventListener('click', () => {
+            const input = aiInput.value.trim();
+            if (input) {
+                // Simulate analysis with animation
+                biasValue.className = 'result-value typing';
+                deepfakeValue.className = 'result-value typing';
+                misinfoValue.className = 'result-value typing';
+                
+                setTimeout(() => {
+                    // Generate random analysis results
+                    const biasScore = Math.floor(Math.random() * 30);
+                    const deepfakeScore = Math.floor(Math.random() * 50);
+                    const misinfoScore = Math.floor(Math.random() * 20);
+                    
+                    // Update UI with results
+                    biasValue.textContent = biasScore;
+                    deepfakeValue.textContent = deepfakeScore;
+                    misinfoValue.textContent = misinfoScore;
+                    
+                    // Set risk classes
+                    biasValue.className = biasScore > 15 ? 'result-value medium-risk' : 'result-value low-risk';
+                    deepfakeValue.className = deepfakeScore > 25 ? 'result-value high-risk' : (deepfakeScore > 15 ? 'result-value medium-risk' : 'result-value low-risk');
+                    misinfoValue.className = misinfoScore > 10 ? 'result-value medium-risk' : 'result-value low-risk';
+                    
+                    // Add detailed feedback
+                    const feedback = `
+                        <div class="feedback-detail">
+                            <p>Analysis of your text shows:</p>
+                            <ul>
+                                <li>Bias Score: ${biasScore}/100 - ${biasScore > 15 ? 'Moderate risk of bias detected' : 'Low risk of bias'}</li>
+                                <li>Deepfake Probability: ${deepfakeScore}/100 - ${deepfakeScore > 25 ? 'High risk of being AI-generated' : (deepfakeScore > 15 ? 'Moderate risk' : 'Low risk')}</li>
+                                <li>Misinformation Risk: ${misinfoScore}/100 - ${misinfoScore > 10 ? 'Some factual inaccuracies detected' : 'Low misinformation risk'}</li>
+                            </ul>
+                            <p class="recommendation">Recommendation: ${biasScore > 15 || deepfakeScore > 25 || misinfoScore > 10 ? 'Review and edit content for accuracy and objectivity' : 'Content appears to be authentic and factual'}</p>
+                        </div>
+                    `;
+                    
+                    // Add feedback to container
+                    const feedbackContainer = document.querySelector('.auditor-container');
+                    const existingFeedback = feedbackContainer.querySelector('.feedback-detail');
+                    if (existingFeedback) {
+                        existingFeedback.remove();
+                    }
+                    
+                    feedbackContainer.appendChild(document.createRange().createContextualFragment(feedback));
+                    
+                    // Clear input
+                    aiInput.value = '';
+                }, 1500);
+            }
+        });
+        
+        // Supply Chain Threat Intelligence
+        const supplyChainNetwork = document.getElementById('supplyChainNetwork');
+        
+        // Create nodes
+        const nodeTypes = ['facility', 'data', 'user', 'threat'];
+        const nodeIcons = ['server', 'database', 'user', 'virus'];
+        
+        for (let i = 0; i < 25; i++) {
+            const node = document.createElement('div');
+            node.className = 'supply-chain-node';
+            node.classList.add(nodeTypes[Math.floor(Math.random() * nodeTypes.length)]);
+            node.innerHTML = `<i class="fas fa-${nodeIcons[Math.floor(Math.random() * nodeIcons.length)]}"></i>`;
+            node.style.left = `${Math.random() * 100}%`;
+            node.style.top = `${Math.random() * 100}%`;
+            supplyChainNetwork.appendChild(node);
+        }
+        
+        // Add connecting lines
+        for (let i = 0; i < 40; i++) {
+            const edge = document.createElement('div');
+            edge.className = 'supply-chain-edge';
+            edge.style.left = `${Math.random() * 100}%`;
+            edge.style.top = `${Math.random() * 100}%`;
+            edge.style.width = `${Math.random() * 50 + 20}px`;
+            edge.style.transform = `rotate(${Math.random() * 360}deg)`;
+            supplyChainNetwork.appendChild(edge);
+        }
+        
+        // Simulate threats
+        setInterval(() => {
+            const nodes = document.querySelectorAll('.supply-chain-node');
+            const edges = document.querySelectorAll('.supply-chain-edge');
+            
+            // Reset all nodes and edges
+            nodes.forEach(node => {
+                node.classList.remove('warning', 'danger');
+            });
+            edges.forEach(edge => {
+                edge.classList.remove('warning', 'danger');
+            });
+            
+            // Add random threat
+            const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+            randomNode.classList.add('danger');
+            
+            // Add warning nodes
+            for (let i = 0; i < 3; i++) {
+                const warningNode = nodes[Math.floor(Math.random() * nodes.length)];
+                if (!warningNode.classList.contains('danger')) {
+                    warningNode.classList.add('warning');
+                }
+            }
+            
+            // Add threat edges
+            for (let i = 0; i < 3; i++) {
+                const randomEdge = edges[Math.floor(Math.random() * edges.length)];
+                randomEdge.classList.add('danger');
+            }
+        }, 5000);
+        
+        // GRC Assistant
+        const grcInput = document.getElementById('grcInput');
+        const sendGrcBtn = document.getElementById('sendGrcBtn');
+        
+        sendGrcBtn.addEventListener('click', () => {
+            const input = grcInput.value.trim();
+            if (input) {
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'grc-message user-message';
+                userMessage.textContent = input;
+                document.querySelector('.grc-chat').appendChild(userMessage);
+                
+                // Clear input
+                grcInput.value = '';
+                
+                // Scroll to bottom
+                document.querySelector('.grc-chat').scrollTop = document.querySelector('.grc-chat').scrollHeight;
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'grc-message bot-message';
+                    
+                    // Generate response based on input
+                    let response = "I can help with that. Based on your certifications in ";
+                    
+                    if (input.toLowerCase().includes('security') || input.toLowerCase().includes('cyber')) {
+                        response += "Google Cybersecurity, Microsoft Responsible AI, and Oracle Cloud Infrastructure, ";
+                    }
+                    
+                    if (input.toLowerCase().includes('ai') || input.toLowerCase().includes('artificial')) {
+                        response += "Google AI Fundamentals, Microsoft Generative AI, and Oracle Cloud AI Services, ";
+                    }
+                    
+                    if (input.toLowerCase().includes('data') || input.toLowerCase().includes('analytics')) {
+                        response += "Google Business Intelligence, Oracle Data Science, and Oracle BigQuery, ";
+                    }
+                    
+                    if (input.toLowerCase().includes('project')) {
+                        response += "Google Project Management and Deloitte Project Simulation, ";
+                    }
+                    
+                    if (input.toLowerCase().includes('compliance') || input.toLowerCase().includes('governance')) {
+                        response += "PWC Cyber Security Consulting Simulation and Deloitte Technology Simulation, ";
+                    }
+                    
+                    response += "I recommend reviewing your certification documents and relevant industry frameworks like NIST or ISO 27001.";
+                    
+                    botMessage.textContent = response;
+                    document.querySelector('.grc-chat').appendChild(botMessage);
+                    
+                    // Scroll to bottom
+                    document.querySelector('.grc-chat').scrollTop = document.querySelector('.grc-chat').scrollHeight;
+                }, 1000);
+            }
         });
         
         // Chatbot functionality
@@ -2022,7 +3219,6 @@
         const chatbotInput = document.getElementById('chatbot-input');
         const chatbotSend = document.getElementById('chatbot-send');
         
-        // Toggle chatbot window
         chatbotToggle.addEventListener('click', () => {
             chatbotWindow.classList.add('active');
         });
@@ -2031,7 +3227,16 @@
             chatbotWindow.classList.remove('active');
         });
         
-        // Send message function
+        chatbotSend.addEventListener('click', () => {
+            sendMessage();
+        });
+        
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
         function sendMessage() {
             const message = chatbotInput.value.trim();
             if (message) {
@@ -2047,12 +3252,11 @@
                 // Scroll to bottom
                 chatbotBody.scrollTop = chatbotBody.scrollHeight;
                 
-                // Simulate bot response after a short delay
+                // Simulate bot response
                 setTimeout(() => {
-                    const botResponse = getBotResponse(message);
                     const botMessage = document.createElement('div');
                     botMessage.className = 'chat-message bot-message';
-                    botMessage.textContent = botResponse;
+                    botMessage.textContent = getBotResponse(message);
                     chatbotBody.appendChild(botMessage);
                     
                     // Scroll to bottom
@@ -2061,22 +3265,11 @@
             }
         }
         
-        // Send message on button click
-        chatbotSend.addEventListener('click', sendMessage);
-        
-        // Send message on Enter key
-        chatbotInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-        
-        // Simple bot response logic
         function getBotResponse(message) {
             message = message.toLowerCase();
             
             if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
-                return "Hello! How can I assist you today?";
+                return "Hello! I'm Neo's AI Assistant. How can I help you today?";
             } else if (message.includes('name') || message.includes('who are you')) {
                 return "I'm Neo's AI Assistant. I can help you learn about Neo's skills, projects, and certifications.";
             } else if (message.includes('certification') || message.includes('certifications') || message.includes('certificate')) {
@@ -2101,6 +3294,38 @@
                 return "I'm not sure how to answer that. You can ask about Neo's skills, projects, certifications, experience, or contact information.";
             }
         }
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            // Simulate form submission
+            const successMessage = document.createElement('div');
+            successMessage.style.position = 'fixed';
+            successMessage.style.top = '20px';
+            successMessage.style.left = '50%';
+            successMessage.style.transform = 'translateX(-50%)';
+            successMessage.style.background = 'rgba(16, 185, 129, 0.9)';
+            successMessage.style.color = 'white';
+            successMessage.style.padding = '15px 30px';
+            successMessage.style.borderRadius = '8px';
+            successMessage.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+            successMessage.textContent = 'Message sent successfully! I will get back to you soon.';
+            
+            document.body.appendChild(successMessage);
+            
+            // Remove message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+                successMessage.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => {
+                    document.body.removeChild(successMessage);
+                }, 500);
+            }, 5000);
+            
+            // Reset form
+            contactForm.reset();
+        });
     </script>
 </body>
 </html>
