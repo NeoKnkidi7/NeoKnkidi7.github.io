@@ -1576,11 +1576,11 @@
         </div>
     </section>
     
-    <!-- Experience Section -->
+  <!-- Experience Section - Fixed Implementation -->
     <section class="experience" id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <p class="section-subtitle">Professional journey and practical applications</p>
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My journey in technology and innovation</p>
             
             <div class="timeline">
                 <!-- Experience 1 -->
@@ -1590,15 +1590,70 @@
                         <span class="date">Jan 2022 - Present · 3 yrs 7 mos</span>
                         <p>ValorSpirit Academy · Freelance | Eastern Cape, South Africa · Hybrid</p>
                         <ul>
-                            <li>Provided one-on-one and group tutoring sessions in Mathematics and Physical Sciences</li>
-                            <li>Developed customized lesson plans and practice exercises tailored to students' needs</li>
-                            <li>Explained complex concepts in clear, simplified terms to enhance understanding</li>
-                            <li>Assisted learners in exam preparation, homework completion, and project guidance</li>
-                            <li>Monitored student progress and provided constructive feedback</li>
-                            <li>Maintained a positive, motivating, and respectful learning environment</li>
+                            <li>Provided one-on-one and group tutoring sessions</li>
+                            <li>Developed customized lesson plans and practice exercises</li>
+                            <li>Explained complex concepts in clear, simplified terms</li>
                         </ul>
                     </div>
                 </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Quantium's Data Analytics</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Quantium · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation focused on Data Analytics</li>
+                            <li>Developed expertise in data preparation and customer analytics</li>
+                            <li>Utilized transaction datasets to extract insights</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cyber Security Consulting</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>PwC · Internship | Remote</p>
+                        <ul>
+                            <li>Completed cybersecurity risk assessment simulation</li>
+                            <li>Determined missing controls and identified risks</li>
+                            <li>Completed Test of Design documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Tata Consultancy Services · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation in identity and access management</li>
+                            <li>Acquired expertise in IAM principles</li>
+                            <li>Strategically aligned security solutions with business objectives</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Walmart Global Tech · Internship | Remote</p>
+                        <ul>
+                            <li>Completed Advanced Software Engineering Job Simulation</li>
+                            <li>Developed novel heap data structure in Java</li>
+                            <li>Designed UML class diagram for data processor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
                 
                 <!-- Experience 2 -->
                 <div class="timeline-item">
@@ -2599,35 +2654,47 @@
     contactForm.reset();
   });
   
-  // Initialize animations when elements come into view
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
+  // NEW INTERSECTION OBSERVER IMPLEMENTATION
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Handle sections
+      if (entry.target.classList.contains('section-hidden')) {
         entry.target.classList.add('section-visible');
-        
-        // Animate skill bars
-        if (entry.target.id === 'skills') {
-          document.querySelectorAll('.skill-progress').forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-              bar.style.width = width;
-            }, 300);
-          });
-        }
       }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('section').forEach(section => {
-    section.classList.add('section-hidden');
-    observer.observe(section);
+      
+      // Handle timeline items specifically
+      if (entry.target.classList.contains('timeline-content')) {
+        entry.target.classList.add('visible');
+      }
+
+      // Animate skill bars
+      if (entry.target.id === 'skills') {
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
+        });
+      }
+    }
   });
-  
-  document.querySelectorAll('.timeline-item').forEach(item => {
-    item.classList.add('section-hidden');
-    observer.observe(item);
-  });
+}, { 
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px' /* Trigger 100px earlier */
+});
+
+// Observe sections
+document.querySelectorAll('section').forEach(section => {
+  section.classList.add('section-hidden');
+  observer.observe(section);
+});
+
+// Observe timeline content DIRECTLY (critical fix)
+document.querySelectorAll('.timeline-content').forEach(content => {
+  observer.observe(content); // Changed from timeline-item to timeline-content
+});
   
   // Create particles
   function createParticles() {
