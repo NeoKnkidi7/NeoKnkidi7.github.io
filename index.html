@@ -535,12 +535,10 @@
         
         .timeline-item:nth-child(odd) {
             left: 0;
-            padding-right: 70px;
         }
         
         .timeline-item:nth-child(even) {
             left: 50%;
-            padding-left: 70px;
         }
         
         .timeline-content {
@@ -570,51 +568,6 @@
             font-weight: 600;
             margin-bottom: 10px;
             display: block;
-        }
-        
-        /* Add indicator circles */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border: 4px solid var(--bg-dark);
-            top: 30px;
-            border-radius: 50%;
-            z-index: 2;
-            box-shadow: var(--glow-primary);
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        @media (max-width: 992px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-                left: 0 !important;
-            }
-            
-            .timeline-item:nth-child(even) {
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 21px !important;
-                right: auto !important;
-            }
         }
         
         /* Animation Fixes */
@@ -1623,154 +1576,223 @@
         </div>
     </section>
     
- <!-- Experience Section - FIXED IMPLEMENTATION -->
-<section class="experience" id="experience">
-    <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-        <p class="section-subtitle">My journey in technology and innovation</p>
-        
-        <div class="timeline">
-            <!-- Experience 1 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Mathematics and Science Tutor</h3>
-                    <span class="date">Jan 2022 - Present · 3 yrs 7 mos</span>
-                    <p>ValorSpirit Academy · Freelance | Eastern Cape, South Africa · Hybrid</p>
-                    <ul>
-                        <li>Provided one-on-one and group tutoring sessions</li>
-                        <li>Developed customized lesson plans and practice exercises</li>
-                        <li>Explained complex concepts in clear, simplified terms</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Experience Section - Fixed Implementation -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My journey in technology and innovation</p>
             
-            <!-- Experience 2 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Quantium's Data Analytics</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>Quantium · Internship | Remote</p>
-                    <ul>
-                        <li>Completed job simulation focused on Data Analytics</li>
-                        <li>Developed expertise in data preparation and customer analytics</li>
-                        <li>Utilized transaction datasets to extract insights</li>
-                        <li>Identified benchmark stores for uplift testing</li>
-                    </ul>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Mathematics and Science Tutor</h3>
+                        <span class="date">Jan 2022 - Present · 3 yrs 7 mos</span>
+                        <p>ValorSpirit Academy · Freelance | Eastern Cape, South Africa · Hybrid</p>
+                        <ul>
+                            <li>Provided one-on-one and group tutoring sessions</li>
+                            <li>Developed customized lesson plans and practice exercises</li>
+                            <li>Explained complex concepts in clear, simplified terms</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Experience 3 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Cyber Security Consulting</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>PwC · Internship | Remote</p>
-                    <ul>
-                        <li>Completed cybersecurity risk assessment simulation</li>
-                        <li>Determined missing controls and identified risks</li>
-                        <li>Completed Test of Design documentation</li>
-                    </ul>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Quantium's Data Analytics</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Quantium · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation focused on Data Analytics</li>
+                            <li>Developed expertise in data preparation and customer analytics</li>
+                            <li>Utilized transaction datasets to extract insights</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Experience 4 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Cybersecurity Analyst</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>Tata Consultancy Services · Internship | Remote</p>
-                    <ul>
-                        <li>Completed job simulation in identity and access management</li>
-                        <li>Acquired expertise in IAM principles</li>
-                        <li>Strategically aligned security solutions with business objectives</li>
-                    </ul>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cyber Security Consulting</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>PwC · Internship | Remote</p>
+                        <ul>
+                            <li>Completed cybersecurity risk assessment simulation</li>
+                            <li>Determined missing controls and identified risks</li>
+                            <li>Completed Test of Design documentation</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Experience 5 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Software Engineer</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>Walmart Global Tech · Internship | Remote</p>
-                    <ul>
-                        <li>Completed Advanced Software Engineering Job Simulation</li>
-                        <li>Developed novel heap data structure in Java</li>
-                        <li>Designed UML class diagram for data processor</li>
-                    </ul>
+                
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Tata Consultancy Services · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation in identity and access management</li>
+                            <li>Acquired expertise in IAM principles</li>
+                            <li>Strategically aligned security solutions with business objectives</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Experience 6a -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Information Technology Intern</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>Deloitte · Internship | Remote</p>
-                    <ul>
-                        <li>Completed job simulation involving development and coding</li>
-                        <li>Wrote proposal for creating a dashboard</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Experience 6b -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Cybersecurity Analyst Intern</h3>
-                    <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
-                    <p>Deloitte · Internship | Remote</p>
-                    <ul>
-                        <li>Completed job simulation involving reading web activity logs</li>
-                        <li>Supported client in cybersecurity breach</li>
-                        <li>Identified suspicious user activity through analysis</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Experience 7 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Examination Assistant</h3>
-                    <span class="date">Nov 2024 - Dec 2024 · 2 mos</span>
-                    <p>Department of Basic Education · Part-time | Mvenyane Marking Centre · On-site</p>
-                    <ul>
-                        <li>Handled and verified exam scripts under high-pressure deadlines</li>
-                        <li>Ensured accurate data organization, contributing to exam integrity</li>
-                        <li>Maintained confidentiality of examination content and candidate identities</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Experience 8 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Assistant Radiographer (Volunteer)</h3>
-                    <span class="date">Feb 2022 - Mar 2022 · 2 mos</span>
-                    <p>Department of Health South Africa · Freelance | Taylor Bequest Hospital · On-site</p>
-                    <ul>
-                        <li>Assisted in imaging procedures and patient positioning</li>
-                        <li>Maintained high hygiene and safety standards in compliance with protocols</li>
-                        <li>Developed hands-on understanding of X-ray and radiographic techniques</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Experience 9 -->
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Project Manager (Academics-CMPG213/223)</h3>
-                    <span class="date">Feb 2023 - Nov 2023</span>
-                    <p>North West University | Howard University Student Information System</p>
-                    <ul>
-                        <li>Managed academic projects for Howard University Student Information System</li>
-                        <li>Coordinated between academic departments and technical teams</li>
-                        <li>Ensured project deliverables met academic requirements and deadlines</li>
-                    </ul>
+                
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Walmart Global Tech · Internship | Remote</p>
+                        <ul>
+                            <li>Completed Advanced Software Engineering Job Simulation</li>
+                            <li>Developed novel heap data structure in Java</li>
+                            <li>Designed UML class diagram for data processor</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Quantium's Data Analytics</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Quantium · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation focused on Data Analytics and Commercial Insights</li>
+                            <li>Developed expertise in data preparation and customer analytics</li>
+                            <li>Utilized transaction datasets to extract insights and deliver commercial recommendations</li>
+                            <li>Identified benchmark stores for uplift testing on trial store layouts</li>
+                            <li>Created comprehensive reports for Category Manager to facilitate strategic decisions</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cyber Security Consulting</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>PwC · Internship | Remote</p>
+                        <ul>
+                            <li>Completed cybersecurity risk assessment simulation for PwC</li>
+                            <li>Determined missing controls and identified associated risks</li>
+                            <li>Completed Test of Design and Operating Effectiveness documentation</li>
+                            <li>Created one-slide summary to present findings</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Tata Consultancy Services · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation involving identity and access management (IAM)</li>
+                            <li>Acquired expertise in IAM principles and cybersecurity best practices</li>
+                            <li>Strategically aligned security solutions with business objectives</li>
+                            <li>Delivered comprehensive documentation and presentations</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Walmart Global Tech · Internship | Remote</p>
+                        <ul>
+                            <li>Completed Advanced Software Engineering Job Simulation</li>
+                            <li>Developed novel heap data structure in Java for shipping department</li>
+                            <li>Designed UML class diagram for data processor with different operating modes</li>
+                            <li>Created entity relationship diagram for new database design</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 6a -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Information Technology Intern</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Deloitte · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation involving development and coding</li>
+                            <li>Wrote proposal for creating a dashboard</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 6b -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Analyst Intern</h3>
+                        <span class="date">Jul 2025 - Jul 2025 · 1 mo</span>
+                        <p>Deloitte · Internship | Remote</p>
+                        <ul>
+                            <li>Completed job simulation involving reading web activity logs</li>
+                            <li>Supported client in cybersecurity breach</li>
+                            <li>Identified suspicious user activity through analysis</li>
+                        </ul>
+                        <a href="#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <!-- Experience 7 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Examination Assistant</h3>
+                        <span class="date">Nov 2024 - Dec 2024 · 2 mos</span>
+                        <p>Department of Basic Education · Part-time | Mvenyane Marking Centre · On-site</p>
+                        <ul>
+                            <li>Handled and verified exam scripts under high-pressure deadlines</li>
+                            <li>Ensured accurate data organization, contributing to exam integrity</li>
+                            <li>Maintained confidentiality of examination content and candidate identities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 8 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Assistant Radiographer (Volunteer)</h3>
+                        <span class="date">Feb 2022 - Mar 2022 · 2 mos</span>
+                        <p>Department of Health South Africa · Freelance | Taylor Bequest Hospital · On-site</p>
+                        <ul>
+                            <li>Assisted in imaging procedures and patient positioning</li>
+                            <li>Maintained high hygiene and safety standards in compliance with protocols</li>
+                            <li>Developed hands-on understanding of X-ray and radiographic techniques</li>
+                            <li>Successfully integrated into healthcare team during high-pressure periods</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 9 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Project Manager (Academics-CMPG213/223)</h3>
+                        <span class="date">Feb 2023 - Nov 2023</span>
+                        <p>North West University | Howard University Student Information System</p>
+                        <ul>
+                            <li>Managed academic projects for Howard University Student Information System</li>
+                            <li>Coordinated between academic departments and technical teams</li>
+                            <li>Ensured project deliverables met academic requirements and deadlines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <!-- Skills Section -->
@@ -2632,49 +2654,47 @@
     contactForm.reset();
   });
   
-  
-        // FIXED INTERSECTION OBSERVER FOR TIMELINE
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Handle sections
-                    if (entry.target.classList.contains('section-hidden')) {
-                        entry.target.classList.add('section-visible');
-                    }
-                    
-                    // Handle timeline items specifically
-                    if (entry.target.classList.contains('timeline-content')) {
-                        entry.target.classList.add('visible');
-                    }
+  // NEW INTERSECTION OBSERVER IMPLEMENTATION
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Handle sections
+      if (entry.target.classList.contains('section-hidden')) {
+        entry.target.classList.add('section-visible');
+      }
+      
+      // Handle timeline items specifically
+      if (entry.target.classList.contains('timeline-content')) {
+        entry.target.classList.add('visible');
+      }
 
-                    // Animate skill bars
-                    if (entry.target.id === 'skills') {
-                        document.querySelectorAll('.skill-progress').forEach(bar => {
-                            const width = bar.style.width;
-                            bar.style.width = '0';
-                            setTimeout(() => {
-                                bar.style.width = width;
-                            }, 300);
-                        });
-                    }
-                }
-            });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+      // Animate skill bars
+      if (entry.target.id === 'skills') {
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
         });
+      }
+    }
+  });
+}, { 
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px' /* Trigger 100px earlier */
+});
 
-        // Observe sections
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('section-hidden');
-            observer.observe(section);
-        });
+// Observe sections
+document.querySelectorAll('section').forEach(section => {
+  section.classList.add('section-hidden');
+  observer.observe(section);
+});
 
-        // Observe timeline content
-        document.querySelectorAll('.timeline-content').forEach(content => {
-            observer.observe(content);
-        });
-    </script>
+// Observe timeline content DIRECTLY (critical fix)
+document.querySelectorAll('.timeline-content').forEach(content => {
+  observer.observe(content); // Changed from timeline-item to timeline-content
+});
   
   // Create particles
   function createParticles() {
@@ -2723,5 +2743,3 @@
 </script>
 </body>
 </html>
-
-
