@@ -1314,6 +1314,206 @@
                 transform: rotate(30deg) translateY(-100%);
             }
         }
+        
+        /* NEW FEATURES */
+        
+        /* Dynamic Typing Effect */
+        #typed-roles {
+            color: var(--accent);
+            font-weight: 700;
+            display: inline-block;
+            min-width: 250px;
+            height: 1.6em;
+            overflow: hidden;
+            vertical-align: bottom;
+            border-right: 2px solid var(--primary);
+            animation: blinkCursor 0.7s infinite;
+        }
+        
+        @keyframes blinkCursor {
+            0%, 100% { border-right-color: transparent; }
+            50% { border-right-color: var(--primary); }
+        }
+        
+        /* Tech Sphere Enhancement */
+        .tech-tag {
+            position: absolute;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+            transform-origin: center;
+            transform-style: preserve-3d;
+            background: rgba(10, 15, 30, 0.7);
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+        
+        /* Project Modal */
+        .project-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 18, 0.95);
+            backdrop-filter: blur(10px);
+            overflow: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            border-radius: var(--radius);
+            max-width: 800px;
+            margin: 5% auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: var(--glow-primary), 0 0 50px rgba(0, 240, 255, 0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: var(--text-light);
+            font-size: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        .modal-body {
+            color: var(--text-light);
+        }
+        
+        .modal-body img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+        }
+        
+        .modal-body h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .modal-body .project-tags {
+            margin-bottom: 20px;
+        }
+        
+        .modal-body .project-desc {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .modal-body .project-link {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Scroll to top button */
+        #scroll-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--bg-dark);
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        #scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 240, 255, 0.5);
+        }
+        
+        /* Dark Mode Toggle */
+        #theme-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        #theme-toggle:hover {
+            border-color: var(--primary);
+            box-shadow: var(--glow-primary);
+        }
+        
+        /* Light Mode */
+        :root.light-mode {
+            --bg-dark: #f0f0f7;
+            --bg-darker: #e0e0ef;
+            --text-light: #333344;
+            --text-lighter: #222233;
+            --text-gray: #555566;
+            --primary: #0077ff;
+            --primary-dark: #0055cc;
+            --secondary: #9900ff;
+            --accent: #00aa88;
+            --accent2: #00cc99;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(0, 119, 255, 0.2);
+            --glow-primary: 0 0 15px rgba(0, 119, 255, 0.3);
+            --glow-secondary: 0 0 15px rgba(153, 0, 255, 0.2);
+        }
+        
+        .light-mode .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(0, 119, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 119, 255, 0.05) 1px, transparent 1px);
+        }
+        
+        /* Form message */
+        #form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: var(--radius);
+            display: none;
+        }
+        
+        .success {
+            background: rgba(0, 255, 128, 0.1);
+            border: 1px solid #00ff80;
+            color: #00ff80;
+        }
+        
+        .error {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+        }
     </style>
 </head>
 <body>
@@ -1322,6 +1522,16 @@
     
     <!-- Particles -->
     <div class="particles" id="particles"></div>
+    
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" title="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- Scroll to top button -->
+    <button id="scroll-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     
     <!-- AI Assistant -->
     <div class="ai-assistant" id="ai-assistant">
@@ -1341,6 +1551,14 @@
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Ask me something...">
             <button class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body"></div>
         </div>
     </div>
     
@@ -1371,7 +1589,7 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span>Neo Kenedy Nkidi</span></h1>
-                <p class="hero-roles">IT Student · <span>AI Engineer</span> · <span>Cybersecurity Analyst</span> · <span>Data Scientist</span> · <span>Full Stack Developer</span></p>
+                <p class="hero-roles">IT Student · <span id="typed-roles"></span></p>
                 <p>Final-year IT student at North-West University transforming real-world challenges into innovative, data-driven solutions. Passionate about the intersection of AI, security, and human-centered technology.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">Explore Projects</a>
@@ -2137,6 +2355,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                     </form>
+                    <div id="form-message"></div>
                 </div>
             </div>
         </div>
@@ -2199,16 +2418,27 @@
             renderer.setSize(400, 400);
             document.getElementById('tech-sphere').appendChild(renderer.domElement);
             
-            // Create sphere
+            // Create sphere with improved material
             const geometry = new THREE.SphereGeometry(5, 32, 32);
-            const material = new THREE.MeshBasicMaterial({ 
+            const material = new THREE.MeshPhongMaterial({ 
                 color: 0x00a0b0,
                 wireframe: true,
-                opacity: 0.7,
-                transparent: true
+                opacity: 0.9,
+                transparent: true,
+                shininess: 100,
+                emissive: 0x00f0ff,
+                emissiveIntensity: 0.3
             });
             const sphere = new THREE.Mesh(geometry, material);
             scene.add(sphere);
+            
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            const pointLight = new THREE.PointLight(0x00f0ff, 1, 100);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
             
             // Add floating tech tags
             const tags = ['AI', 'ML', 'Cybersecurity', 'Data Science', 'Python', 'Java', 'Cloud', 'BI', 'NLP', 'React', 'SQL', 'TensorFlow'];
@@ -2383,26 +2613,48 @@
         }
         
         function getAIResponse(userMessage) {
-            const responses = {
-                'hello': 'Hello! How can I assist you today?',
-                'hi': 'Hi there! What would you like to know about Neo?',
-                'projects': 'Neo has created several innovative projects including the Load-Shedding Impact Predictor, Indigenous Language Voice Assistant, and FinSight Financial Intelligence Platform. You can view them in the Projects section!',
-                'skills': 'Neo has expertise in Python, Java, AI, Machine Learning, Cybersecurity, Data Science, and Full Stack Development. Check out the Skills section for details.',
-                'certifications': 'Neo holds 22 certifications from Microsoft, Google, Oracle, Deloitte, and others in areas like AI, Cybersecurity, Data Science, and Business Intelligence. See the Certifications section!',
-                'contact': 'You can reach Neo via email at neonkidi296@gmail.com or phone at 082 213 2330. His LinkedIn and GitHub are also available in the Contact section.',
-                'experience': 'Neo has participated in job simulations with Walmart Global Tech, TATA, PwC, and Deloitte, focusing on software engineering, cybersecurity, and data analytics.',
-                'default': "I'm Neo's AI assistant. You can ask me about his skills, projects, certifications, or how to contact him!"
-            };
+            const responses = [
+                { 
+                    patterns: ['hello', 'hi', 'hey'], 
+                    response: 'Hello! How can I assist you today?'
+                },
+                { 
+                    patterns: ['project', 'projects', 'work', 'portfolio'], 
+                    response: 'Neo has created several innovative projects including the Load-Shedding Impact Predictor, Indigenous Language Voice Assistant, and FinSight Financial Intelligence Platform. You can view them in the Projects section!'
+                },
+                { 
+                    patterns: ['skill', 'skills', 'expertise', 'technology'], 
+                    response: 'Neo has expertise in Python, Java, AI, Machine Learning, Cybersecurity, Data Science, and Full Stack Development. Check out the Skills section for details.'
+                },
+                { 
+                    patterns: ['certification', 'certifications', 'cert', 'certs', 'qualification'], 
+                    response: 'Neo holds 22 certifications from Microsoft, Google, Oracle, Deloitte, and others in areas like AI, Cybersecurity, Data Science, and Business Intelligence. See the Certifications section!'
+                },
+                { 
+                    patterns: ['contact', 'email', 'phone', 'linkedin', 'github', 'reach', 'get in touch'], 
+                    response: 'You can reach Neo via email at neonkidi296@gmail.com or phone at 082 213 2330. His LinkedIn and GitHub are also available in the Contact section.'
+                },
+                { 
+                    patterns: ['experience', 'job', 'work experience', 'internship', 'career'], 
+                    response: 'Neo has participated in job simulations with Walmart Global Tech, TATA, PwC, and Deloitte, focusing on software engineering, cybersecurity, and data analytics.'
+                },
+                { 
+                    patterns: ['about', 'who', 'background', 'bio'], 
+                    response: 'Neo is a final-year IT student at North-West University with a passion for transforming complex problems into elegant solutions. His expertise spans across AI, cybersecurity, data science, and full-stack development.'
+                }
+            ];
             
             const lowerMessage = userMessage.toLowerCase();
             
-            for (const [key, value] of Object.entries(responses)) {
-                if (lowerMessage.includes(key)) {
-                    return value;
+            for (const item of responses) {
+                for (const pattern of item.patterns) {
+                    if (lowerMessage.includes(pattern)) {
+                        return item.response;
+                    }
                 }
             }
             
-            return responses.default;
+            return "I'm Neo's AI assistant. You can ask me about his skills, projects, certifications, or how to contact him!";
         }
         
         sendBtn.addEventListener('click', () => {
@@ -2427,11 +2679,47 @@
         
         // Form submission
         const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
+        
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Thank you for your message! Neo will get back to you soon.');
+            
+            // Reset message
+            formMessage.style.display = 'none';
+            formMessage.className = '';
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validation
+            if (!name || !email || !subject || !message) {
+                showMessage('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                showMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // If valid, show success message
+            showMessage('Thank you for your message! Neo will get back to you soon.', 'success');
             contactForm.reset();
         });
+        
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        
+        function showMessage(text, type) {
+            formMessage.textContent = text;
+            formMessage.className = type;
+            formMessage.style.display = 'block';
+        }
         
         // Initialize animations when elements come into view
         const observer = new IntersectionObserver((entries) => {
@@ -2493,6 +2781,146 @@
             }
         }
         
+        // Dynamic Typing Effect for Hero Roles
+        const roles = ["AI Engineer", "Cybersecurity Analyst", "Data Scientist", "Full Stack Developer", "Business Intelligence Analyst"];
+        const typedRoles = document.getElementById('typed-roles');
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeRole() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                // Remove character
+                typedRoles.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // Add character
+                typedRoles.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            // Determine typing speed
+            let typeSpeed = 100;
+            if (isDeleting) {
+                typeSpeed /= 2;
+            }
+            
+            // If word is complete
+            if (!isDeleting && charIndex === currentRole.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeRole, typeSpeed);
+        }
+        
+        // Project Modals
+        const projectModal = document.getElementById('project-modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeModal = document.querySelector('.close-modal');
+        
+        // Project data
+        const projects = [
+            {
+                title: "FinSight Financial Intelligence",
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1611&q=80",
+                tags: ["Python", "AI", "Finance"],
+                desc: "AI-powered platform for financial professionals featuring predictive analytics, automated data processing, and compliance checks. The system analyzes market trends in real-time and provides actionable insights to optimize investment strategies. Built with Python, TensorFlow, and Streamlit for the frontend interface.",
+                link: "https://ai-powered-financial-tool-for-professionals.streamlit.app/"
+            },
+            {
+                title: "Load-Shedding Impact Predictor",
+                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+                tags: ["Python", "Machine Learning", "API"],
+                desc: "Forecasts Eskom outages and correlates with economic activity using machine learning and real-time data. The model predicts load-shedding schedules 72 hours in advance with 92% accuracy. Integrated with Google Maps API to visualize impact on different regions and industries.",
+                link: "https://gmrbd3olwagdnpprs4aafc.streamlit.app/"
+            },
+            {
+                title: "Indigenous Language Voice Assistant",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1715&q=80",
+                tags: ["AI", "NLP", "Speech"],
+                desc: "Bridges digital divides for Zulu/Tswana speakers using advanced speech recognition and NLP techniques. The system achieves 87% accuracy for indigenous language understanding. Features include voice commands, translation, and cultural context awareness. Developed using Python, TensorFlow, and Mozilla DeepSpeech.",
+                link: "https://indigenous-language-voice-assistant.streamlit.app/"
+            },
+            {
+                title: "GBV Alert & Response System",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+                tags: ["AI", "Mobile App", "Security"],
+                desc: "Mobile application with AI-driven threat detection and emergency response coordination for gender-based violence prevention. Uses audio analysis and motion sensors to detect distress situations. Integrates with local authorities and support networks for rapid response. Built with React Native, Node.js, and Python AI backend.",
+                link: "#"
+            },
+            {
+                title: "Smart Campus Optimization",
+                image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+                tags: ["IoT", "AI", "Java"],
+                desc: "IoT-enabled campus management system using sensor data and AI to optimize resource allocation and security. Monitors energy consumption, room occupancy, and security threats in real-time. Reduced campus energy costs by 23% during the pilot phase. Technologies used: Java, Python, TensorFlow, and AWS IoT.",
+                link: "#"
+            }
+        ];
+        
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.addEventListener('click', () => {
+                const project = projects[index];
+                modalBody.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="project-tags">
+                        ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                    </div>
+                    <h3>${project.title}</h3>
+                    <p class="project-desc">${project.desc}</p>
+                    <a href="${project.link}" class="project-link" target="_blank">View Project <i class="fas fa-arrow-right"></i></a>
+                `;
+                projectModal.style.display = 'block';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            projectModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.style.display = 'none';
+            }
+        });
+        
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('light-mode');
+            if (document.documentElement.classList.contains('light-mode')) {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+        });
+        
         // Initialize everything when page loads
         window.addEventListener('load', () => {
             initTechSphere();
@@ -2506,6 +2934,9 @@
             document.querySelectorAll('.project-card, .cert-card, .timeline-content, .skill-category, .stat-item, .contact-item').forEach(card => {
                 card.classList.add('hologram-effect');
             });
+            
+            // Start typing effect
+            setTimeout(typeRole, 1000);
         });
     </script>
 </body>
