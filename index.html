@@ -497,7 +497,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-         /* Experience Section Fixes */
+        /* Experience Section Fixes */
         .experience {
             position: relative;
             overflow: visible;
@@ -547,12 +547,6 @@
             border: 1px solid var(--card-border);
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .timeline-content.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -2600,48 +2594,6 @@
         e.preventDefault();
         alert('Thank you for your message! Neo will get back to you soon.');
         contactForm.reset();
-    });
-    
-    // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Handle sections
-                if (entry.target.classList.contains('section-hidden')) {
-                    entry.target.classList.add('section-visible');
-                }
-                
-                // Handle timeline items
-                if (entry.target.classList.contains('timeline-content')) {
-                    entry.target.classList.add('visible');
-                }
-
-                // Animate skill bars
-                if (entry.target.id === 'skills') {
-                    document.querySelectorAll('.skill-progress').forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 300);
-                    });
-                }
-            }
-        });
-    }, { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    });
-
-    // Observe sections
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('section-hidden');
-        observer.observe(section);
-    });
-
-    // Observe timeline content
-    document.querySelectorAll('.timeline-content').forEach(content => {
-        observer.observe(content);
     });
     
     // Create particles
