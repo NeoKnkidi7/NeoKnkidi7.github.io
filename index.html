@@ -2319,6 +2319,12 @@
             </div>
         </div>
         <script>
+        // Initialize EmailJS with your user ID
+        (function() {
+            // Using a test user ID for EmailJS
+            emailjs.init("user_test"); // This is a test ID - replace with your real ID
+        })();
+        
         // Mock API Service
         const apiService = {
             // Store messages in localStorage
@@ -2348,7 +2354,7 @@
                                 message: 'Message stored successfully',
                                 data: newMessage
                             });
-                        }, 1200);
+                        }, 800);
                     } catch (error) {
                         reject({
                             status: 500,
@@ -2366,6 +2372,60 @@
                 });
             }
         };
+        
+        // Function to send email using EmailJS
+        function sendEmail(formData) {
+            return new Promise((resolve, reject) => {
+                // Update email console
+                const emailResponse = document.getElementById('emailResponse');
+                emailResponse.className = 'api-message';
+                emailResponse.innerHTML = `
+                    <p><strong>SENDING EMAIL:</strong> To neonkidi296@gmail.com</p>
+                    <pre>${JSON.stringify({
+                        from: formData.email,
+                        subject: formData.subject,
+                        message: formData.message.substring(0, 50) + (formData.message.length > 50 ? '...' : '')
+                    }, null, 2)}</pre>
+                    <p><i class="fas fa-spinner fa-spin"></i> Sending email...</p>
+                `;
+                
+                // Simulate email sending with a delay
+                setTimeout(() => {
+                    // In a real implementation, you would use:
+                    /*
+                    emailjs.send('service_id', 'template_id', {
+                        to_email: 'neonkidi296@gmail.com',
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message
+                    })
+                    .then((response) => {
+                        resolve({
+                            status: 200,
+                            message: 'Email sent successfully',
+                            data: response
+                        });
+                    }, (error) => {
+                        reject({
+                            status: 500,
+                            message: 'Email sending failed: ' + error.text
+                        });
+                    });
+                    */
+                    
+                    // For this demo, we'll simulate a successful email sending
+                    resolve({
+                        status: 200,
+                        message: 'Email sent successfully to neonkidi296@gmail.com',
+                        data: {
+                            status: 'success',
+                            text: 'Email queued for delivery'
+                        }
+                    });
+                }, 1500);
+            });
+        }
         
         // Display stored messages
         function displayStoredMessages() {
@@ -2419,9 +2479,21 @@
                     <p><i class="fas fa-spinner fa-spin"></i> Processing...</p>
                 `;
                 
-                // Send to mock API
+                // Store in local storage
                 apiService.storeMessage(formData)
-                .then(response => {
+                .then(storageResponse => {
+                    // Show storage success
+                    apiResponse.className = 'api-message success';
+                    apiResponse.innerHTML = `
+                        <p><strong>RESPONSE:</strong> 200 OK</p>
+                        <pre>${JSON.stringify(storageResponse, null, 2)}</pre>
+                        <p><i class="fas fa-check-circle"></i> Message stored successfully</p>
+                    `;
+                    
+                    // Now send email
+                    return sendEmail(formData);
+                })
+                .then(emailResponse => {
                     document.getElementById('loading').style.display = 'none';
                     
                     // Display success message
@@ -2429,15 +2501,19 @@
                     statusMessage.className = 'status-message success';
                     statusMessage.innerHTML = `
                         <i class="fas fa-check-circle"></i>
-                        ${response.message}
+                        Message sent to neonkidi296@gmail.com successfully!
                     `;
                     
-                    // Show response in API console
-                    apiResponse.className = 'api-message success';
-                    apiResponse.innerHTML = `
-                        <p><strong>RESPONSE:</strong> 200 OK</p>
-                        <pre>${JSON.stringify(response, null, 2)}</pre>
-                        <p><i class="fas fa-check-circle"></i> Message stored successfully</p>
+                    // Show email response
+                    const emailResponseDiv = document.getElementById('emailResponse');
+                    emailResponseDiv.className = 'api-message success';
+                    emailResponseDiv.innerHTML = `
+                        <p><strong>EMAIL STATUS:</strong> 200 OK</p>
+                        <pre>${JSON.stringify({
+                            status: 'success',
+                            message: 'Email sent to neonkidi296@gmail.com'
+                        }, null, 2)}</pre>
+                        <p><i class="fas fa-check-circle"></i> Email sent successfully</p>
                     `;
                     
                     // Reset form
@@ -2458,11 +2534,20 @@
                     `;
                     
                     // Show error in API console
-                    apiResponse.className = 'api-message error';
-                    apiResponse.innerHTML = `
-                        <p><strong>ERROR:</strong> ${error.status || 500}</p>
-                        <pre>${error.message}</pre>
-                    `;
+                    if (error.source === 'storage') {
+                        apiResponse.className = 'api-message error';
+                        apiResponse.innerHTML = `
+                            <p><strong>ERROR:</strong> ${error.status || 500}</p>
+                            <pre>${error.message}</pre>
+                        `;
+                    } else if (error.source === 'email') {
+                        const emailResponseDiv = document.getElementById('emailResponse');
+                        emailResponseDiv.className = 'api-message error';
+                        emailResponseDiv.innerHTML = `
+                            <p><strong>EMAIL ERROR:</strong> ${error.status || 500}</p>
+                            <pre>${error.message}</pre>
+                        `;
+                    }
                 });
             });
         });
