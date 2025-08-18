@@ -2319,65 +2319,151 @@
             </div>
         </div>
         <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Mock API Service
+        const apiService = {
+            // Store messages in localStorage
+            storeMessage: (messageData) => {
+                return new Promise((resolve, reject) => {
+                    try {
+                        // Simulate API delay
+                        setTimeout(() => {
+                            // Get existing messages or initialize empty array
+                            const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+                            
+                            // Add new message with timestamp
+                            const newMessage = {
+                                ...messageData,
+                                id: Date.now(),
+                                date: new Date().toISOString()
+                            };
+                            
+                            messages.push(newMessage);
+                            
+                            // Save back to localStorage
+                            localStorage.setItem('contactMessages', JSON.stringify(messages));
+                            
+                            // Return success response
+                            resolve({
+                                status: 200,
+                                message: 'Message stored successfully',
+                                data: newMessage
+                            });
+                        }, 1200);
+                    } catch (error) {
+                        reject({
+                            status: 500,
+                            message: 'Error storing message: ' + error.message
+                        });
+                    }
+                });
+            },
             
-            // Show loading spinner
-            document.getElementById('loading').style.display = 'flex';
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Create data object
-            const formData = {
-                name,
-                email,
-                subject,
-                message,
-                userId: 1 // Required by JSONPlaceholder
-            };
-            
-            // Send POST request to API
-            fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                document.getElementById('loading').style.display = 'none';
-                
-                if (response.ok) {
-                    return response.json();
+            // Get all stored messages
+            getMessages: () => {
+                return new Promise((resolve) => {
+                    const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+                    resolve(messages);
+                });
+            }
+        };
+        
+        // Display stored messages
+        function displayStoredMessages() {
+            apiService.getMessages().then(messages => {
+                const container = document.getElementById('storedMessages');
+                if (messages.length === 0) {
+                    container.innerHTML = '<p>No messages stored yet</p>';
+                    return;
                 }
-                throw new Error('Network response was not ok.');
-            })
-            .then(data => {
-                // Display success message
-                const statusMessage = document.getElementById('statusMessage');
-                statusMessage.className = 'status-message success';
-                statusMessage.innerHTML = `
-                    <i class="fas fa-check-circle"></i>
-                    Message sent successfully! API returned ID: ${data.id}
+                
+                // Sort by date (newest first)
+                messages.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                container.innerHTML = messages.map(msg => `
+                    <div class="message-item">
+                        <div class="name">${msg.name}</div>
+                        <div class="subject">${msg.subject}</div>
+                        <div class="email">${msg.email}</div>
+                        <div class="date">${new Date(msg.date).toLocaleString()}</div>
+                    </div>
+                `).join('');
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            displayStoredMessages();
+            
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading spinner
+                document.getElementById('loading').style.display = 'flex';
+                document.getElementById('statusMessage').style.display = 'none';
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Create data object
+                const formData = { name, email, subject, message };
+                
+                // Show request in API console
+                const apiResponse = document.getElementById('apiResponse');
+                apiResponse.className = 'api-message';
+                apiResponse.innerHTML = `
+                    <p><strong>REQUEST:</strong> POST /api/contact</p>
+                    <pre>${JSON.stringify(formData, null, 2)}</pre>
+                    <p><i class="fas fa-spinner fa-spin"></i> Processing...</p>
                 `;
                 
-                // Reset form
-                document.getElementById('contactForm').reset();
-            })
-            .catch(error => {
-                document.getElementById('loading').style.display = 'none';
-                
-                // Display error message
-                const statusMessage = document.getElementById('statusMessage');
-                statusMessage.className = 'status-message error';
-                statusMessage.innerHTML = `
-                    <i class="fas fa-exclamation-circle"></i>
-                    Error: ${error.message}
-                `;
+                // Send to mock API
+                apiService.storeMessage(formData)
+                .then(response => {
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    // Display success message
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.className = 'status-message success';
+                    statusMessage.innerHTML = `
+                        <i class="fas fa-check-circle"></i>
+                        ${response.message}
+                    `;
+                    
+                    // Show response in API console
+                    apiResponse.className = 'api-message success';
+                    apiResponse.innerHTML = `
+                        <p><strong>RESPONSE:</strong> 200 OK</p>
+                        <pre>${JSON.stringify(response, null, 2)}</pre>
+                        <p><i class="fas fa-check-circle"></i> Message stored successfully</p>
+                    `;
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Refresh stored messages
+                    displayStoredMessages();
+                })
+                .catch(error => {
+                    document.getElementById('loading').style.display = 'none';
+                    
+                    // Display error message
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.className = 'status-message error';
+                    statusMessage.innerHTML = `
+                        <i class="fas fa-exclamation-circle"></i>
+                        ${error.message || 'Error occurred while sending message'}
+                    `;
+                    
+                    // Show error in API console
+                    apiResponse.className = 'api-message error';
+                    apiResponse.innerHTML = `
+                        <p><strong>ERROR:</strong> ${error.status || 500}</p>
+                        <pre>${error.message}</pre>
+                    `;
+                });
             });
         });
     </script>
