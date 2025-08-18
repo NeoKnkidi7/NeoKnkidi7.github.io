@@ -2318,6 +2318,69 @@
                 </div>
             </div>
         </div>
+        <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading spinner
+            document.getElementById('loading').style.display = 'flex';
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create data object
+            const formData = {
+                name,
+                email,
+                subject,
+                message,
+                userId: 1 // Required by JSONPlaceholder
+            };
+            
+            // Send POST request to API
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                document.getElementById('loading').style.display = 'none';
+                
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                // Display success message
+                const statusMessage = document.getElementById('statusMessage');
+                statusMessage.className = 'status-message success';
+                statusMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    Message sent successfully! API returned ID: ${data.id}
+                `;
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                
+                // Display error message
+                const statusMessage = document.getElementById('statusMessage');
+                statusMessage.className = 'status-message error';
+                statusMessage.innerHTML = `
+                    <i class="fas fa-exclamation-circle"></i>
+                    Error: ${error.message}
+                `;
+            });
+        });
+    </script>
     </section>
     
     <!-- Footer -->
